@@ -30,21 +30,17 @@ metadata/_custom_type_script = "uid://bf3ggechk0wan"
 
 [node name="Root" type="Node2D" parent="."]
 position = Vector2(-1.0000002, -26.000002)
-scale = Vector2(0.65, 0.65)
 
 [node name="Leg3" type="Sprite2D" parent="Root"]
-position = Vector2(5.384613, 110)
-scale = Vector2(1.5384617, 1.5384617)
+position = Vector2(5.384613, 74)
 texture = ExtResource("2_1twnf")
 
 [node name="Leg2" type="Sprite2D" parent="Root"]
-position = Vector2(-3.846161, 48.461594)
-scale = Vector2(1.5384617, 1.5384617)
+position = Vector2(-3.846161, 34.461594)
 texture = ExtResource("3_4i633")
 
 [node name="Leg1" type="Sprite2D" parent="Root"]
-position = Vector2(-10.000004, -59.230774)
-scale = Vector2(1.5384617, 1.5384617)
+position = Vector2(-10.000004, -36.230774)
 texture = ExtResource("4_dkpgs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
