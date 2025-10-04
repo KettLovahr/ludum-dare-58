@@ -25,7 +25,7 @@ func generate_curve(strength: float, delta: float):
 	# just simulate the whole path i guess idfk
 	var yvel = -height
 	var yp = yvel * delta
-	for i in range(strength):
+	for i in range(abs(strength) + 1):
 		curve.add_point(Vector2(dist * i * delta, yp))
 		yp += yvel * delta
 		yvel += PlayerPart.GRAVITY * delta
