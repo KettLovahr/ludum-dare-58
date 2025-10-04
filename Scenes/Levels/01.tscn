@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=4 uid="uid://yja10kwnqisd"]
+
+[ext_resource type="Texture2D" uid="uid://43q4pcvppvws" path="res://icon.svg" id="1_wi0lj"]
+[ext_resource type="Script" uid="uid://cd2wm64sra5ry" path="res://Scenes/Objects/Player/PlayerRoot.gd" id="2_cv17v"]
+[ext_resource type="PackedScene" uid="uid://bnichbfjk6ywa" path="res://Scenes/Objects/Player/Skull.tscn" id="2_rfhst"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv17v"]
+texture = ExtResource("1_wi0lj")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_v8iqp"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/1 = SubResource("TileSetAtlasSource_cv17v")
+
+[node name="01" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAADAAQAAQAAAAAAAAACAAQAAQAAAAAAAAABAAQAAQAAAAAAAAAAAAQAAQAAAAAAAAA=")
+tile_set = SubResource("TileSet_v8iqp")
+
+[node name="PlayerRoot" type="Node" parent="."]
+script = ExtResource("2_cv17v")
+metadata/_custom_type_script = "uid://cd2wm64sra5ry"
+
+[node name="Skull" parent="PlayerRoot" instance=ExtResource("2_rfhst")]
+position = Vector2(166, 198)
+
+[node name="Skull2" parent="PlayerRoot" instance=ExtResource("2_rfhst")]
+position = Vector2(708, 283)
