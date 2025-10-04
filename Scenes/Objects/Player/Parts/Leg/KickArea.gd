@@ -4,6 +4,9 @@ class_name KickArea
 var kick_target: PlayerPart
 var curve: Curve2D = Curve2D.new()
 
+var dist: float
+var height: float
+
 func _ready():
 	generate_curve(1)
 	%TrajectoryArc.curve = curve
@@ -15,22 +18,20 @@ func _process(delta: float) -> void:
 		%TrajectoryArc.global_position = kick_target.global_position
 		
 func generate_curve(strength: float):
-	var dist = strength * 2
-	var height = abs(strength)
+	dist = strength * 6
+	height = abs(strength) * 6
 	curve.clear_points()
 	curve.add_point( Vector2.ZERO )
-	curve.add_point( Vector2(dist, -height), Vector2(-dist/2, 0), Vector2(dist/2, 0) )
-	curve.add_point( Vector2(dist*2, 0) )
+	var yvel = -height
+	var yp = yvel / 60
+	for i in range(100):
+		curve.add_point(Vector2(dist * i / 60, yp))
+		yp += yvel / 60
+		yvel += PlayerPart.GRAVITY / 60
 	
 func handle_kick():
-	print(curve.point_count)
-	kick_target.global_position.y -= 16
-	kick_target.move_and_slide()
-	kick_target.kick_curve = curve.duplicate(true)
-	kick_target.kick_initial_position = kick_target.global_position
-	kick_target.kick_state = true
-	
-	kick_target = null
+	kick_target.velocity.x = dist
+	kick_target.velocity.y = -height
 	%TrajectoryArc.hide()
 
 func _on_body_entered(body: Node2D) -> void:

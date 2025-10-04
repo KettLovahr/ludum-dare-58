@@ -18,18 +18,9 @@ var selected: bool:
 		
 		
 func _physics_process(delta: float) -> void:
-	if not kick_state:
-		if selected and controllable:
-			_handle_controls(delta)
-		_custom_behavior(delta)
-	else:
-		kick_position += delta * 3
-		global_position = kick_initial_position + kick_curve.sample(0, kick_position)
-		if kick_position >= kick_curve.point_count - 1 or get_slide_collision_count() > 0:
-			kick_state = false
-			kick_position = 0.0
-			kick_curve = null
-			kick_initial_position = Vector2.ZERO
+	if selected and controllable:
+		_handle_controls(delta)
+	_custom_behavior(delta)
 	move_and_slide()
 	
 ## Override this function with this part's controls

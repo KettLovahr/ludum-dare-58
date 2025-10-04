@@ -6,7 +6,9 @@ const VELOCITY: float = 1000
 func _custom_behavior(delta):
 	velocity.y += GRAVITY * delta
 	$Sprite.rotate(velocity.x / 1000)
-	velocity.x = lerp(velocity.x, 0.0, 0.1)
+	if is_on_floor():
+		velocity.x = lerp(velocity.x, 0.0, 0.1)
 		
 func _handle_controls(delta):
-	velocity.x += Input.get_axis("move_left", "move_right") * VELOCITY * delta
+	if is_on_floor():
+		velocity.x += Input.get_axis("move_left", "move_right") * VELOCITY * delta
