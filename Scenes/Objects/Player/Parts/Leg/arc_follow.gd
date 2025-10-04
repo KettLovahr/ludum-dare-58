@@ -8,8 +8,8 @@ var offset := 0.0
 func _ready():
 	for i in range(points):
 		create_tiny_sprite()
-		
-		
+
+
 func _process(delta):
 	offset += delta / 10
 	for i in range(points):

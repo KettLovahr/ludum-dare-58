@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://yja10kwnqisd"]
+[gd_scene load_steps=12 format=4 uid="uid://yja10kwnqisd"]
 
 [ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_v8iqp"]
 [ext_resource type="Texture2D" uid="uid://43q4pcvppvws" path="res://icon.svg" id="1_wi0lj"]
 [ext_resource type="PackedScene" uid="uid://bajlrrg5f56a2" path="res://Scenes/Objects/Player/PlayerRoot.tscn" id="2_cv17v"]
 [ext_resource type="PackedScene" uid="uid://bnichbfjk6ywa" path="res://Scenes/Objects/Player/Parts/Skull/Skull.tscn" id="2_rfhst"]
 [ext_resource type="PackedScene" uid="uid://ckjovd4m5x8h4" path="res://Scenes/Objects/Player/Parts/Leg/Leg.tscn" id="4_cv17v"]
+[ext_resource type="Texture2D" uid="uid://bnflm07rloebr" path="res://Assets/Environment/Grass.png" id="6_mfwng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv17v"]
 texture = ExtResource("1_wi0lj")
@@ -17,12 +18,23 @@ tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_cv17v")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2roa"]
+size = Vector2(134, 290)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pdtvn"]
+size = Vector2(134, 161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmfcf"]
+size = Vector2(1256, 197)
+
 [node name="01" type="Node2D"]
 script = ExtResource("1_v8iqp")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+visible = false
 position = Vector2(1, 0)
 tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAADAAQAAQAAAAAAAAACAAQAAQAAAAAAAAABAAQAAQAAAAAAAAAAAAQAAQAAAAAAAAAGAAMAAQAAAAAAAAAGAAEAAQAAAAAAAAA=")
+enabled = false
 tile_set = SubResource("TileSet_v8iqp")
 
 [node name="PlayerRoot" parent="." instance=ExtResource("2_cv17v")]
@@ -32,3 +44,57 @@ position = Vector2(556, 318)
 
 [node name="Leg" parent="PlayerRoot" instance=ExtResource("4_cv17v")]
 position = Vector2(342, 325)
+
+[node name="Ground3" type="NinePatchRect" parent="."]
+offset_left = 761.0
+offset_top = -47.0
+offset_right = 913.0
+offset_bottom = 258.0
+texture = ExtResource("6_mfwng")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
+position = Vector2(76, 150)
+shape = SubResource("RectangleShape2D_a2roa")
+
+[node name="Ground2" type="NinePatchRect" parent="."]
+offset_left = 758.0
+offset_top = 374.0
+offset_right = 910.0
+offset_bottom = 552.0
+texture = ExtResource("6_mfwng")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
+position = Vector2(76, 85.5)
+shape = SubResource("RectangleShape2D_pdtvn")
+
+[node name="Ground1" type="NinePatchRect" parent="."]
+offset_left = 3.0
+offset_top = 507.0
+offset_right = 1276.0
+offset_bottom = 715.0
+texture = ExtResource("6_mfwng")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground1/StaticBody2D"]
+position = Vector2(637, 103.5)
+shape = SubResource("RectangleShape2D_wmfcf")
