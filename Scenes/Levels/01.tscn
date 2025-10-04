@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://yja10kwnqisd"]
 
 [ext_resource type="Texture2D" uid="uid://43q4pcvppvws" path="res://icon.svg" id="1_wi0lj"]
-[ext_resource type="Script" uid="uid://cd2wm64sra5ry" path="res://Scenes/Objects/Player/PlayerRoot.gd" id="2_cv17v"]
+[ext_resource type="PackedScene" uid="uid://bajlrrg5f56a2" path="res://Scenes/Objects/Player/PlayerRoot.tscn" id="2_cv17v"]
 [ext_resource type="PackedScene" uid="uid://bnichbfjk6ywa" path="res://Scenes/Objects/Player/Skull.tscn" id="2_rfhst"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv17v"]
@@ -21,12 +21,10 @@ sources/1 = SubResource("TileSetAtlasSource_cv17v")
 tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAAAAAADAAUAAQAAAAAAAAAEAAUAAQAAAAAAAAAFAAUAAQAAAAAAAAAGAAUAAQAAAAAAAAAHAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAQAAAAAAAAAJAAQAAQAAAAAAAAAIAAQAAQAAAAAAAAAHAAQAAQAAAAAAAAAGAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAAEAAQAAQAAAAAAAAADAAQAAQAAAAAAAAACAAQAAQAAAAAAAAABAAQAAQAAAAAAAAAAAAQAAQAAAAAAAAA=")
 tile_set = SubResource("TileSet_v8iqp")
 
-[node name="PlayerRoot" type="Node" parent="."]
-script = ExtResource("2_cv17v")
-metadata/_custom_type_script = "uid://cd2wm64sra5ry"
+[node name="PlayerRoot2" parent="." instance=ExtResource("2_cv17v")]
 
-[node name="Skull" parent="PlayerRoot" instance=ExtResource("2_rfhst")]
+[node name="Skull" parent="PlayerRoot2" instance=ExtResource("2_rfhst")]
 position = Vector2(166, 198)
 
-[node name="Skull2" parent="PlayerRoot" instance=ExtResource("2_rfhst")]
+[node name="Skull2" parent="PlayerRoot2" instance=ExtResource("2_rfhst")]
 position = Vector2(708, 283)
