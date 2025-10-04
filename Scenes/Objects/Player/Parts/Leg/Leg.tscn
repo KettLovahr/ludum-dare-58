@@ -23,9 +23,10 @@ point_count = 3
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6664t"]
 size = Vector2(188, 52)
 
-[node name="Leg" type="CharacterBody2D"]
+[node name="Leg" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 collision_layer = 2
 script = ExtResource("1_57jxl")
+sprites = [NodePath("Root/Leg1"), NodePath("Root/Leg2"), NodePath("Root/Leg3")]
 metadata/_custom_type_script = "uid://bf3ggechk0wan"
 
 [node name="Root" type="Node2D" parent="."]
