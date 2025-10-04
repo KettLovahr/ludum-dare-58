@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://ckjovd4m5x8h4"]
+
+[ext_resource type="Script" uid="uid://digm7s2akv0h" path="res://Scenes/Objects/Player/Parts/Leg/Leg.gd" id="1_57jxl"]
+[ext_resource type="Texture2D" uid="uid://br84ney373xno" path="res://Assets/TEMP/leg.png" id="2_7m4t5"]
+[ext_resource type="Script" uid="uid://c5xh8k0ojshh5" path="res://Scenes/Objects/Player/PartSelectionArea.gd" id="3_7m4t5"]
+[ext_resource type="Script" uid="uid://brif1cey8jv3k" path="res://Scenes/Objects/Player/Parts/Leg/arc_follow.gd" id="4_6664t"]
+[ext_resource type="Script" uid="uid://dx4ik8gmlqv56" path="res://Scenes/Objects/Player/Parts/Leg/KickArea.gd" id="5_b30j4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qlu"]
+size = Vector2(42, 140)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqpvh"]
+size = Vector2(68, 172)
+
+[sub_resource type="Curve2D" id="Curve2D_7m4t5"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, -128, 0, 128, 0, 256, -256, 0, 0, 0, 0, 512, 0)
+}
+point_count = 3
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6664t"]
+size = Vector2(188, 52)
+
+[node name="Leg" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_57jxl")
+metadata/_custom_type_script = "uid://bf3ggechk0wan"
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_7m4t5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_o5qlu")
+
+[node name="PartSelectionArea" type="Area2D" parent="."]
+script = ExtResource("3_7m4t5")
+metadata/_custom_type_script = "uid://c5xh8k0ojshh5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartSelectionArea"]
+shape = SubResource("RectangleShape2D_kqpvh")
+
+[node name="TrajectoryArc" type="Path2D" parent="."]
+unique_name_in_owner = true
+visible = false
+curve = SubResource("Curve2D_7m4t5")
+script = ExtResource("4_6664t")
+
+[node name="KickArea" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("5_b30j4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea"]
+position = Vector2(0, 60)
+shape = SubResource("RectangleShape2D_6664t")
+
+[connection signal="body_entered" from="KickArea" to="KickArea" method="_on_body_entered"]
+[connection signal="body_exited" from="KickArea" to="KickArea" method="_on_body_exited"]

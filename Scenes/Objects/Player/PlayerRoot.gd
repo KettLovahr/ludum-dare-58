@@ -14,7 +14,7 @@ func _ready():
 			create_button_for(child)
 
 func _process(delta):
-	for i in range(1, 7):
+	for i in range(1, len(mapped_parts) + 1):
 		if Input.is_action_just_pressed("switch_%s" % [i]):
 			mapped_parts[i-1].select()
 

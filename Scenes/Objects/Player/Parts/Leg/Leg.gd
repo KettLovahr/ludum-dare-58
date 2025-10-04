@@ -1,8 +1,8 @@
 extends PlayerPart
 class_name Leg
 
-const HOP_DIST = 300
-const HOP_HEIGHT = 300
+const HOP_DIST = 150
+const HOP_HEIGHT = 150
 
 enum Direction {
 	LEFT,

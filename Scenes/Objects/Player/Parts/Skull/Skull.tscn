@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnichbfjk6ywa"]
 
-[ext_resource type="Script" uid="uid://p8cg6f0oqwbr" path="res://Scenes/Objects/Player/Parts/Skull.gd" id="1_tyaox"]
+[ext_resource type="Script" uid="uid://p8cg6f0oqwbr" path="res://Scenes/Objects/Player/Parts/Skull/Skull.gd" id="1_tyaox"]
 [ext_resource type="Texture2D" uid="uid://qy726iibvivv" path="res://Assets/TEMP/skull.png" id="2_tyaox"]
 [ext_resource type="Script" uid="uid://c5xh8k0ojshh5" path="res://Scenes/Objects/Player/PartSelectionArea.gd" id="3_oj13q"]
 
