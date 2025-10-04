@@ -7,10 +7,10 @@
 [ext_resource type="Script" uid="uid://dx4ik8gmlqv56" path="res://Scenes/Objects/Player/Parts/Leg/KickArea.gd" id="5_b30j4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qlu"]
-size = Vector2(42, 140)
+size = Vector2(30, 96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqpvh"]
-size = Vector2(68, 172)
+size = Vector2(44, 112)
 
 [sub_resource type="Curve2D" id="Curve2D_7m4t5"]
 _data = {
@@ -27,6 +27,7 @@ script = ExtResource("1_57jxl")
 metadata/_custom_type_script = "uid://bf3ggechk0wan"
 
 [node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.65, 0.65)
 texture = ExtResource("2_7m4t5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -50,8 +51,12 @@ collision_mask = 2
 script = ExtResource("5_b30j4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea"]
-position = Vector2(0, 60)
+position = Vector2(0, 44)
 shape = SubResource("RectangleShape2D_6664t")
+
+[node name="KickDelay" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="KickArea" to="KickArea" method="_on_body_entered"]
 [connection signal="body_exited" from="KickArea" to="KickArea" method="_on_body_exited"]
+[connection signal="timeout" from="KickDelay" to="." method="_on_kick_delay_timeout"]

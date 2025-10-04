@@ -21,6 +21,17 @@ func generate_curve(strength: float):
 	curve.add_point( Vector2.ZERO )
 	curve.add_point( Vector2(dist, -height), Vector2(-dist/2, 0), Vector2(dist/2, 0) )
 	curve.add_point( Vector2(dist*2, 0) )
+	
+func handle_kick():
+	print(curve.point_count)
+	kick_target.global_position.y -= 16
+	kick_target.move_and_slide()
+	kick_target.kick_curve = curve.duplicate(true)
+	kick_target.kick_initial_position = kick_target.global_position
+	kick_target.kick_state = true
+	
+	kick_target = null
+	%TrajectoryArc.hide()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerPart and body != get_parent() and kick_target == null:

@@ -1,8 +1,11 @@
 extends PlayerPart
 class_name Leg
 
-const HOP_DIST = 150
+const HOP_DIST = 200
 const HOP_HEIGHT = 150
+const JUMP_HEIGHT = 500
+
+var can_kick := true
 
 enum Direction {
 	LEFT,
@@ -15,6 +18,14 @@ func _handle_controls(delta: float):
 			hop(Direction.LEFT)
 		if Input.is_action_pressed("move_right"):
 			hop(Direction.RIGHT)
+		if Input.is_action_just_pressed("move_up"):
+			if $KickArea.kick_target != null:
+				if can_kick:
+					$KickArea.handle_kick()
+					$KickDelay.start(1.0)
+					can_kick = false
+			else:
+				velocity.y = -JUMP_HEIGHT
 	
 func _custom_behavior(delta: float):
 	if is_on_floor():
@@ -28,3 +39,7 @@ func hop(direction: Direction):
 		Direction.RIGHT: 
 			velocity.x = HOP_DIST
 	velocity.y = -HOP_HEIGHT
+
+
+func _on_kick_delay_timeout() -> void:
+	can_kick = true
