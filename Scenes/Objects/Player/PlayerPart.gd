@@ -4,11 +4,6 @@ class_name PlayerPart
 
 const GRAVITY: float = 1000
 
-var kick_state: bool
-var kick_curve: Curve2D
-var kick_position: float = 0.0
-var kick_initial_position: Vector2
-
 var selected: bool:
 	get:
 		var parent = get_parent()
