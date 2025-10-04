@@ -11,6 +11,18 @@ var selected: bool:
 			return parent.selected == self
 		return false
 		
+		
+func _physics_process(delta: float) -> void:
+	if selected and controllable:
+		_handle_controls(delta)
+	_custom_behavior(delta)
+	move_and_slide()
+	
+## Override this function with this part's controls
+func _handle_controls(delta: float): pass
+## Override this function with this part's custom behavior
+func _custom_behavior(delta: float): pass
+		
 func _ready():
 	for child in get_children():
 		if child is PartSelectionArea:
