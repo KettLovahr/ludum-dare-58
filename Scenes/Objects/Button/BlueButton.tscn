@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckuh1tjs1rgx1"]
+
+[ext_resource type="PackedScene" uid="uid://dalhlyuqlukkn" path="res://Scenes/Objects/Button/Button.tscn" id="1_kqa47"]
+[ext_resource type="Texture2D" uid="uid://71uddyvqpphx" path="res://Assets/Environment/Button3.png" id="2_xtwhv"]
+
+[node name="Button" instance=ExtResource("1_kqa47")]
+
+[node name="Button" parent="." index="0"]
+texture = ExtResource("2_xtwhv")
