@@ -12,13 +12,13 @@ var created_leg := false
 @onready var SelectSFX: AudioStreamPlayer = $SelectPart
 
 func _ready():
-	var i = 0
+	var i = 1
 	for child in get_children():
 		if child is PlayerPart:
 			create_button_for(child, i)
+			i += 1
 		if child is Skull:
 			child.select()
-		i += 1
 
 func _process(_delta):
 	for i in range(1, len(mapped_parts) + 1):
