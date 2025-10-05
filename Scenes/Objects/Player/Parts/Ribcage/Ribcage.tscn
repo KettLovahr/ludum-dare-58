@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=3 uid="uid://kxlkspfj2w2j"]
+
+[ext_resource type="Script" uid="uid://drmc2yhwgo2ga" path="res://Scenes/Objects/Player/Parts/Ribcage/Ribcage.gd" id="1_o5qfi"]
+[ext_resource type="Texture2D" uid="uid://chaysg1rkfi4" path="res://Assets/Bones/Ribcage7.png" id="2_k7jol"]
+[ext_resource type="Texture2D" uid="uid://dqgy4pweiysno" path="res://Assets/Bones/Ribcage8.png" id="3_o5qfi"]
+[ext_resource type="Texture2D" uid="uid://bovpcc7q8inkg" path="res://Assets/Bones/Ribcage9.png" id="4_lgp1r"]
+[ext_resource type="Texture2D" uid="uid://o8hu08x02sui" path="res://Assets/Bones/Ribcage10.png" id="5_efypk"]
+[ext_resource type="Texture2D" uid="uid://cgaapaimkkm6b" path="res://Assets/Bones/Ribcage6.png" id="6_olu0q"]
+[ext_resource type="Texture2D" uid="uid://lceguuvbo8fe" path="res://Assets/Bones/Ribcage3.png" id="7_uchnl"]
+[ext_resource type="Texture2D" uid="uid://yup1v2apri4i" path="res://Assets/Bones/Ribcage4.png" id="8_m0npk"]
+[ext_resource type="Texture2D" uid="uid://doqgbibm78fvq" path="res://Assets/Bones/Ribcage5.png" id="9_kvlcm"]
+[ext_resource type="Texture2D" uid="uid://b4j4cknh0fm80" path="res://Assets/Bones/Ribcage1.png" id="10_fhx7n"]
+[ext_resource type="Texture2D" uid="uid://bxnw4wxee4xjc" path="res://Assets/Bones/Ribcage2.png" id="11_my4ou"]
+[ext_resource type="Script" uid="uid://c5xh8k0ojshh5" path="res://Scenes/Objects/Player/PartSelectionArea.gd" id="12_o5qfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgp1r"]
+size = Vector2(123, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efypk"]
+size = Vector2(153, 138)
+
+[node name="Ribcage" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
+script = ExtResource("1_o5qfi")
+sprites = [NodePath("Root/Ribcage7"), NodePath("Root/Ribcage8"), NodePath("Root/Ribcage9"), NodePath("Root/Ribcage10"), NodePath("Root/Ribcage6"), NodePath("Root/Ribcage3"), NodePath("Root/Ribcage4"), NodePath("Root/Ribcage5"), NodePath("Root/Ribcage1"), NodePath("Root/Ribcage2")]
+metadata/_custom_type_script = "uid://bf3ggechk0wan"
+
+[node name="Root" type="Node2D" parent="."]
+
+[node name="Ribcage7" type="Sprite2D" parent="Root"]
+position = Vector2(67, -49)
+texture = ExtResource("2_k7jol")
+
+[node name="Ribcage8" type="Sprite2D" parent="Root"]
+position = Vector2(-11, -29)
+texture = ExtResource("3_o5qfi")
+
+[node name="Ribcage9" type="Sprite2D" parent="Root"]
+position = Vector2(15, -30)
+texture = ExtResource("4_lgp1r")
+
+[node name="Ribcage10" type="Sprite2D" parent="Root"]
+position = Vector2(42, -28)
+texture = ExtResource("5_efypk")
+
+[node name="Ribcage6" type="Sprite2D" parent="Root"]
+position = Vector2(5, -71)
+texture = ExtResource("6_olu0q")
+
+[node name="Ribcage3" type="Sprite2D" parent="Root"]
+position = Vector2(6, -28)
+texture = ExtResource("7_uchnl")
+
+[node name="Ribcage4" type="Sprite2D" parent="Root"]
+position = Vector2(-17, -27)
+texture = ExtResource("8_m0npk")
+
+[node name="Ribcage5" type="Sprite2D" parent="Root"]
+position = Vector2(-43, -26)
+texture = ExtResource("9_kvlcm")
+
+[node name="Ribcage1" type="Sprite2D" parent="Root"]
+position = Vector2(51, -95)
+texture = ExtResource("10_fhx7n")
+
+[node name="Ribcage2" type="Sprite2D" parent="Root"]
+position = Vector2(38, -46)
+texture = ExtResource("11_my4ou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10.5, -42.5)
+shape = SubResource("RectangleShape2D_lgp1r")
+
+[node name="PartSelectionArea" type="Area2D" parent="."]
+script = ExtResource("12_o5qfi")
+metadata/_custom_type_script = "uid://c5xh8k0ojshh5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartSelectionArea"]
+position = Vector2(15.5, -63)
+shape = SubResource("RectangleShape2D_efypk")

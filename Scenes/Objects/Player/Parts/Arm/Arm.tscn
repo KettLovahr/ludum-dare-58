@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctvb2v4km3wmk"]
+
+[ext_resource type="Script" uid="uid://wwug0fdackgd" path="res://Scenes/Objects/Player/Parts/Arm/Arm.gd" id="1_kw201"]
+[ext_resource type="Texture2D" uid="uid://d1et2tjwgi10g" path="res://Assets/Bones/Arm1.png" id="2_mafgn"]
+[ext_resource type="Texture2D" uid="uid://dmo24ot0kq40i" path="res://Assets/Bones/Arm2.png" id="3_1e0ca"]
+[ext_resource type="Texture2D" uid="uid://bp4m2tj5asvyl" path="res://Assets/Bones/Arm3.png" id="4_iuteu"]
+[ext_resource type="Script" uid="uid://c5xh8k0ojshh5" path="res://Scenes/Objects/Player/PartSelectionArea.gd" id="5_8ecoy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce146"]
+size = Vector2(53, 125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38s26"]
+size = Vector2(88, 140)
+
+[node name="Ribcage" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
+script = ExtResource("1_kw201")
+sprites = [NodePath("Root/Arm1"), NodePath("Root/Arm2"), NodePath("Root/Arm3")]
+metadata/_custom_type_script = "uid://bf3ggechk0wan"
+
+[node name="Root" type="Node2D" parent="."]
+
+[node name="Arm1" type="Sprite2D" parent="Root"]
+position = Vector2(-42, -95)
+texture = ExtResource("2_mafgn")
+
+[node name="Arm2" type="Sprite2D" parent="Root"]
+position = Vector2(-20, -37)
+texture = ExtResource("3_1e0ca")
+
+[node name="Arm3" type="Sprite2D" parent="Root"]
+position = Vector2(-1, -1)
+texture = ExtResource("4_iuteu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-30.5, -61.5)
+shape = SubResource("RectangleShape2D_ce146")
+
+[node name="PartSelectionArea" type="Area2D" parent="."]
+script = ExtResource("5_8ecoy")
+metadata/_custom_type_script = "uid://c5xh8k0ojshh5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartSelectionArea"]
+position = Vector2(-24, -59)
+shape = SubResource("RectangleShape2D_38s26")
