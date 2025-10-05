@@ -3,22 +3,43 @@ class_name ButtonSwitch
 
 var activated: bool = false
 
-signal button_triggered
+var bodies: Array[PlayerPart]
+
+const PRESSED_HEIGHT = 16
+const RELEASE_HEIGHT = 36
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerPart:
-		press()
+		if len(bodies) == 0:
+			press()
+		bodies.append(body)
 
 func _on_body_exited(body: Node2D) -> void:
 	if body is PlayerPart:
-		pass
+		for i in len(bodies):
+			if bodies[i] == body:
+				bodies.remove_at(i)
+				break
+		if len(bodies) == 0:
+			release()
 
-func press():
-	if activated:
+func button_state_change(on: bool):
+	if activated == on:
 		return
-	activated = true
+	activated = on
 	create_tween()\
-		.tween_property($Button, "region_rect", Rect2(0, 0, 92, 16), TRIGGER_TIME)
+		.tween_property(
+			$Button,
+			"region_rect",
+			Rect2(0, 0, 92, PRESSED_HEIGHT if on else RELEASE_HEIGHT),
+			TRIGGER_TIME
+		)
 	await get_tree().create_timer(TRIGGER_TIME).timeout
-	button_triggered.emit()
-	print("button pressed!")
+	state_changed.emit(on)
+	print("button pressed!" if on else "button released!")
+
+func release():
+	button_state_change(false)
+	
+func press():
+	button_state_change(true)

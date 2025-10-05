@@ -3,11 +3,11 @@ class_name Lever
 
 var activated: bool = false
 
-signal lever_triggered
+const OFF_DEGREES = -45
+const ON_DEGREES = 45
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Arm:
-		print("fuck")
 		body.interact.connect(flip)
 
 func _on_body_exited(body: Node2D) -> void:
@@ -16,11 +16,14 @@ func _on_body_exited(body: Node2D) -> void:
 			body.interact.disconnect(flip)
 
 func flip():
-	if not activated:
-		activated = true
-		create_tween()\
-			.tween_property($Pivot, "rotation_degrees", 45, TRIGGER_TIME)\
-			.set_ease(Tween.EASE_IN)
+	activated = not activated
+	create_tween()\
+		.tween_property(
+			$Pivot,
+			"rotation_degrees",
+			ON_DEGREES if activated else OFF_DEGREES,
+			TRIGGER_TIME)\
+		.set_ease(Tween.EASE_IN)
 	await get_tree().create_timer(TRIGGER_TIME).timeout
-	lever_triggered.emit()
+	state_changed.emit(activated)
 	print("lever flipped!")

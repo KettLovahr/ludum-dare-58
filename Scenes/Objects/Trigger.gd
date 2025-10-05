@@ -6,3 +6,5 @@ class_name Trigger
 @export var connected_items: Array[Triggerable]
 
 const TRIGGER_TIME = 0.3
+
+signal state_changed(on: bool)
