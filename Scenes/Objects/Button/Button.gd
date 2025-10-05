@@ -40,6 +40,6 @@ func button_state_change(on: bool):
 
 func release():
 	button_state_change(false)
-	
+
 func press():
 	button_state_change(true)
