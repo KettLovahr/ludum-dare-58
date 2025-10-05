@@ -8,3 +8,7 @@ class_name Trigger
 const TRIGGER_TIME = 0.3
 
 signal state_changed(on: bool)
+
+func _ready():
+	for item in connected_items:
+		state_changed.connect(item._perform_trigger_action)
