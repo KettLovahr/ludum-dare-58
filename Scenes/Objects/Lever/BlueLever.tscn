@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://iarbdqegiejh"]
+
+[ext_resource type="PackedScene" uid="uid://cvtr13jyty6h8" path="res://Scenes/Objects/Lever/Lever.tscn" id="1_uths2"]
+[ext_resource type="Texture2D" uid="uid://chl728ou71was" path="res://Assets/Environment/Lever3.png" id="2_4k41e"]
+
+[node name="Lever" instance=ExtResource("1_uths2")]
+
+[node name="Handle" parent="Pivot" index="0"]
+texture = ExtResource("2_4k41e")
