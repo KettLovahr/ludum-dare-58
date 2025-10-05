@@ -21,7 +21,8 @@ buses/default_bus_layout="uid://nxtt31a6xbun"
 
 [autoload]
 
-MusicPlayer="*res://Scenes/music_player.tscn"
+MusicPlayer="*res://Scenes/Autoloads/music_player.tscn"
+GameState="*res://Scenes/Autoloads/game_state.tscn"
 
 [display]
 
