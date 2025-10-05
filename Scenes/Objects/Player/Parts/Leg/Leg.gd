@@ -3,7 +3,7 @@ class_name Leg
 
 const HOP_DIST = 400
 const HOP_HEIGHT = 150
-const JUMP_HEIGHT = 500
+const JUMP_HEIGHT = 550
 
 var can_kick := true
 var kick_dir: Direction
@@ -11,6 +11,8 @@ var kick_dir: Direction
 var facing: Direction = Direction.RIGHT
 
 @onready var KickSound: AudioStreamPlayer = $KickSound
+@onready var col = $CollisionShape2D
+@onready var col_when_kicked = $CollisionShapeWhenKicked
 
 enum Direction {
 	LEFT,
@@ -42,9 +44,17 @@ func _handle_controls(_delta: float):
 			velocity.y = -JUMP_HEIGHT
 
 func _custom_behavior(delta: float):
+	velocity.y += GRAVITY * delta
 	if is_on_floor():
 		velocity.x = lerp(velocity.x, 0.0, 0.5)
-	velocity.y += GRAVITY * delta
+	elif not selected:
+		if velocity.y < 0:
+			col_when_kicked.set_deferred("disabled", false)
+			col.set_deferred("disabled", true)
+		else:
+			col_when_kicked.set_deferred("disabled", true)
+			col.set_deferred("disabled", false)
+
 
 func hop(direction: Direction):
 	match direction:

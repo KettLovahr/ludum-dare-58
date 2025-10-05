@@ -510,6 +510,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qlu"]
 size = Vector2(33, 150)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i633"]
+size = Vector2(25, 69)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqpvh"]
 size = Vector2(56, 161)
 
@@ -561,6 +564,10 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -25)
 shape = SubResource("RectangleShape2D_o5qlu")
+
+[node name="CollisionShapeWhenKicked" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -33.5)
+shape = SubResource("RectangleShape2D_4i633")
 
 [node name="PartSelectionArea" type="Area2D" parent="."]
 script = ExtResource("3_7m4t5")
