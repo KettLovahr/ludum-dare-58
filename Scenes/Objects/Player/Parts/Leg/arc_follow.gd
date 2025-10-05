@@ -18,7 +18,7 @@ func _process(delta):
 func create_tiny_sprite():
 	var new_pathfollow := PathFollow2D.new()
 	var new_spr := Sprite2D.new()
-	new_spr.texture = load("res://icon.svg")
+	new_spr.texture = load("res://Assets/Environment/Coin.png")
 	new_spr.scale = Vector2(0.1, 0.1)
 	add_child(new_pathfollow)
 	new_pathfollow.add_child(new_spr)

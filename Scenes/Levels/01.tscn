@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://yja10kwnqisd"]
+[gd_scene load_steps=16 format=4 uid="uid://yja10kwnqisd"]
 
 [ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_v8iqp"]
 [ext_resource type="Texture2D" uid="uid://43q4pcvppvws" path="res://icon.svg" id="1_wi0lj"]
@@ -7,7 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ckjovd4m5x8h4" path="res://Scenes/Objects/Player/Parts/Leg/Leg.tscn" id="4_cv17v"]
 [ext_resource type="Texture2D" uid="uid://bnflm07rloebr" path="res://Assets/Environment/Grass.png" id="6_mfwng"]
 [ext_resource type="PackedScene" uid="uid://dum6w4upon77l" path="res://Scenes/Objects/Coin/Coin.tscn" id="7_a2roa"]
+[ext_resource type="PackedScene" uid="uid://kxlkspfj2w2j" path="res://Scenes/Objects/Player/Parts/Ribcage/Ribcage.tscn" id="7_rlexa"]
 [ext_resource type="PackedScene" uid="uid://b3ye10a2hbdvu" path="res://Scenes/Objects/Flag/Flag.tscn" id="8_pdtvn"]
+[ext_resource type="PackedScene" uid="uid://ctvb2v4km3wmk" path="res://Scenes/Objects/Player/Parts/Arm/Arm.tscn" id="9_wmfcf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv17v"]
 texture = ExtResource("1_wi0lj")
@@ -48,6 +50,14 @@ position = Vector2(67, 471)
 
 [node name="Leg" parent="PlayerRoot" instance=ExtResource("4_cv17v")]
 position = Vector2(231, 453)
+
+[node name="Ribcage" parent="PlayerRoot" instance=ExtResource("9_wmfcf")]
+position = Vector2(487, 255)
+collision_layer = 2
+
+[node name="Ribcage2" parent="PlayerRoot" instance=ExtResource("7_rlexa")]
+position = Vector2(336, 508)
+collision_layer = 2
 
 [node name="Ground3" type="NinePatchRect" parent="."]
 offset_left = 761.0

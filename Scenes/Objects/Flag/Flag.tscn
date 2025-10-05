@@ -9,13 +9,13 @@ size = Vector2(260, 173)
 [node name="Flag" type="Area2D"]
 script = ExtResource("1_p3una")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -86.5)
-shape = SubResource("RectangleShape2D_atme4")
-
 [node name="Flag" type="Sprite2D" parent="."]
 position = Vector2(36, -80)
 texture = ExtResource("1_aypam")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -86.5)
+shape = SubResource("RectangleShape2D_atme4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

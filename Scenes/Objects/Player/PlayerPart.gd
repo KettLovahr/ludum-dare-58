@@ -33,6 +33,8 @@ func _custom_behavior(delta: float): pass
 func _ready():
 	# this is stupid but i want the state for these to be different always :/
 	glow_material = load("res://Scenes/Objects/Player/Parts/PartGlow.tres").duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+	for sprite in sprites:
+		sprite.material = glow_material
 	for child in get_children():
 		if child is PartSelectionArea:
 			child.part_clicked.connect(func(): select())
