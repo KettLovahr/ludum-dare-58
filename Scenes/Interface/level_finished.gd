@@ -36,3 +36,7 @@ func check_grave(which: int):
 
 func _on_main_menu_pressed() -> void:
 	Transition.change_scene_to_file("res://Scenes/Interface/main_menu.tscn")
+
+
+func _on_restart_pressed() -> void:
+	Transition.reload_current_scene()

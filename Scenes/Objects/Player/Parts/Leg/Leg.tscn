@@ -511,7 +511,7 @@ _data = {
 size = Vector2(33, 150)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4i633"]
-size = Vector2(25, 69)
+size = Vector2(33, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqpvh"]
 size = Vector2(56, 161)
@@ -529,6 +529,7 @@ size = Vector2(216, 52)
 collision_layer = 2
 script = ExtResource("1_57jxl")
 sprites = NodePath("Root")
+kick_strength_factor = 2.0
 metadata/_custom_type_script = "uid://bf3ggechk0wan"
 
 [node name="Root" type="CanvasGroup" parent="."]
@@ -562,7 +563,7 @@ position = Vector2(-1.5, -25)
 shape = SubResource("RectangleShape2D_o5qlu")
 
 [node name="CollisionShapeWhenKicked" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -33.5)
+position = Vector2(-1.5, -29.5)
 shape = SubResource("RectangleShape2D_4i633")
 
 [node name="PartSelectionArea" type="Area2D" parent="."]
