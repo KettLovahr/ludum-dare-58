@@ -60,3 +60,11 @@ func create_button_for(part: PlayerPart, number: int):
 			new_button.button_pressed = true
 	)
 	$PlayerUICanvas/PlayerUI/PartsButtons.add_child(new_button)
+
+
+func _on_restart_pressed() -> void:
+	get_tree().reload_current_scene()
+
+
+func _on_levels_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Interface/main_menu.tscn")

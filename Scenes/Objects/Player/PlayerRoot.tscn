@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bajlrrg5f56a2"]
+[gd_scene load_steps=6 format=3 uid="uid://bajlrrg5f56a2"]
 
 [ext_resource type="Script" uid="uid://cd2wm64sra5ry" path="res://Scenes/Objects/Player/PlayerRoot.gd" id="1_xc0eg"]
 [ext_resource type="AudioStream" uid="uid://cfs6ibfeq6sq1" path="res://Assets/Sounds/SFX/MenuConfirm.wav" id="2_7rw0l"]
+[ext_resource type="PackedScene" uid="uid://j2yrdprfcj3r" path="res://Scenes/Interface/square_butt.tscn" id="2_jw738"]
+[ext_resource type="Texture2D" uid="uid://d2ivwfmpaokdu" path="res://Assets/Interface/Reset.png" id="3_xah1p"]
+[ext_resource type="Texture2D" uid="uid://cvorowugi43ol" path="res://Assets/Interface/Levels.png" id="4_xah1p"]
 
 [node name="PlayerRoot" type="Node"]
 script = ExtResource("1_xc0eg")
@@ -24,5 +27,48 @@ offset_top = 16.0
 offset_right = 376.0
 offset_bottom = 76.0
 
+[node name="Restart" parent="PlayerUICanvas" instance=ExtResource("2_jw738")]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label" parent="PlayerUICanvas/Restart" index="1"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerUICanvas/Restart"]
+position = Vector2(39, 39)
+texture = ExtResource("3_xah1p")
+
+[node name="Levels" parent="PlayerUICanvas" instance=ExtResource("2_jw738")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -96.0
+offset_right = 96.0
+offset_bottom = -16.0
+grow_vertical = 0
+
+[node name="Label" parent="PlayerUICanvas/Levels" index="1"]
+visible = false
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerUICanvas/Levels"]
+position = Vector2(40, 40)
+texture = ExtResource("4_xah1p")
+
 [node name="SelectPart" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_7rw0l")
+
+[connection signal="pressed" from="PlayerUICanvas/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PlayerUICanvas/Levels" to="." method="_on_levels_pressed"]
+
+[editable path="PlayerUICanvas/Restart"]
+[editable path="PlayerUICanvas/Levels"]

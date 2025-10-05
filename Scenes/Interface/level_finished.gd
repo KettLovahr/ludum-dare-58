@@ -8,14 +8,15 @@ var _grave_states := [false, false, false]
 func complete(grave_states: Array, time_limit: float):
 	var which_level = GameState.current_level
 	if which_level + 1 >= len(GameState.level_scene_paths):
-		return
-	next_level = GameState.level_scene_paths[which_level + 1]
+		$Next.hide()
+	else:
+		next_level = GameState.level_scene_paths[which_level + 1]
 	_grave_states = grave_states
 
 	var sec_num = floor(time_limit)
 	var minutes = floor(sec_num / 60)
-	var seconds = sec_num - minutes * 60
-	$Grave3/Label.text = str(minutes).pad_zeros(2) + ':' + str(seconds).pad_zeros(2)
+	var seconds = floor(sec_num - minutes * 60)
+	$Grave3/Label.text = str(int(minutes)).pad_zeros(2) + ':' + str(int(seconds)).pad_zeros(2)
 
 	$AnimationPlayer.play("in")
 	if GameState.unlocked == which_level:
