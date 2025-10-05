@@ -8,6 +8,11 @@ const BONE_BUTT = preload("res://Scenes/Interface/bone_button.tscn")
 var mapped_parts: Array[PlayerPart]
 var created_arm := false
 var created_leg := false
+var disabled := false:
+	set(new):
+		for part in mapped_parts:
+			part.controllable = not new
+		disabled = new
 
 @onready var SelectSFX: AudioStreamPlayer = $SelectPart
 
@@ -55,3 +60,11 @@ func create_button_for(part: PlayerPart, number: int):
 			new_button.button_pressed = true
 	)
 	$PlayerUICanvas/PlayerUI/PartsButtons.add_child(new_button)
+
+
+func _on_restart_pressed() -> void:
+	get_tree().reload_current_scene()
+
+
+func _on_levels_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Interface/main_menu.tscn")
