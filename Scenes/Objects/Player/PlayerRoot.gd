@@ -9,6 +9,8 @@ var mapped_parts: Array[PlayerPart]
 var created_arm := false
 var created_leg := false
 
+@onready var SelectSFX: AudioStreamPlayer = $SelectPart
+
 func _ready():
 	var i = 0
 	for child in get_children():
@@ -26,6 +28,8 @@ func _process(_delta):
 func request_selection(part: PlayerPart):
 	if part.controllable and part in get_children():
 		selected = part
+		SelectSFX.play()
+		SelectSFX.pitch_scale = randf_range(0.8, 1.2)
 		set_all_unselected()
 		part.selected = true
 		selection_changed.emit(part)

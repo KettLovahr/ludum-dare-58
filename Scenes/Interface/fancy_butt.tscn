@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://n4yb77aqepuc"]
+[gd_scene load_steps=15 format=3 uid="uid://n4yb77aqepuc"]
 
 [ext_resource type="Script" uid="uid://3howopcgbo1a" path="res://Scenes/Interface/fancy_butt.gd" id="1_8mjff"]
 [ext_resource type="Texture2D" uid="uid://b10kdlw4msqy8" path="res://Assets/Interface/Button.png" id="2_tmnc4"]
 [ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="3_3m8u7"]
 [ext_resource type="Texture2D" uid="uid://d1qssp61l5qvn" path="res://Assets/Interface/ButtonHighlight.png" id="4_b4m3y"]
 [ext_resource type="Texture2D" uid="uid://c6fmeir1f6r27" path="res://Assets/Interface/ButtonPressed.png" id="5_817rl"]
+[ext_resource type="AudioStream" uid="uid://djqm6672mai03" path="res://Assets/Sounds/SFX/MenuSelect.wav" id="6_3m8u7"]
+[ext_resource type="AudioStream" uid="uid://cfs6ibfeq6sq1" path="res://Assets/Sounds/SFX/MenuConfirm.wav" id="7_b4m3y"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_61btv"]
 font = ExtResource("3_3m8u7")
@@ -317,6 +319,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_61btv")
 }
 autoplay = "normal"
+
+[node name="Select" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3m8u7")
+bus = &"SFX"
+
+[node name="Confirm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_b4m3y")
+bus = &"SFX"
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]
