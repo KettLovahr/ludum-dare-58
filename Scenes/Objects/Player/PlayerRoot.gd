@@ -12,7 +12,7 @@ var created_leg := false
 @onready var SelectSFX: AudioStreamPlayer = $SelectPart
 
 func _ready():
-	var i = 1
+	var i = 0
 	for child in get_children():
 		if child is PlayerPart:
 			create_button_for(child, i)
@@ -48,7 +48,7 @@ func create_button_for(part: PlayerPart, number: int):
 	# Use names Skull Leg1 Leg2 Arm1 Arm2 Ribcage for bone nodes
 	var texture = load("res://Assets/Interface/Bone" + part.name + ".png")
 	new_button.get_node("TextureRect").texture = texture
-	new_button.get_node("Label").text = str(number)
+	new_button.get_node("Label").text = str(number + 1)
 	new_button.pressed.connect(func(): part.select())
 	selection_changed.connect(func(np):
 		if np == part:

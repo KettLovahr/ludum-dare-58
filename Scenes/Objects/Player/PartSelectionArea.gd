@@ -5,9 +5,9 @@ signal part_clicked
 
 func _ready():
 	pass
-	
+
 func _input_event(viewport: Node, event: InputEvent, shape_idx: int):
-	if event is InputEventMouse:
+	if event is InputEventMouse and event.is_pressed():
 		if event.button_mask & MOUSE_BUTTON_LEFT:
 			part_clicked.emit()
 	pass
