@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://ckjovd4m5x8h4"]
+[gd_scene load_steps=21 format=3 uid="uid://ckjovd4m5x8h4"]
 
 [ext_resource type="Script" uid="uid://digm7s2akv0h" path="res://Scenes/Objects/Player/Parts/Leg/Leg.gd" id="1_57jxl"]
 [ext_resource type="Texture2D" uid="uid://ok7e42kijr8l" path="res://Assets/Bones/Leg3.png" id="2_1twnf"]
@@ -519,6 +519,10 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Gradient" id="Gradient_4i633"]
+offsets = PackedFloat32Array(0, 0.9170306, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6664t"]
 size = Vector2(216, 52)
 
@@ -571,6 +575,7 @@ unique_name_in_owner = true
 visible = false
 curve = SubResource("Curve2D_7m4t5")
 script = ExtResource("4_6664t")
+trajectory_gradient = SubResource("Gradient_4i633")
 
 [node name="KickArea" type="Area2D" parent="."]
 collision_mask = 2
