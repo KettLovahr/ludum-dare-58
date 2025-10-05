@@ -12,8 +12,9 @@ func _ready():
 
 func _process(delta):
 	offset += delta / 10
-	for i in range(points):
-		tinies[i].progress_ratio = fmod(((1.0 / points) * i) + offset, 1.0)
+	if curve.get_baked_length() > 0:
+		for i in range(points):
+			tinies[i].progress_ratio = fmod(((1.0 / points) * i) + offset, 1.0)
 
 func create_tiny_sprite():
 	var new_pathfollow := PathFollow2D.new()

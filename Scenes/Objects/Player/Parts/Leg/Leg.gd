@@ -8,6 +8,8 @@ const JUMP_HEIGHT = 500
 var can_kick := true
 var kick_dir: Direction
 
+var facing: Direction = Direction.RIGHT
+
 @onready var KickSound: AudioStreamPlayer = $KickSound
 
 enum Direction {
@@ -24,9 +26,11 @@ func _handle_controls(_delta: float):
 		if axis < 0:
 			$Root.scale.x = -1
 			$Root/AnimationPlayer.play("walk")
+			facing = Direction.LEFT
 		elif axis > 0:
 			$Root.scale.x = 1
 			$Root/AnimationPlayer.play("walk")
+			facing = Direction.RIGHT
 		else:
 			$Root/AnimationPlayer.play("idle")
 		if Input.is_action_just_pressed("move_action"):
