@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvtr13jyty6h8"]
+[gd_scene load_steps=5 format=3 uid="uid://cvtr13jyty6h8"]
 
+[ext_resource type="Script" uid="uid://crynq7gfa8lc2" path="res://Scenes/Objects/Lever/Lever.gd" id="1_gxapa"]
 [ext_resource type="Texture2D" uid="uid://bdfof076avaae" path="res://Assets/Environment/Lever2.png" id="1_vq7cg"]
 [ext_resource type="Texture2D" uid="uid://dpchll6y0de3r" path="res://Assets/Environment/Lever1.png" id="2_gxapa"]
 
@@ -7,8 +8,14 @@
 size = Vector2(132, 54)
 
 [node name="Lever" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_gxapa")
 
-[node name="Handle" type="Sprite2D" parent="."]
+[node name="Pivot" type="Node2D" parent="."]
+rotation = -0.7853982
+
+[node name="Handle" type="Sprite2D" parent="Pivot"]
 position = Vector2(0, -80)
 texture = ExtResource("1_vq7cg")
 
@@ -19,3 +26,6 @@ texture = ExtResource("2_gxapa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_vupft")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
