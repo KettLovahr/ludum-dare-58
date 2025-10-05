@@ -15,11 +15,9 @@ func _on_body_entered(body: Node2D) -> void:
 		parts_reached.append(body)
 	if len(parts_reached) == target_count:
 		flag_reached.emit()
-	print(parts_reached)
 		
 func _on_body_exited(body: Node2D) -> void:
 	for i in range(len(parts_reached)):
 		if parts_reached[i] == body:
 			parts_reached.remove_at(i)
 			break
-	print(parts_reached)

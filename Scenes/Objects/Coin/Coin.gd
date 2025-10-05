@@ -8,7 +8,6 @@ var active: bool = true
 const TIME = 0.4
 
 func _on_body_entered(body: Node2D) -> void:
-	print("hewo")
 	if body is PlayerPart and active:
 		collected.emit()
 		active = false
