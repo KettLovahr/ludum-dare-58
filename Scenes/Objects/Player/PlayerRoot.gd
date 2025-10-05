@@ -8,6 +8,11 @@ const BONE_BUTT = preload("res://Scenes/Interface/bone_button.tscn")
 var mapped_parts: Array[PlayerPart]
 var created_arm := false
 var created_leg := false
+var disabled := false:
+	set(new):
+		for part in mapped_parts:
+			part.controllable = not new
+		disabled = new
 
 @onready var SelectSFX: AudioStreamPlayer = $SelectPart
 

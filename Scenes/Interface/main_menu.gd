@@ -10,7 +10,10 @@ func _ready() -> void:
 	for path in GameState.level_scene_paths:
 		var butt := SQUARE_BUTT.instantiate() as Button
 		butt.get_node("Label").text = str(i + 1)
-		butt.pressed.connect(func(): get_tree().change_scene_to_file(path))
+		butt.pressed.connect(func():
+			GameState.current_level = i
+			get_tree().change_scene_to_file(path)
+		)
 		if GameState.unlocked < i:
 			butt.modulate = Color(1.0, 1.0, 1.0, 0.25)
 			butt.disabled = true

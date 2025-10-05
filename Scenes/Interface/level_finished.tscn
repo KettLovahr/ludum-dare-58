@@ -1,0 +1,444 @@
+[gd_scene load_steps=16 format=3 uid="uid://duox8xe16tceb"]
+
+[ext_resource type="Texture2D" uid="uid://4hcv7kpv1nkg" path="res://Assets/Interface/Titlebar.png" id="1_680gv"]
+[ext_resource type="Script" uid="uid://ddgn66bhens00" path="res://Scenes/Interface/level_finished.gd" id="1_lvamn"]
+[ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="2_fttv8"]
+[ext_resource type="PackedScene" uid="uid://cu1prvcvbtqhv" path="res://Scenes/Interface/grave.tscn" id="3_kiiq7"]
+[ext_resource type="Texture2D" uid="uid://d05fjlc31g0ml" path="res://Assets/Interface/GraveFlag.png" id="4_i3b5c"]
+[ext_resource type="Texture2D" uid="uid://fry4v74j3hyu" path="res://Assets/Interface/GraveCoin.png" id="5_rrbgl"]
+[ext_resource type="Texture2D" uid="uid://vim2vmyvxxnb" path="res://Assets/Interface/GraveTime.png" id="6_fttv8"]
+[ext_resource type="FontFile" uid="uid://djmrwf1ck4r4m" path="res://Assets/Fonts/Atma-Bold.ttf" id="7_xpnng"]
+[ext_resource type="PackedScene" uid="uid://n4yb77aqepuc" path="res://Scenes/Interface/fancy_butt.tscn" id="8_i3b5c"]
+[ext_resource type="AudioStream" uid="uid://cygwwvxy1p8ep" path="res://Assets/Sounds/SFX/MenuCancel.wav" id="9_lvamn"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mgq54"]
+font = ExtResource("2_fttv8")
+font_size = 68
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.7058824)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_i3b5c"]
+font = ExtResource("7_xpnng")
+font_size = 24
+font_color = Color(1, 1, 1, 0.59607846)
+shadow_color = Color(0, 0, 0, 0.36862746)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="Animation" id="Animation_873qm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.5882353)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Titlebar:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Titlebar:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Grave1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(172, 224)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Grave2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(487, 224)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Grave3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(799, 224)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainMenu:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(56.000004, 580)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Next:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(912, 580)]
+}
+
+[sub_resource type="Animation" id="Animation_lvamn"]
+resource_name = "in"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0.5882353)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Titlebar:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.1, 0.7), Vector2(0.7, 1.3), Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Titlebar:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-12.566370614359172, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Grave1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.19999999, 0.39999998, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(172, 720), Vector2(172, 200), Vector2(172, 224)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Grave2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.3, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(487, 720), Vector2(487, 200), Vector2(487, 224)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Grave3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.4, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(799, 720), Vector2(799, 200), Vector2(799, 224)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MainMenu:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-350, 580), Vector2(56.000004, 580)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Next:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1320, 580), Vector2(912, 580)]
+}
+tracks/9/type = "method"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath(".")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [0],
+"method": &"check_grave"
+}, {
+"args": [1],
+"method": &"check_grave"
+}, {
+"args": [2],
+"method": &"check_grave"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mgq54"]
+_data = {
+&"RESET": SubResource("Animation_873qm"),
+&"in": SubResource("Animation_lvamn")
+}
+
+[node name="LevelFinished" type="CanvasLayer"]
+visible = false
+script = ExtResource("1_lvamn")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.5882353)
+
+[node name="Titlebar" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.5
+offset_top = 40.0
+offset_right = 350.5
+offset_bottom = 242.0
+grow_horizontal = 2
+pivot_offset = Vector2(351, 101)
+texture = ExtResource("1_680gv")
+
+[node name="Label" type="Label" parent="Titlebar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -388.5
+offset_top = -52.0
+offset_right = 388.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(388.5, 52)
+text = "You've Skeledaddled!!"
+label_settings = SubResource("LabelSettings_mgq54")
+
+[node name="Grave1" parent="." instance=ExtResource("3_kiiq7")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -468.0
+offset_top = -136.0
+offset_right = -162.0
+offset_bottom = 203.00012
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="Grave1"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 95.0
+offset_right = 195.0
+offset_bottom = 191.0
+texture = ExtResource("4_i3b5c")
+
+[node name="Grave2" parent="." instance=ExtResource("3_kiiq7")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -136.0
+offset_right = 153.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="Grave2"]
+layout_mode = 0
+offset_left = 113.93323
+offset_top = 94.674805
+offset_right = 197.93323
+offset_bottom = 179.6748
+texture = ExtResource("5_rrbgl")
+
+[node name="Grave3" parent="." instance=ExtResource("3_kiiq7")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 159.0
+offset_top = -136.0
+offset_right = 465.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="Grave3"]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 74.0
+offset_right = 192.0
+offset_bottom = 170.0
+texture = ExtResource("6_fttv8")
+
+[node name="Label" type="Label" parent="Grave3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -61.0
+offset_top = -5.0
+offset_right = 65.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "5:00"
+label_settings = SubResource("LabelSettings_i3b5c")
+horizontal_alignment = 1
+
+[node name="MainMenu" parent="." instance=ExtResource("8_i3b5c")]
+offset_left = 56.000004
+offset_top = 580.0
+offset_right = 469.0
+offset_bottom = 693.99915
+scale = Vector2(0.75, 0.75)
+
+[node name="Label" parent="MainMenu" index="1"]
+offset_left = 4.0
+offset_top = 10.0
+offset_right = -9.0
+offset_bottom = 10.0
+text = "Main menu"
+
+[node name="Confirm" parent="MainMenu" index="4"]
+stream = ExtResource("9_lvamn")
+
+[node name="Next" parent="." instance=ExtResource("8_i3b5c")]
+offset_left = 912.0
+offset_top = 580.0
+offset_right = 1325.0
+offset_bottom = 693.99915
+scale = Vector2(0.75, 0.75)
+
+[node name="Label" parent="Next" index="1"]
+offset_left = 4.0
+offset_top = 10.0
+offset_right = -9.0
+offset_bottom = 10.0
+text = "Next level"
+
+[node name="Confirm" parent="Next" index="4"]
+stream = ExtResource("9_lvamn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_mgq54")
+}
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]
+
+[editable path="Grave1"]
+[editable path="Grave2"]
+[editable path="Grave3"]
+[editable path="MainMenu"]
+[editable path="Next"]

@@ -35,6 +35,7 @@ size = Vector2(1256, 197)
 
 [node name="01" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
 script = ExtResource("1_v8iqp")
+target_time = 20.0
 coin = NodePath("Coin")
 flag = NodePath("Flag")
 
