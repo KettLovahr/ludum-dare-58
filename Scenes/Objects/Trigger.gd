@@ -5,7 +5,7 @@ class_name Trigger
 ## Items which this trigger will activate
 @export var connected_items: Array[Triggerable]
 
-const TRIGGER_TIME = 0.3
+const TRIGGER_TIME = 0.1
 
 signal state_changed(on: bool)
 

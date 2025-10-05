@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnichbfjk6ywa"]
+[gd_scene load_steps=7 format=3 uid="uid://bnichbfjk6ywa"]
 
 [ext_resource type="Script" uid="uid://p8cg6f0oqwbr" path="res://Scenes/Objects/Player/Parts/Skull/Skull.gd" id="1_tyaox"]
 [ext_resource type="Texture2D" uid="uid://dixe3wc4kg1md" path="res://Assets/Bones/Skull.png" id="2_oidbk"]
@@ -6,6 +6,9 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyaox"]
 size = Vector2(48, 54)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oidbk"]
+size = Vector2(36, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mk1gw"]
 radius = 40.012497
@@ -22,6 +25,11 @@ texture = ExtResource("2_oidbk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tyaox")
+
+[node name="CollisionShapeWhenKicked" type="CollisionShape2D" parent="."]
+position = Vector2(0, -15)
+shape = SubResource("RectangleShape2D_oidbk")
+disabled = true
 
 [node name="PartSelectionArea" type="Area2D" parent="."]
 script = ExtResource("3_oj13q")
