@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dalhlyuqlukkn"]
+
+[ext_resource type="Script" uid="uid://c0w7tif72equl" path="res://Scenes/Objects/Button/Button.gd" id="1_4oyca"]
+[ext_resource type="Texture2D" uid="uid://oiff4unkeyh5" path="res://Assets/Environment/Button2.png" id="1_wuo2h"]
+[ext_resource type="Texture2D" uid="uid://ceelsqqxcb5w6" path="res://Assets/Environment/Button1.png" id="2_4oyca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wuo2h"]
+size = Vector2(44, 20)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4oyca"]
+radius = 19.0
+height = 102.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_th1hf"]
+radius = 20.0
+height = 82.0
+
+[node name="Button" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_4oyca")
+
+[node name="Button" type="Sprite2D" parent="."]
+position = Vector2(0, -22)
+texture = ExtResource("1_wuo2h")
+region_enabled = true
+region_rect = Rect2(0, 0, 92, 36)
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+texture = ExtResource("2_4oyca")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_wuo2h")
+
+[node name="RigidBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_4oyca")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_th1hf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -5,6 +5,8 @@ class_name PlayerPart
 @export var sprites: Array[Sprite2D]
 @onready var glow_material: Material
 
+@export var kick_strength_factor: float = 1.0
+
 
 const GRAVITY: float = 1000
 
@@ -33,6 +35,8 @@ func _custom_behavior(delta: float): pass
 func _ready():
 	# this is stupid but i want the state for these to be different always :/
 	glow_material = load("res://Scenes/Objects/Player/Parts/PartGlow.tres").duplicate_deep(Resource.DEEP_DUPLICATE_ALL)
+	for sprite in sprites:
+		sprite.material = glow_material
 	for child in get_children():
 		if child is PartSelectionArea:
 			child.part_clicked.connect(func(): select())

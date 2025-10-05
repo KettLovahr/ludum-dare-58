@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://c5xh8k0ojshh5" path="res://Scenes/Objects/Player/PartSelectionArea.gd" id="3_oj13q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyaox"]
-size = Vector2(60, 60)
+size = Vector2(48, 54)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mk1gw"]
 radius = 40.012497
