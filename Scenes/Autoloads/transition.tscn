@@ -1,0 +1,244 @@
+[gd_scene load_steps=11 format=3 uid="uid://b2knlcjh1fetb"]
+
+[ext_resource type="Shader" uid="uid://dup5au7kg0u0" path="res://Scenes/Autoloads/transition.gdshader" id="1_3nmoj"]
+[ext_resource type="Texture2D" uid="uid://43q4pcvppvws" path="res://icon.svg" id="1_jnsx0"]
+[ext_resource type="Script" uid="uid://bx0v0h0ewpwbw" path="res://Scenes/Autoloads/transition.gd" id="1_nshyj"]
+[ext_resource type="Texture2D" uid="uid://bv0u42yrrkpyi" path="res://Assets/Interface/TransitionSkullWhite.png" id="4_w88vm"]
+[ext_resource type="Texture2D" uid="uid://b1ucd3jekeidr" path="res://Assets/Interface/TransitionSkull.png" id="5_jaga7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nshyj"]
+shader = ExtResource("1_3nmoj")
+shader_parameter/chroma_key = Color(1, 1, 1, 1)
+shader_parameter/intensity = 0.1
+
+[sub_resource type="Animation" id="Animation_nshyj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EvilBox2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../EvilBox2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../EvilBox2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../EvilBox2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+
+[sub_resource type="Animation" id="Animation_vlteq"]
+resource_name = "out"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EvilBox2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(0.6, 0.6), Vector2(4.6, 4.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../EvilBox2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../EvilBox2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.1, 0.3, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../EvilBox2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.75, 0.75), Vector2(0.6, 0.6), Vector2(4.6, 4.6)]
+}
+
+[sub_resource type="Animation" id="Animation_3nmoj"]
+resource_name = "in2"
+length = 0.7
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("EvilBox2:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4.6, 4.6), Vector2(0.6, 0.6), Vector2(0.75, 0.75)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../EvilBox2:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../EvilBox2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../EvilBox2:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4.6, 4.6), Vector2(0.6, 0.6), Vector2(0.75, 0.75)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0y44x"]
+_data = {
+&"RESET": SubResource("Animation_nshyj"),
+&"in": SubResource("Animation_vlteq"),
+&"out": SubResource("Animation_3nmoj")
+}
+
+[node name="Transition" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_nshyj")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+visible = false
+texture_filter = 1
+material = SubResource("ShaderMaterial_nshyj")
+
+[node name="Black" type="Sprite2D" parent="CanvasGroup"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(575, 317)
+scale = Vector2(20.0938, 12.5)
+texture = ExtResource("1_jnsx0")
+
+[node name="EvilBox2" type="Sprite2D" parent="CanvasGroup"]
+position = Vector2(640, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("4_w88vm")
+
+[node name="EvilBox2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("5_jaga7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CanvasGroup")
+libraries = {
+&"": SubResource("AnimationLibrary_0y44x")
+}

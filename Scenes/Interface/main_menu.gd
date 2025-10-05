@@ -12,7 +12,7 @@ func _ready() -> void:
 		butt.get_node("Label").text = str(i + 1)
 		butt.pressed.connect(func():
 			GameState.current_level = i
-			get_tree().change_scene_to_file(path)
+			Transition.change_scene_to_file(path)
 		)
 		if GameState.unlocked < i:
 			butt.modulate = Color(1.0, 1.0, 1.0, 0.25)

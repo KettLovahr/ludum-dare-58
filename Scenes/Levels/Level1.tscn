@@ -52,13 +52,13 @@ tile_set = SubResource("TileSet_v8iqp")
 [node name="PlayerRoot" parent="." instance=ExtResource("4_hk4vc")]
 
 [node name="Skull" parent="PlayerRoot" instance=ExtResource("5_wiu4c")]
-position = Vector2(180, 377)
+position = Vector2(180, 329)
 
 [node name="Ground1" type="NinePatchRect" parent="."]
 offset_left = 77.0
-offset_top = 419.0
+offset_top = 371.0
 offset_right = 1202.0
-offset_bottom = 627.0
+offset_bottom = 579.0
 texture = ExtResource("8_8fhce")
 patch_margin_left = 24
 patch_margin_top = 30
@@ -73,10 +73,10 @@ position = Vector2(562, 103.5)
 shape = SubResource("RectangleShape2D_wmfcf")
 
 [node name="Coin" parent="." instance=ExtResource("9_uqlrs")]
-position = Vector2(635, 374)
+position = Vector2(635, 326)
 
 [node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("10_htexa")]
-position = Vector2(1029, 419)
+position = Vector2(1029, 371)
 collision_layer = 2
 collision_mask = 2
 player_root = NodePath("../PlayerRoot")

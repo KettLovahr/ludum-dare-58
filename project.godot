@@ -23,6 +23,7 @@ buses/default_bus_layout="uid://nxtt31a6xbun"
 
 MusicPlayer="*res://Scenes/Autoloads/music_player.tscn"
 GameState="*res://Scenes/Autoloads/game_state.tscn"
+Transition="*res://Scenes/Autoloads/transition.tscn"
 
 [display]
 

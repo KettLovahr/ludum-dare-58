@@ -25,7 +25,7 @@ func complete(grave_states: Array, time_limit: float):
 
 func _on_next_pressed() -> void:
 	GameState.current_level += 1
-	get_tree().change_scene_to_file(next_level)
+	Transition.change_scene_to_file(next_level)
 
 
 func check_grave(which: int):
@@ -35,4 +35,4 @@ func check_grave(which: int):
 
 
 func _on_main_menu_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/Interface/main_menu.tscn")
+	Transition.change_scene_to_file("res://Scenes/Interface/main_menu.tscn")
