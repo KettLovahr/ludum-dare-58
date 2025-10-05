@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ckjovd4m5x8h4"]
+[gd_scene load_steps=20 format=3 uid="uid://ckjovd4m5x8h4"]
 
 [ext_resource type="Script" uid="uid://digm7s2akv0h" path="res://Scenes/Objects/Player/Parts/Leg/Leg.gd" id="1_57jxl"]
 [ext_resource type="Texture2D" uid="uid://ok7e42kijr8l" path="res://Assets/Bones/Leg3.png" id="2_1twnf"]
@@ -7,6 +7,94 @@
 [ext_resource type="Script" uid="uid://brif1cey8jv3k" path="res://Scenes/Objects/Player/Parts/Leg/arc_follow.gd" id="4_6664t"]
 [ext_resource type="Texture2D" uid="uid://cndyxdysslfsp" path="res://Assets/Bones/Leg1.png" id="4_dkpgs"]
 [ext_resource type="Script" uid="uid://dx4ik8gmlqv56" path="res://Scenes/Objects/Player/Parts/Leg/KickArea.gd" id="5_b30j4"]
+[ext_resource type="AudioStream" uid="uid://cpfw8hmbbot6p" path="res://Assets/Sounds/SFX/CraniumKick.wav" id="8_4i633"]
+
+[sub_resource type="Animation" id="Animation_4i633"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Leg3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-11, 71)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Leg3:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Leg2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-15, 65)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Leg2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Leg1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -5.999998)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Leg1:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../KickSound:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_4i633"]
 length = 0.001
@@ -328,6 +416,18 @@ tracks/6/keys = {
 "method": &"kick"
 }]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../KickSound:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_jullg"]
 resource_name = "stop"
@@ -569,6 +669,11 @@ shape = SubResource("RectangleShape2D_6664t")
 
 [node name="KickDelay" type="Timer" parent="."]
 one_shot = true
+
+[node name="KickSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_4i633")
+volume_db = 5.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="KickArea" to="KickArea" method="_on_body_entered"]
 [connection signal="body_exited" from="KickArea" to="KickArea" method="_on_body_exited"]

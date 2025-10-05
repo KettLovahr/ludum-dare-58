@@ -5,9 +5,14 @@ extends Button
 var is_button_down := false
 var is_mouse_over := false
 
+@onready var SelectSFX: AudioStreamPlayer = $Select
+@onready var ConfirmSFX: AudioStreamPlayer = $Confirm
+
 
 func _on_mouse_entered() -> void:
 	is_mouse_over = true
+	SelectSFX.play()
+	SelectSFX.pitch_scale = randf_range(0.8, 1.2)
 	if disabled or button_pressed:
 		return
 	anim.play("hover")
@@ -21,6 +26,8 @@ func _on_mouse_exited() -> void:
 
 func _on_button_down() -> void:
 	is_button_down = true
+	ConfirmSFX.play()
+	ConfirmSFX.pitch_scale = randf_range(0.8, 1.2)
 	if disabled:
 		return
 	anim.play("press")

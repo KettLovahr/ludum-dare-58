@@ -8,6 +8,8 @@ const JUMP_HEIGHT = 500
 var can_kick := true
 var kick_dir: Direction
 
+@onready var KickSound: AudioStreamPlayer = $KickSound
+
 enum Direction {
 	LEFT,
 	RIGHT
@@ -52,6 +54,7 @@ func hop(direction: Direction):
 
 
 func kick():
+	KickSound.pitch_scale = randf_range(0.8, 1.2)
 	$KickArea.handle_kick()
 	$KickDelay.start(1.0)
 	can_kick = false

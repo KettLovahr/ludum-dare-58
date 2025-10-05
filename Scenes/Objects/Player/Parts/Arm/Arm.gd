@@ -3,6 +3,8 @@ class_name Arm
 
 const MOVE_SPEED = 400
 
+@export var ArmSound: AudioStreamPlayer
+
 signal interact
 
 func _custom_behavior(delta: float):
@@ -12,5 +14,15 @@ func _custom_behavior(delta: float):
 		
 func _handle_controls(delta: float):
 	velocity.x = Input.get_axis("move_left", "move_right") * MOVE_SPEED
+	PlaySound()
+	
 	if Input.is_action_just_pressed("move_action"):
 		interact.emit()
+
+func PlaySound():
+	var IsMoving = Input.get_axis("move_left", "move_right")
+	if IsMoving and ArmSound:
+		if not ArmSound.is_playing():
+			ArmSound.play()
+	else:
+		ArmSound.stop()
