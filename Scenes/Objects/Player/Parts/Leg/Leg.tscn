@@ -522,6 +522,10 @@ _data = {
 }
 point_count = 3
 
+[sub_resource type="Gradient" id="Gradient_4i633"]
+offsets = PackedFloat32Array(0, 0.9170306, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6664t"]
 size = Vector2(216, 52)
 
@@ -579,6 +583,7 @@ unique_name_in_owner = true
 visible = false
 curve = SubResource("Curve2D_7m4t5")
 script = ExtResource("4_6664t")
+trajectory_gradient = SubResource("Gradient_4i633")
 
 [node name="KickArea" type="Area2D" parent="."]
 collision_mask = 2
