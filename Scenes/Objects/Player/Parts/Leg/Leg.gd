@@ -13,21 +13,26 @@ enum Direction {
 	RIGHT
 }
 
-func _handle_controls(delta: float):
+func _handle_controls(_delta: float):
 	if is_on_floor():
+		if $Root/AnimationPlayer.current_animation == "kick":
+			return
 		var axis = Input.get_axis("move_left","move_right")
 		velocity.x = Input.get_axis("move_left","move_right") * HOP_DIST
 		if axis < 0:
 			$Root.scale.x = -1
+			$Root/AnimationPlayer.play("walk")
 		elif axis > 0:
 			$Root.scale.x = 1
+			$Root/AnimationPlayer.play("walk")
+		else:
+			$Root/AnimationPlayer.play("idle")
 		if Input.is_action_just_pressed("move_action"):
 			if $KickArea.kick_target != null:
 				if can_kick:
-					$KickArea.handle_kick()
-					$KickDelay.start(1.0)
-					can_kick = false
+					$Root/AnimationPlayer.play("kick")
 		if Input.is_action_pressed("move_up"):
+			$Root/AnimationPlayer.play("jump")
 			velocity.y = -JUMP_HEIGHT
 
 func _custom_behavior(delta: float):
@@ -44,6 +49,12 @@ func hop(direction: Direction):
 			velocity.x = HOP_DIST
 			kick_dir = Direction.LEFT
 	velocity.y = -HOP_HEIGHT
+
+
+func kick():
+	$KickArea.handle_kick()
+	$KickDelay.start(1.0)
+	can_kick = false
 
 
 func _on_kick_delay_timeout() -> void:

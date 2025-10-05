@@ -44,7 +44,7 @@ tile_set = SubResource("TileSet_v8iqp")
 [node name="Skull" parent="PlayerRoot" instance=ExtResource("2_rfhst")]
 position = Vector2(556, 318)
 
-[node name="Leg" parent="PlayerRoot" instance=ExtResource("4_cv17v")]
+[node name="Leg1" parent="PlayerRoot" instance=ExtResource("4_cv17v")]
 position = Vector2(342, 325)
 
 [node name="Ground3" type="NinePatchRect" parent="."]

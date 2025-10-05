@@ -1,17 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://n4yb77aqepuc"]
+[gd_scene load_steps=14 format=3 uid="uid://byofqoig4gemh"]
 
-[ext_resource type="Script" uid="uid://3howopcgbo1a" path="res://Scenes/Interface/fancy_butt.gd" id="1_8mjff"]
-[ext_resource type="Texture2D" uid="uid://b10kdlw4msqy8" path="res://Assets/Interface/Button.png" id="2_tmnc4"]
-[ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="3_3m8u7"]
-[ext_resource type="Texture2D" uid="uid://d1qssp61l5qvn" path="res://Assets/Interface/ButtonHighlight.png" id="4_b4m3y"]
-[ext_resource type="Texture2D" uid="uid://c6fmeir1f6r27" path="res://Assets/Interface/ButtonPressed.png" id="5_817rl"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_61btv"]
-font = ExtResource("3_3m8u7")
-font_size = 52
-shadow_size = 0
-shadow_color = Color(0, 0, 0, 0.7058824)
-shadow_offset = Vector2(3, 3)
+[ext_resource type="Script" uid="uid://3howopcgbo1a" path="res://Scenes/Interface/fancy_butt.gd" id="1_18u6j"]
+[ext_resource type="Texture2D" uid="uid://bc6i2f0a4m41b" path="res://Assets/Interface/BoneButton.png" id="2_1ja4v"]
+[ext_resource type="Texture2D" uid="uid://b0n4qlaojc0l" path="res://Assets/Interface/BoneButtonHighlight.png" id="4_ilv5w"]
+[ext_resource type="Texture2D" uid="uid://brcyq6vn18vc2" path="res://Assets/Interface/BoneSkull.png" id="5_18u6j"]
+[ext_resource type="Texture2D" uid="uid://n3hr67ddnoc0" path="res://Assets/Interface/BoneButtonPressed.png" id="5_dm5ob"]
+[ext_resource type="FontFile" uid="uid://djmrwf1ck4r4m" path="res://Assets/Fonts/Atma-Bold.ttf" id="6_1ja4v"]
 
 [sub_resource type="Animation" id="Animation_4ijj7"]
 length = 0.001
@@ -25,7 +19,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_tmnc4")]
+"values": [ExtResource("2_1ja4v")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -79,7 +73,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_b4m3y")]
+"values": [ExtResource("4_ilv5w")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -131,7 +125,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_tmnc4")]
+"values": [ExtResource("2_1ja4v")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -183,7 +177,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_817rl")]
+"values": [ExtResource("5_dm5ob")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -207,7 +201,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0.75, 0.9)]
+"values": [Vector2(0.8, 0.8)]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -222,7 +216,7 @@ tracks/3/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_8mjff"]
+[sub_resource type="Animation" id="Animation_18u6j"]
 resource_name = "toggled"
 length = 0.001
 tracks/0/type = "value"
@@ -235,7 +229,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("5_817rl")]
+"values": [ExtResource("5_dm5ob")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -280,37 +274,28 @@ _data = {
 &"hover": SubResource("Animation_61btv"),
 &"normal": SubResource("Animation_qr3g5"),
 &"press": SubResource("Animation_l5osf"),
-&"toggled": SubResource("Animation_8mjff")
+&"toggled": SubResource("Animation_18u6j")
 }
 
-[node name="Start" type="Button"]
-offset_right = 413.0
-offset_bottom = 113.99988
+[sub_resource type="LabelSettings" id="LabelSettings_gmmyy"]
+font = ExtResource("6_1ja4v")
+font_size = 24
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(80, 80)
+offset_right = 80.0
+offset_bottom = 80.0
 focus_mode = 3
 mouse_default_cursor_shape = 2
+toggle_mode = true
 flat = true
-script = ExtResource("1_8mjff")
+script = ExtResource("1_18u6j")
 metadata/_edit_group_ = true
 
 [node name="Button" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(210, 52)
-texture = ExtResource("2_tmnc4")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 7.0
-offset_right = -13.0
-offset_bottom = 7.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Button"
-label_settings = SubResource("LabelSettings_61btv")
-horizontal_alignment = 1
-vertical_alignment = 1
+position = Vector2(40, 40)
+texture = ExtResource("2_1ja4v")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -318,7 +303,26 @@ libraries = {
 }
 autoplay = "normal"
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_18u6j")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 1.0
+offset_right = 21.0
+offset_bottom = 41.0
+text = "1"
+label_settings = SubResource("LabelSettings_gmmyy")
+
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]
