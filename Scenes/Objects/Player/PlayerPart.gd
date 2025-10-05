@@ -17,7 +17,6 @@ var selected: bool:
 			return parent.selected == self
 		return false
 
-
 func _process(delta) -> void:
 	glow_material.set_shader_parameter("glowing", self.selected)
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://kxlkspfj2w2j"]
+[gd_scene load_steps=16 format=3 uid="uid://kxlkspfj2w2j"]
 
 [ext_resource type="Script" uid="uid://drmc2yhwgo2ga" path="res://Scenes/Objects/Player/Parts/Ribcage/Ribcage.gd" id="1_o5qfi"]
 [ext_resource type="Texture2D" uid="uid://chaysg1rkfi4" path="res://Assets/Bones/Ribcage7.png" id="2_k7jol"]
@@ -18,6 +18,9 @@ size = Vector2(123, 83)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efypk"]
 size = Vector2(153, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qfi"]
+size = Vector2(156, 46)
 
 [node name="Ribcage" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 collision_layer = 2
@@ -79,3 +82,17 @@ metadata/_custom_type_script = "uid://c5xh8k0ojshh5"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PartSelectionArea"]
 position = Vector2(15.5, -63)
 shape = SubResource("RectangleShape2D_efypk")
+
+[node name="CarryPivot" type="Marker2D" parent="."]
+position = Vector2(-6, -59)
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_o5qfi")
+
+[connection signal="body_entered" from="PickupArea" to="." method="_on_pickup_area_body_entered"]
+[connection signal="body_exited" from="PickupArea" to="." method="_on_pickup_area_body_exited"]
