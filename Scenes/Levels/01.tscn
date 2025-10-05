@@ -51,11 +51,11 @@ position = Vector2(67, 471)
 [node name="Leg" parent="PlayerRoot" instance=ExtResource("4_cv17v")]
 position = Vector2(231, 453)
 
-[node name="Ribcage" parent="PlayerRoot" instance=ExtResource("9_wmfcf")]
+[node name="Arm" parent="PlayerRoot" instance=ExtResource("9_wmfcf")]
 position = Vector2(487, 255)
 collision_layer = 2
 
-[node name="Ribcage2" parent="PlayerRoot" instance=ExtResource("7_rlexa")]
+[node name="Ribcage" parent="PlayerRoot" instance=ExtResource("7_rlexa")]
 position = Vector2(336, 508)
 collision_layer = 2
 

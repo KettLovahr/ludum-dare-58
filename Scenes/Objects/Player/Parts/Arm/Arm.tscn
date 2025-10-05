@@ -12,9 +12,10 @@ size = Vector2(53, 125)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_38s26"]
 size = Vector2(88, 140)
 
-[node name="Ribcage" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
+[node name="Arm" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 script = ExtResource("1_kw201")
 sprites = [NodePath("Root/Arm1"), NodePath("Root/Arm2"), NodePath("Root/Arm3")]
+kick_strength_factor = 0.8
 metadata/_custom_type_script = "uid://bf3ggechk0wan"
 
 [node name="Root" type="Node2D" parent="."]

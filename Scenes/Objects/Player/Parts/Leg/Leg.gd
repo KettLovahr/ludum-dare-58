@@ -1,7 +1,7 @@
 extends PlayerPart
 class_name Leg
 
-const HOP_DIST = 200
+const HOP_DIST = 400
 const HOP_HEIGHT = 150
 const JUMP_HEIGHT = 500
 

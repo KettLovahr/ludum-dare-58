@@ -5,6 +5,8 @@ class_name PlayerPart
 @export var sprites: Array[Sprite2D]
 @onready var glow_material: Material
 
+@export var kick_strength_factor: float = 1.0
+
 
 const GRAVITY: float = 1000
 

@@ -20,6 +20,9 @@ func _process(delta: float) -> void:
 func generate_curve(strength: float, delta: float):
 	dist = strength * 6
 	height = abs(strength) * 6
+	if kick_target:
+		dist *= kick_target.kick_strength_factor
+		height *= kick_target.kick_strength_factor
 	curve.clear_points()
 	curve.add_point( Vector2.ZERO )
 	# just simulate the whole path i guess idfk
