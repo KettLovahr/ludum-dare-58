@@ -14,11 +14,11 @@ size = Vector2(88, 140)
 
 [node name="Arm" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 script = ExtResource("1_kw201")
-sprites = [NodePath("Root/Arm1"), NodePath("Root/Arm2"), NodePath("Root/Arm3")]
+sprites = NodePath("Root")
 kick_strength_factor = 0.8
 metadata/_custom_type_script = "uid://bf3ggechk0wan"
 
-[node name="Root" type="Node2D" parent="."]
+[node name="Root" type="CanvasGroup" parent="."]
 
 [node name="Arm1" type="Sprite2D" parent="Root"]
 position = Vector2(-42, -95)

@@ -21,11 +21,11 @@ size = Vector2(153, 138)
 
 [node name="Ribcage" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 script = ExtResource("1_o5qfi")
-sprites = [NodePath("Root/Ribcage7"), NodePath("Root/Ribcage8"), NodePath("Root/Ribcage9"), NodePath("Root/Ribcage10"), NodePath("Root/Ribcage6"), NodePath("Root/Ribcage3"), NodePath("Root/Ribcage4"), NodePath("Root/Ribcage5"), NodePath("Root/Ribcage1"), NodePath("Root/Ribcage2")]
+sprites = NodePath("Root")
 kick_strength_factor = 0.8
 metadata/_custom_type_script = "uid://bf3ggechk0wan"
 
-[node name="Root" type="Node2D" parent="."]
+[node name="Root" type="CanvasGroup" parent="."]
 
 [node name="Ribcage7" type="Sprite2D" parent="Root"]
 position = Vector2(67, -49)

@@ -13,9 +13,11 @@ radius = 40.012497
 [node name="Skull" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 collision_layer = 2
 script = ExtResource("1_tyaox")
-sprites = [NodePath("Sprite")]
+sprites = NodePath("Root")
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="Root" type="CanvasGroup" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="Root"]
 texture = ExtResource("2_oidbk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

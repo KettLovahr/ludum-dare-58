@@ -4,3 +4,6 @@
 
 [resource]
 shader = ExtResource("1_cd8nd")
+shader_parameter/glowing = true
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+shader_parameter/radius = 4.0

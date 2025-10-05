@@ -5,7 +5,7 @@ const VELOCITY: float = 1500
 
 func _custom_behavior(delta):
 	velocity.y += GRAVITY * delta
-	$Sprite.rotate(velocity.x / 3500.0)
+	$Root/Sprite.rotate(velocity.x / 3500.0)
 	if is_on_floor():
 		velocity.x = lerp(velocity.x, 0.0, 0.1)
 
