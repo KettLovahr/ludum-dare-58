@@ -20,6 +20,7 @@ size = Vector2(123, 83)
 size = Vector2(153, 138)
 
 [node name="Ribcage" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
+collision_layer = 2
 script = ExtResource("1_o5qfi")
 sprites = NodePath("Root")
 kick_strength_factor = 0.8
