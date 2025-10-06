@@ -9,6 +9,7 @@ var dist: float
 var height: float
 
 var valid_kick: bool = false
+@onready var leg = get_parent()
 
 func _ready():
 	generate_curve(1, 1.0/60)
@@ -20,12 +21,14 @@ func _process(delta: float) -> void:
 		valid_kick = generate_curve(strength, delta)
 		%TrajectoryArc.global_position = kick_target.global_position
 	%TrajectoryArc.visible = (kick_target != null)\
-		and get_parent().can_kick\
-		and not get_parent().being_carried\
-		and valid_kick
+		and leg.can_kick\
+		and not leg.being_carried\
+		and valid_kick\
+		and ((leg.selected and leg.controllable)\
+			or (kick_target.selected and kick_target.controllable))
 
 func generate_curve(strength: float, delta: float) -> bool:
-	var parent: Leg = get_parent()
+	var parent: Leg = leg
 	if parent.facing == Leg.Direction.LEFT and strength > 0\
 		or parent.facing == Leg.Direction.RIGHT and strength < 0:
 			return false
@@ -54,7 +57,7 @@ func handle_kick():
 	ref.velocity.x = dist
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is PlayerPart and body != get_parent():
+	if body is PlayerPart and body != leg:
 		kick_targets_list.append(body)
 		if kick_target == null:
 			kick_target = body

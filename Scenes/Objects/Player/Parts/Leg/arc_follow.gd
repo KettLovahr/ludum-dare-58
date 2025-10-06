@@ -7,6 +7,9 @@ const points: int = 10
 var tinies: Array[PathFollow2D]
 var offset := 0.0
 
+const SMALL_DOT = preload("res://Assets/Environment/SmallDot.png")
+const BIG_DOT = preload("res://Assets/Environment/BigDot.png")
+
 func _ready():
 	for i in range(points):
 		create_tiny_sprite(i)
@@ -23,10 +26,12 @@ func _process(delta):
 func create_tiny_sprite(i: int):
 	var new_pathfollow := PathFollow2D.new()
 	var new_spr := Sprite2D.new()
-	new_spr.texture = load("res://Assets/Environment/Coin.png")
 	new_spr.scale = Vector2(0.1, 0.1)
 	if i % 3 == 0:
 		new_spr.scale *= 1.5
+		new_spr.texture = BIG_DOT
+	else:
+		new_spr.texture = SMALL_DOT
 	add_child(new_pathfollow)
 	new_pathfollow.add_child(new_spr)
 	tinies.append(new_pathfollow)
