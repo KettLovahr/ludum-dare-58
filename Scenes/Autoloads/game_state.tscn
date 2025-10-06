@@ -4,4 +4,4 @@
 
 [node name="GameState" type="Node"]
 script = ExtResource("1_y8yhq")
-level_scene_paths = Array[String](["res://Scenes/Levels/DeadStraight.tscn", "res://Scenes/Levels/Level2_V2.tscn", "res://Scenes/Levels/Level3_V2.tscn", "res://Scenes/Levels/OneFoot.tscn", "res://Scenes/Levels/StairwayToHeaven.tscn", "res://Scenes/Levels/ThePearlyGates.tscn", "res://Scenes/Levels/TwoFeet.tscn"])
+level_scene_paths = Array[String](["res://Scenes/Levels/DeadStraight.tscn", "res://Scenes/Levels/Level2_V2.tscn", "res://Scenes/Levels/Level3_V2.tscn", "res://Scenes/Levels/OneFoot.tscn", "res://Scenes/Levels/StairwayToHeaven.tscn", "res://Scenes/Levels/ThePearlyGates.tscn", "res://Scenes/Levels/TwoFeet.tscn", "res://Scenes/Levels/NinthCircle.tscn"])
