@@ -35,7 +35,7 @@ shadow_offset = Vector2(3, 3)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
 script = ExtResource("1_25pmv")
-target_time = 60.0
+target_time = 45.0
 coin = NodePath("Coin")
 flag = NodePath("Flag")
 
