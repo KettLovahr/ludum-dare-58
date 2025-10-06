@@ -21,10 +21,10 @@ size = Vector2(1414, 136)
 size = Vector2(1806, 277)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nvbyj"]
-size = Vector2(406, 136)
+size = Vector2(541, 136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3i7ro"]
-size = Vector2(104, 40)
+size = Vector2(394, 40)
 
 [sub_resource type="LabelSettings" id="LabelSettings_57lp3"]
 font = ExtResource("9_ksuta")
@@ -50,10 +50,10 @@ metadata/_edit_lock_ = true
 [node name="PlayerRoot" parent="." instance=ExtResource("3_2cgx1")]
 
 [node name="Skull" parent="PlayerRoot" instance=ExtResource("4_1vk5l")]
-position = Vector2(366, 414)
+position = Vector2(165, 446)
 
 [node name="Leg1" parent="PlayerRoot" instance=ExtResource("5_agal8")]
-position = Vector2(204, 381)
+position = Vector2(41, 444)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-232, -661)
@@ -70,9 +70,9 @@ position = Vector2(96.5, 591)
 shape = SubResource("RectangleShape2D_ngp1c")
 
 [node name="Ground5" type="NinePatchRect" parent="."]
-offset_left = 1198.0
+offset_left = 1056.0
 offset_top = 130.0
-offset_right = 2634.0
+offset_right = 2492.0
 offset_bottom = 280.0
 texture = ExtResource("6_gih1h")
 patch_margin_left = 24
@@ -88,9 +88,9 @@ position = Vector2(716, 73)
 shape = SubResource("RectangleShape2D_wmfcf")
 
 [node name="Ground4" type="NinePatchRect" parent="."]
-offset_left = 1000.0
+offset_left = 729.0
 offset_top = 237.0
-offset_right = 2436.0
+offset_right = 2165.0
 offset_bottom = 387.0
 texture = ExtResource("6_gih1h")
 patch_margin_left = 24
@@ -106,9 +106,9 @@ position = Vector2(716, 73)
 shape = SubResource("RectangleShape2D_wmfcf")
 
 [node name="Ground2" type="NinePatchRect" parent="."]
-offset_left = 642.0
+offset_left = 402.0
 offset_top = 340.0
-offset_right = 2078.0
+offset_right = 1838.0
 offset_bottom = 490.0
 texture = ExtResource("6_gih1h")
 patch_margin_left = 24
@@ -142,10 +142,10 @@ position = Vector2(912, 143.5)
 shape = SubResource("RectangleShape2D_t0ble")
 
 [node name="Ground6" type="NinePatchRect" parent="."]
-offset_left = 206.0
-offset_top = -141.0
-offset_right = 629.0
-offset_bottom = 9.0
+offset_left = -168.0
+offset_top = -90.0
+offset_right = 388.0
+offset_bottom = 60.0
 texture = ExtResource("6_gih1h")
 patch_margin_left = 24
 patch_margin_top = 30
@@ -156,14 +156,14 @@ axis_stretch_horizontal = 2
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground6"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground6/StaticBody2D"]
-position = Vector2(212, 73)
+position = Vector2(279.5, 73)
 shape = SubResource("RectangleShape2D_nvbyj")
 
 [node name="Ground7" type="NinePatchRect" parent="."]
-offset_left = 935.0
-offset_top = -4.0
-offset_right = 1060.0
-offset_bottom = 50.0
+offset_left = 469.0
+offset_top = 4.0
+offset_right = 885.0
+offset_bottom = 58.0
 texture = ExtResource("6_gih1h")
 patch_margin_left = 24
 patch_margin_top = 30
@@ -174,32 +174,14 @@ axis_stretch_horizontal = 2
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground7"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground7/StaticBody2D"]
-position = Vector2(61, 27)
-shape = SubResource("RectangleShape2D_3i7ro")
-
-[node name="Ground8" type="NinePatchRect" parent="."]
-offset_left = 725.0
-offset_top = -75.0
-offset_right = 850.0
-offset_bottom = -21.0
-texture = ExtResource("6_gih1h")
-patch_margin_left = 24
-patch_margin_top = 30
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground8"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground8/StaticBody2D"]
-position = Vector2(61, 26)
+position = Vector2(206, 27)
 shape = SubResource("RectangleShape2D_3i7ro")
 
 [node name="Coin" parent="." instance=ExtResource("7_xnehd")]
-position = Vector2(275, 70)
+position = Vector2(36, 99)
 
 [node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("8_x8iny")]
-position = Vector2(305, -139)
+position = Vector2(16, -89)
 collision_layer = 2
 collision_mask = 2
 player_root = NodePath("../PlayerRoot")
