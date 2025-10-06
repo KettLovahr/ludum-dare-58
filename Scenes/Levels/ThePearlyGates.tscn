@@ -41,7 +41,7 @@ shadow_offset = Vector2(3, 3)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
 script = ExtResource("1_vsesi")
-target_time = 60.0
+target_time = 30.0
 coin = NodePath("Coin")
 flag = NodePath("Flag")
 
@@ -180,7 +180,7 @@ position = Vector2(1089, 454)
 connected_items = [NodePath("../RedGate2/Triggerable"), NodePath("../RedGate/Triggerable")]
 
 [node name="Coin" parent="." instance=ExtResource("10_8l83l")]
-position = Vector2(541, 123)
+position = Vector2(527, 86)
 
 [node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("11_1etim")]
 position = Vector2(268, 448)
