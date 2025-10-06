@@ -59,7 +59,7 @@ func _custom_behavior(delta: float):
 		else:
 			col_when_kicked.set_deferred("disabled", true)
 			col.set_deferred("disabled", false)
-	if not selected:
+	if not selected or not controllable:
 		anim.play("idle")
 
 func kick():

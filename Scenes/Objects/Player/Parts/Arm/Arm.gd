@@ -12,7 +12,7 @@ func _custom_behavior(delta: float):
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
 		velocity.x = lerp(velocity.x, 0.0, 0.2)
-	if not selected:
+	if not selected or not controllable:
 		anim.play("idle")
 		if ArmSound.playing:
 			ArmSound.stop()

@@ -19,7 +19,7 @@ func _custom_behavior(delta: float):
 	if carrying:
 		carrying.global_position = $CarryPivot.global_position
 		carrying.velocity = Vector2.ZERO
-	if not selected:
+	if not selected or not controllable:
 		if climbing:
 			anim.play("climb_idle")
 		else:
