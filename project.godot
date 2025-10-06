@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Ludum Dare 58"
+config/name="Skeledaddler"
 run/main_scene="uid://cfwt6uej8j8s"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://d0rqjbo8vy730"
 
 [audio]
 
