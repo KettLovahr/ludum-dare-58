@@ -1,36 +1,27 @@
-[gd_scene load_steps=22 format=3 uid="uid://xn4p1wd3rgwn"]
+[gd_scene load_steps=16 format=3 uid="uid://xn4p1wd3rgwn"]
 
-[ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_hungf"]
-[ext_resource type="Texture2D" uid="uid://hiff0j0fqt5r" path="res://Assets/Environment/Background.png" id="2_gbvbn"]
-[ext_resource type="PackedScene" uid="uid://bajlrrg5f56a2" path="res://Scenes/Objects/Player/PlayerRoot.tscn" id="3_p586c"]
-[ext_resource type="PackedScene" uid="uid://bnichbfjk6ywa" path="res://Scenes/Objects/Player/Parts/Skull/Skull.tscn" id="4_i8d5y"]
-[ext_resource type="PackedScene" uid="uid://ckjovd4m5x8h4" path="res://Scenes/Objects/Player/Parts/Leg/Leg.tscn" id="5_6oktm"]
-[ext_resource type="Texture2D" uid="uid://bnflm07rloebr" path="res://Assets/Environment/Grass.png" id="6_jpymg"]
-[ext_resource type="Texture2D" uid="uid://cru0s563eo1hi" path="res://Assets/Environment/Gate1.png" id="7_rqn52"]
-[ext_resource type="Script" uid="uid://copkvyjkqf2bk" path="res://Scenes/Objects/Gate/Gate.gd" id="8_8kddg"]
-[ext_resource type="PackedScene" uid="uid://dalhlyuqlukkn" path="res://Scenes/Objects/Button/Button.tscn" id="9_pgc26"]
-[ext_resource type="PackedScene" uid="uid://dum6w4upon77l" path="res://Scenes/Objects/Coin/Coin.tscn" id="10_4px3c"]
-[ext_resource type="PackedScene" uid="uid://b3ye10a2hbdvu" path="res://Scenes/Objects/Flag/Flag.tscn" id="11_wjobf"]
-[ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="12_2fe0e"]
-[ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="13_iu7w2"]
+[ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_eyf00"]
+[ext_resource type="Texture2D" uid="uid://hiff0j0fqt5r" path="res://Assets/Environment/Background.png" id="2_34e73"]
+[ext_resource type="PackedScene" uid="uid://bajlrrg5f56a2" path="res://Scenes/Objects/Player/PlayerRoot.tscn" id="3_68v1p"]
+[ext_resource type="PackedScene" uid="uid://bnichbfjk6ywa" path="res://Scenes/Objects/Player/Parts/Skull/Skull.tscn" id="4_konwh"]
+[ext_resource type="PackedScene" uid="uid://ckjovd4m5x8h4" path="res://Scenes/Objects/Player/Parts/Leg/Leg.tscn" id="5_ai8g5"]
+[ext_resource type="Texture2D" uid="uid://bnflm07rloebr" path="res://Assets/Environment/Grass.png" id="6_tjygj"]
+[ext_resource type="PackedScene" uid="uid://dum6w4upon77l" path="res://Scenes/Objects/Coin/Coin.tscn" id="10_3o4m1"]
+[ext_resource type="PackedScene" uid="uid://b3ye10a2hbdvu" path="res://Scenes/Objects/Flag/Flag.tscn" id="11_uxovo"]
+[ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="12_4psah"]
+[ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="13_4j28p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_68v1p"]
-size = Vector2(453, 216)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngp1c"]
+size = Vector2(1442, 684)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eyf00"]
-size = Vector2(100, 41)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipaot"]
+size = Vector2(171, 684)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca5bt"]
-size = Vector2(335, 335)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao4h1"]
+size = Vector2(200, 719)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_konwh"]
-size = Vector2(458, 458)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fsn6e"]
-size = Vector2(127, 45)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_34e73"]
-size = Vector2(335, 67)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5eb6"]
+size = Vector2(1442, 196)
 
 [sub_resource type="LabelSettings" id="LabelSettings_57lp3"]
 font = ExtResource("13_iu7w2")
@@ -39,172 +30,133 @@ shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.64705884)
 shadow_offset = Vector2(3, 3)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai8g5"]
-size = Vector2(60, 1272)
-
 [node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
-script = ExtResource("1_hungf")
-target_time = 120.0
+script = ExtResource("1_eyf00")
+target_time = 10.0
 coin = NodePath("Coin")
 flag = NodePath("Flag")
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="."]
-layer = -1
-
-[node name="Background" type="Sprite2D" parent="CanvasLayer2"]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
 texture = ExtResource("2_gbvbn")
 metadata/_edit_lock_ = true
 
 [node name="PlayerRoot" parent="." instance=ExtResource("3_p586c")]
 
-[node name="Skull" parent="PlayerRoot" instance=ExtResource("4_i8d5y")]
-position = Vector2(268, 407)
+[node name="Skull" parent="PlayerRoot" instance=ExtResource("4_konwh")]
+position = Vector2(353, 469)
 
-[node name="Leg1" parent="PlayerRoot" instance=ExtResource("5_6oktm")]
-position = Vector2(107, 394)
+[node name="Leg1" parent="PlayerRoot" instance=ExtResource("5_ai8g5")]
+position = Vector2(180, 453)
 
-[node name="Leg2" parent="PlayerRoot" instance=ExtResource("5_6oktm")]
-position = Vector2(708, 278)
-
-[node name="Ground1" type="NinePatchRect" parent="."]
-offset_left = -108.0
-offset_top = 443.0
-offset_right = 365.0
-offset_bottom = 674.0
-texture = ExtResource("6_jpymg")
+[node name="Ground7" type="NinePatchRect" parent="."]
+offset_left = -78.0
+offset_top = 505.0
+offset_right = 1330.0
+offset_bottom = 1204.0
+texture = ExtResource("6_tjygj")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
 patch_margin_bottom = 24
 axis_stretch_horizontal = 2
-metadata/_edit_group_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground7"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground1/StaticBody2D"]
-position = Vector2(235.5, 113)
-shape = SubResource("RectangleShape2D_68v1p")
-
-[node name="Ground4" type="NinePatchRect" parent="."]
-offset_left = 391.0
-offset_top = 377.0
-offset_right = 510.0
-offset_bottom = 431.0
-texture = ExtResource("6_jpymg")
-patch_margin_left = 24
-patch_margin_top = 30
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-metadata/_edit_group_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/StaticBody2D"]
-position = Vector2(59, 25.5)
-shape = SubResource("RectangleShape2D_eyf00")
-
-[node name="Ground2" type="NinePatchRect" parent="."]
-offset_left = 536.0
-offset_top = 330.0
-offset_right = 889.0
-offset_bottom = 686.0
-texture = ExtResource("6_jpymg")
-patch_margin_left = 24
-patch_margin_top = 30
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-metadata/_edit_group_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
-position = Vector2(176.5, 172.5)
-shape = SubResource("RectangleShape2D_ca5bt")
-
-[node name="Ground3" type="NinePatchRect" parent="."]
-offset_left = 1071.0
-offset_top = 201.0
-offset_right = 1553.0
-offset_bottom = 680.0
-texture = ExtResource("6_jpymg")
-patch_margin_left = 24
-patch_margin_top = 30
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-metadata/_edit_group_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
-position = Vector2(238, 234)
-shape = SubResource("RectangleShape2D_konwh")
-
-[node name="RedGate" type="NinePatchRect" parent="."]
-offset_left = 911.0
-offset_top = 258.0
-offset_right = 1041.0
-offset_bottom = 306.0
-texture = ExtResource("7_rqn52")
-patch_margin_left = 24
-patch_margin_top = 24
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
-
-[node name="Triggerable" type="Node" parent="RedGate"]
-script = ExtResource("8_8kddg")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="RedGate"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RedGate/StaticBody2D"]
-position = Vector2(65.5, 24.5)
-shape = SubResource("RectangleShape2D_fsn6e")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground7/StaticBody2D"]
+position = Vector2(692, 347)
+shape = SubResource("RectangleShape2D_ngp1c")
 
 [node name="Ground5" type="NinePatchRect" parent="."]
-offset_left = 533.0
-offset_top = -14.0
-offset_right = 886.0
-offset_bottom = 66.0
-texture = ExtResource("6_jpymg")
+offset_left = -189.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 697.0
+texture = ExtResource("6_tjygj")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
 patch_margin_bottom = 24
 axis_stretch_horizontal = 2
-metadata/_edit_group_ = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground5"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground5/StaticBody2D"]
-position = Vector2(176.5, 38.5)
-shape = SubResource("RectangleShape2D_34e73")
+position = Vector2(103, 347)
+shape = SubResource("RectangleShape2D_ipaot")
+metadata/_edit_lock_ = true
 
-[node name="Button" parent="." node_paths=PackedStringArray("connected_items") instance=ExtResource("9_pgc26")]
-position = Vector2(709, -8)
-connected_items = [NodePath("../RedGate/Triggerable")]
+[node name="Ground2" type="NinePatchRect" parent="."]
+offset_left = 1287.0
+offset_top = -8.0
+offset_right = 1493.0
+offset_bottom = 722.0
+texture = ExtResource("6_tjygj")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
 
-[node name="Coin" parent="." instance=ExtResource("10_4px3c")]
-position = Vector2(312, 18)
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
 
-[node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("11_wjobf")]
-position = Vector2(1282, 204)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
+position = Vector2(95, 364.5)
+shape = SubResource("RectangleShape2D_ao4h1")
+
+[node name="Ground6" type="NinePatchRect" parent="."]
+offset_left = -31.0
+offset_top = -23.0
+offset_right = 1377.0
+offset_bottom = 185.0
+texture = ExtResource("6_tjygj")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground6/StaticBody2D"]
+position = Vector2(692, 103)
+shape = SubResource("RectangleShape2D_u5eb6")
+
+[node name="Ground4" type="NinePatchRect" parent="."]
+offset_left = -189.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 697.0
+texture = ExtResource("6_tjygj")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/StaticBody2D"]
+position = Vector2(103, 347)
+shape = SubResource("RectangleShape2D_ipaot")
+
+[node name="Coin" parent="." instance=ExtResource("10_3o4m1")]
+position = Vector2(640, 312)
+
+[node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("11_uxovo")]
+position = Vector2(1136, 506)
 collision_layer = 2
 collision_mask = 2
 player_root = NodePath("../PlayerRoot")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Vignette" type="Sprite2D" parent="CanvasLayer"]
+[node name="Vignette" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
 texture = ExtResource("12_2fe0e")
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
+z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -215,24 +167,42 @@ offset_right = 1280.0
 offset_bottom = 699.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "05. TWO Feet in the Grave"
+text = "04. One Foot in the Grave"
 label_settings = SubResource("LabelSettings_57lp3")
 horizontal_alignment = 1
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(720, 199)
-zoom = Vector2(0.8, 0.8)
+[node name="Ground3" type="NinePatchRect" parent="."]
+offset_left = 543.0
+offset_top = 428.0
+offset_right = 749.0
+offset_bottom = 1158.0
+texture = ExtResource("6_tjygj")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-167, -342)
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(39, 641)
-shape = SubResource("RectangleShape2D_ai8g5")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
+position = Vector2(105, 364.5)
+shape = SubResource("RectangleShape2D_ao4h1")
+metadata/_edit_lock_ = true
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(1523, -402)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(39, 641)
-shape = SubResource("RectangleShape2D_ai8g5")
+[node name="Label2" type="Label" parent="."]
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 40.0
+offset_right = 1280.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "When controlling a leg, press Space near other
+parts to kick them away!"
+label_settings = SubResource("LabelSettings_57lp3")
+horizontal_alignment = 1
