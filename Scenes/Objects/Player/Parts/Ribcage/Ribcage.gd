@@ -42,7 +42,7 @@ func _handle_controls(delta: float):
 	velocity.x = x_axis * (CLIMB_SPEED if climbing else MOVE_SPEED)
 	if climbing:
 		velocity.y = y_axis * CLIMB_SPEED
-	
+
 	if velocity != Vector2(0.0, 0.0):
 		if not rib_walk.is_playing():
 			rib_walk.play()
@@ -50,7 +50,7 @@ func _handle_controls(delta: float):
 	else:
 		if rib_walk.is_playing():
 			rib_walk.stop()
-	
+
 	if not climbing and Input.is_action_pressed("move_up") and can_climb():
 		climbing = true
 	if not climbing and not carrying and len(detected_parts) > 0:

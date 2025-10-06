@@ -49,4 +49,3 @@ func press():
 	button_state_change(true)
 	pressed_sfx.play()
 	pressed_sfx.pitch_scale = 1.0
-	

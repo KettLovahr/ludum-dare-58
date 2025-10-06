@@ -512,6 +512,33 @@ shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.7647059)
 shadow_offset = Vector2(3, 3)
 
+[sub_resource type="Animation" id="Animation_qua8k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 720)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
 [sub_resource type="Animation" id="Animation_lhov2"]
 resource_name = "in"
 length = 0.5
@@ -539,33 +566,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
-}
-
-[sub_resource type="Animation" id="Animation_qua8k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 720)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_etgo7"]
@@ -823,7 +823,7 @@ offset_left = 129.0
 offset_top = 125.0
 offset_right = 1151.0
 offset_bottom = 272.0
-text = "Life ain't easy without muscle! Our skeleton friend fell apart and got all his limbs jumbled up! Now, you gotta help him get to the end with all his parts intact."
+text = "Life ain't easy without muscle! Our skeleton friend fell apart and got all his limbs jumbled up! Now, you gotta help him collect all his body parts."
 label_settings = SubResource("LabelSettings_6jfpq")
 horizontal_alignment = 1
 autowrap_mode = 3
