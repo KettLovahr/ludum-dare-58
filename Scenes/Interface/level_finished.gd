@@ -32,7 +32,8 @@ func check_grave(which: int):
 	if which < 0 or which > 2 or not _grave_states[which]:
 		return
 	get_node("Grave" + str(which + 1) + "/AnimationPlayer").play("complete")
-
+	get_node("Grave" + str(which + 1) + "/DirtSFX").play()
+	get_node("Grave" + str(which + 1) + "/DirtSFX").pitch_scale = randf_range(0.8, 1.2)
 
 func _on_main_menu_pressed() -> void:
 	Transition.change_scene_to_file("res://Scenes/Interface/main_menu.tscn")
