@@ -27,6 +27,10 @@ func _custom_behavior(delta: float):
 			anim.play("climb_idle")
 		else:
 			anim.play("side_idle")
+	if is_on_floor():
+		velocity.x = lerp(velocity.x, 0.0, 0.2)
+	elif climbing:
+		velocity = velocity.lerp(Vector2.ZERO, 0.2)
 
 func _handle_controls(delta: float):
 	var x_axis = Input.get_axis("move_left", "move_right")

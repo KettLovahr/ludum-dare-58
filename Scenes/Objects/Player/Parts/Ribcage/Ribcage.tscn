@@ -2361,7 +2361,7 @@ position = Vector2(13.5, -64.5)
 shape = SubResource("RectangleShape2D_efypk")
 
 [node name="CarryPivot" type="Marker2D" parent="."]
-position = Vector2(0, -67)
+position = Vector2(0, -56)
 
 [node name="PickupArea" type="Area2D" parent="."]
 collision_layer = 2
