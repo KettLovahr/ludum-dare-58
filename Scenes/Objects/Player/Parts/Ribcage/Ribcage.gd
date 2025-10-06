@@ -44,9 +44,11 @@ func _handle_controls(delta: float):
 		if Input.is_action_just_pressed("move_action"):
 			carrying = detected_parts[0]
 			carrying.z_index = 1
+			carrying.being_carried = true
 	elif carrying:
 		if Input.is_action_just_pressed("move_action"):
 			carrying.z_index = 0
+			carrying.being_carried = false
 			carrying = null
 
 	if climbing:

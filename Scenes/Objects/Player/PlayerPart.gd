@@ -6,6 +6,7 @@ class_name PlayerPart
 @onready var glow_material: Material
 
 @export var kick_strength_factor: float = 1.0
+var being_carried := false
 
 
 const GRAVITY: float = 1000

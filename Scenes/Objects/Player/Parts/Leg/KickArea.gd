@@ -20,8 +20,9 @@ func _process(delta: float) -> void:
 		%TrajectoryArc.global_position = kick_target.global_position
 	%TrajectoryArc.visible = (kick_target != null)\
 		and get_parent().can_kick\
+		and not get_parent().being_carried\
 		and valid_kick
-		
+
 func generate_curve(strength: float, delta: float) -> bool:
 	var parent: Leg = get_parent()
 	if parent.facing == Leg.Direction.LEFT and strength > 0\
@@ -42,7 +43,7 @@ func generate_curve(strength: float, delta: float) -> bool:
 		yp += yvel * delta
 		yvel += PlayerPart.GRAVITY * delta
 	return true
-	
+
 func handle_kick():
 	var ref = kick_target
 	if not ref: return
