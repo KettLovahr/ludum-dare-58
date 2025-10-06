@@ -553,7 +553,7 @@ offsets = PackedFloat32Array(0, 0.9170306, 1)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6664t"]
-size = Vector2(216, 52)
+size = Vector2(108, 52)
 
 [node name="Leg" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 collision_layer = 2
@@ -616,8 +616,13 @@ position = Vector2(0, -53.5)
 collision_mask = 2
 script = ExtResource("5_b30j4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KickArea"]
-position = Vector2(0, 28)
+[node name="Left" type="CollisionShape2D" parent="KickArea"]
+position = Vector2(-54, 28)
+shape = SubResource("RectangleShape2D_6664t")
+disabled = true
+
+[node name="Right" type="CollisionShape2D" parent="KickArea"]
+position = Vector2(54, 28)
 shape = SubResource("RectangleShape2D_6664t")
 
 [node name="KickDelay" type="Timer" parent="."]

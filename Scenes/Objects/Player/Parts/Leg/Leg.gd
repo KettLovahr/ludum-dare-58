@@ -20,6 +20,8 @@ enum Direction {
 }
 
 @onready var anim = $Root/AnimationPlayer
+@onready var left_kick = $KickArea/Left
+@onready var right_kick = $KickArea/Right
 
 func _handle_controls(_delta: float):
 	if is_on_floor():
@@ -31,10 +33,14 @@ func _handle_controls(_delta: float):
 			$Root.scale.x = -1
 			anim.play("walk")
 			facing = Direction.LEFT
+			left_kick.set_deferred("disabled", false)
+			right_kick.set_deferred("disabled", true)
 		elif axis > 0:
 			$Root.scale.x = 1
 			anim.play("walk")
 			facing = Direction.RIGHT
+			left_kick.set_deferred("disabled", true)
+			right_kick.set_deferred("disabled", false)
 		else:
 			anim.play("idle")
 		if Input.is_action_just_pressed("move_action"):

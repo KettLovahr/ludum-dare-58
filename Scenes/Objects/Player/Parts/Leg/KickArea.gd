@@ -2,6 +2,7 @@ extends Area2D
 class_name KickArea
 
 var kick_target: PlayerPart
+var kick_targets_list := []
 var curve: Curve2D = Curve2D.new()
 
 var dist: float
@@ -53,9 +54,15 @@ func handle_kick():
 	ref.velocity.x = dist
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is PlayerPart and body != get_parent() and kick_target == null:
-		kick_target = body
+	if body is PlayerPart and body != get_parent():
+		kick_targets_list.append(body)
+		if kick_target == null:
+			kick_target = body
 
 func _on_body_exited(body: Node2D) -> void:
+	if body in kick_targets_list:
+		kick_targets_list.erase(body)
 	if body == kick_target:
 		kick_target = null
+		if len(kick_targets_list) != 0:
+			kick_target = kick_targets_list[-1]
