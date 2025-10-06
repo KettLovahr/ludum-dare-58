@@ -4,8 +4,6 @@ extends CanvasLayer
 var next_level := ""
 var _grave_states := [false, false, false]
 
-@onready var GraveDirtSound: AudioStreamPlayer = $GraveSound1
-@onready var GraveThumbSound: AudioStreamPlayer = $GraveSound2
 
 func complete(grave_states: Array, time_limit: float):
 	var which_level = GameState.current_level
@@ -34,9 +32,6 @@ func check_grave(which: int):
 	if which < 0 or which > 2 or not _grave_states[which]:
 		return
 	get_node("Grave" + str(which + 1) + "/AnimationPlayer").play("complete")
-	GraveDirtSound.play()
-	GraveDirtSound.pitch_scale = randf_range(0.8, 1.2)
-	GraveThumbSound.pitch_scale = 1.0 + (which / 10.0)
 
 
 func _on_main_menu_pressed() -> void:

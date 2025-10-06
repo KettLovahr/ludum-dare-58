@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://duox8xe16tceb"]
+[gd_scene load_steps=16 format=3 uid="uid://duox8xe16tceb"]
 
 [ext_resource type="Texture2D" uid="uid://4hcv7kpv1nkg" path="res://Assets/Interface/Titlebar.png" id="1_680gv"]
 [ext_resource type="Script" uid="uid://ddgn66bhens00" path="res://Scenes/Interface/level_finished.gd" id="1_lvamn"]
@@ -10,8 +10,6 @@
 [ext_resource type="FontFile" uid="uid://djmrwf1ck4r4m" path="res://Assets/Fonts/Atma-Bold.ttf" id="7_xpnng"]
 [ext_resource type="PackedScene" uid="uid://n4yb77aqepuc" path="res://Scenes/Interface/fancy_butt.tscn" id="8_i3b5c"]
 [ext_resource type="AudioStream" uid="uid://cygwwvxy1p8ep" path="res://Assets/Sounds/SFX/MenuCancel.wav" id="9_lvamn"]
-[ext_resource type="AudioStream" uid="uid://cy4imue6wgix5" path="res://Assets/Sounds/SFX/GraveThumbSound1.wav" id="11_mgq54"]
-[ext_resource type="AudioStream" uid="uid://bt7jp7p6ot636" path="res://Assets/Sounds/SFX/GraveThumbSound2.wav" id="12_3eqms"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mgq54"]
 font = ExtResource("2_fttv8")
@@ -476,14 +474,6 @@ stream = ExtResource("9_lvamn")
 libraries = {
 &"": SubResource("AnimationLibrary_mgq54")
 }
-
-[node name="GraveSound1" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_mgq54")
-bus = &"SFX"
-
-[node name="GraveSound2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("12_3eqms")
-bus = &"SFX"
 
 [connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Restart" to="." method="_on_restart_pressed"]

@@ -11,6 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="9_458el"]
 [ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="10_ok1eh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmfcf"]
+size = Vector2(463, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao4h1"]
+size = Vector2(452, 136)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ngp1c"]
 size = Vector2(171, 684)
 
@@ -20,12 +26,6 @@ font_size = 32
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.64705884)
 shadow_offset = Vector2(3, 3)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipaot"]
-size = Vector2(49, 706.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ao4h1"]
-size = Vector2(1391, 197)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
 script = ExtResource("1_ipaot")
@@ -44,7 +44,45 @@ metadata/_edit_lock_ = true
 position = Vector2(366, 414)
 
 [node name="Leg1" parent="PlayerRoot" instance=ExtResource("6_ao4h1")]
-position = Vector2(198, 396)
+position = Vector2(204, 381)
+
+[node name="Ground1" type="NinePatchRect" parent="."]
+offset_left = 77.0
+offset_top = 445.0
+offset_right = 559.0
+offset_bottom = 595.0
+texture = ExtResource("6_ab8bd")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground1/StaticBody2D"]
+position = Vector2(240.5, 73)
+shape = SubResource("RectangleShape2D_wmfcf")
+
+[node name="Ground2" type="NinePatchRect" parent="."]
+offset_left = 704.0
+offset_top = 447.0
+offset_right = 1177.0
+offset_bottom = 597.0
+texture = ExtResource("6_ab8bd")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
+position = Vector2(237, 73)
+shape = SubResource("RectangleShape2D_ao4h1")
 
 [node name="Ground3" type="NinePatchRect" parent="."]
 offset_left = 1160.0
@@ -80,7 +118,6 @@ texture = ExtResource("9_458el")
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
-z_index = 100
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -94,60 +131,3 @@ grow_vertical = 0
 text = "02. One Foot in the Grave"
 label_settings = SubResource("LabelSettings_57lp3")
 horizontal_alignment = 1
-
-[node name="Wall1" type="NinePatchRect" parent="."]
-offset_left = -55.0
-offset_top = 4.0
-offset_right = 2.0
-offset_bottom = 711.0
-texture = ExtResource("6_ab8bd")
-patch_margin_left = 24
-patch_margin_top = 30
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Wall1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall1/StaticBody2D"]
-position = Vector2(32.5, 352.75)
-shape = SubResource("RectangleShape2D_ipaot")
-metadata/_edit_lock_ = true
-
-[node name="Ground1" type="NinePatchRect" parent="."]
-offset_left = -84.0
-offset_top = 449.0
-offset_right = 1361.0
-offset_bottom = 807.0
-texture = ExtResource("6_ab8bd")
-patch_margin_left = 24
-patch_margin_top = 30
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground1"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground1/StaticBody2D"]
-position = Vector2(703.5, 103.5)
-shape = SubResource("RectangleShape2D_ao4h1")
-
-[node name="Ground4" type="NinePatchRect" parent="."]
-offset_left = 551.0
-offset_top = 370.0
-offset_right = 742.0
-offset_bottom = 1069.0
-texture = ExtResource("6_ab8bd")
-patch_margin_left = 24
-patch_margin_top = 30
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground4"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/StaticBody2D"]
-position = Vector2(96.5, 347)
-shape = SubResource("RectangleShape2D_ngp1c")
-metadata/_edit_lock_ = true
