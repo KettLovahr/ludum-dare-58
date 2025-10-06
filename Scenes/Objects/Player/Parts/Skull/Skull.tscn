@@ -19,19 +19,22 @@ script = ExtResource("1_tyaox")
 sprites = NodePath("Root")
 
 [node name="Root" type="CanvasGroup" parent="."]
+position = Vector2(0, -38)
 
 [node name="Sprite" type="Sprite2D" parent="Root"]
 texture = ExtResource("2_oidbk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -38)
 shape = SubResource("RectangleShape2D_tyaox")
 
 [node name="CollisionShapeWhenKicked" type="CollisionShape2D" parent="."]
-position = Vector2(0, -15)
+position = Vector2(0, -53)
 shape = SubResource("RectangleShape2D_oidbk")
 disabled = true
 
 [node name="PartSelectionArea" type="Area2D" parent="."]
+position = Vector2(0, -38)
 script = ExtResource("3_oj13q")
 metadata/_custom_type_script = "uid://c5xh8k0ojshh5"
 

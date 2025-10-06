@@ -562,7 +562,7 @@ sprites = NodePath("Root")
 metadata/_custom_type_script = "uid://bf3ggechk0wan"
 
 [node name="Root" type="CanvasGroup" parent="."]
-position = Vector2(-1.0000002, -26.000002)
+position = Vector2(-1.0000002, -79.5)
 
 [node name="Leg3" type="Sprite2D" parent="Root"]
 position = Vector2(-11, 71)
@@ -588,14 +588,15 @@ libraries = {
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -25)
+position = Vector2(-1.5, -78.5)
 shape = SubResource("RectangleShape2D_o5qlu")
 
 [node name="CollisionShapeWhenKicked" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -29.5)
+position = Vector2(-1.5, -83)
 shape = SubResource("RectangleShape2D_4i633")
 
 [node name="PartSelectionArea" type="Area2D" parent="."]
+position = Vector2(0, -53.5)
 script = ExtResource("3_7m4t5")
 metadata/_custom_type_script = "uid://c5xh8k0ojshh5"
 
@@ -611,6 +612,7 @@ script = ExtResource("4_6664t")
 trajectory_gradient = SubResource("Gradient_4i633")
 
 [node name="KickArea" type="Area2D" parent="."]
+position = Vector2(0, -53.5)
 collision_mask = 2
 script = ExtResource("5_b30j4")
 
