@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bbt18p5e5j4al"]
+[gd_scene load_steps=16 format=3 uid="uid://bbt18p5e5j4al"]
 
 [ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_6luyl"]
 [ext_resource type="Texture2D" uid="uid://hiff0j0fqt5r" path="res://Assets/Environment/Background.png" id="2_fk1xl"]
@@ -11,14 +11,17 @@
 [ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="9_mwaqq"]
 [ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="10_a467p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wmfcf"]
-size = Vector2(561, 276)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngp1c"]
+size = Vector2(1442, 684)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ipaot"]
+size = Vector2(171, 684)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ao4h1"]
-size = Vector2(572, 275)
+size = Vector2(200, 719)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ngp1c"]
-size = Vector2(171, 684)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u5eb6"]
+size = Vector2(1442, 196)
 
 [sub_resource type="LabelSettings" id="LabelSettings_57lp3"]
 font = ExtResource("10_a467p")
@@ -28,8 +31,8 @@ shadow_color = Color(0, 0, 0, 0.64705884)
 shadow_offset = Vector2(3, 3)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
-script = ExtResource("1_6luyl")
-target_time = 5.0
+script = ExtResource("1_ipaot")
+target_time = 10.0
 coin = NodePath("Coin")
 flag = NodePath("Flag")
 
@@ -40,36 +43,55 @@ metadata/_edit_lock_ = true
 
 [node name="PlayerRoot" parent="." instance=ExtResource("3_okkw7")]
 
-[node name="Skull" parent="PlayerRoot" instance=ExtResource("4_osw06")]
-position = Vector2(366, 414)
+[node name="Skull" parent="PlayerRoot" instance=ExtResource("5_tbiw2")]
+position = Vector2(353, 469)
 
-[node name="Leg1" parent="PlayerRoot" instance=ExtResource("5_vh41t")]
-position = Vector2(204, 381)
+[node name="Leg1" parent="PlayerRoot" instance=ExtResource("6_ao4h1")]
+position = Vector2(180, 453)
 
-[node name="Ground1" type="NinePatchRect" parent="."]
-offset_left = -22.0
-offset_top = 445.0
-offset_right = 559.0
-offset_bottom = 737.0
-texture = ExtResource("6_vx81e")
+[node name="Ground7" type="NinePatchRect" parent="."]
+offset_left = -78.0
+offset_top = 505.0
+offset_right = 1330.0
+offset_bottom = 1204.0
+texture = ExtResource("6_ab8bd")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
 patch_margin_bottom = 24
 axis_stretch_horizontal = 2
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground7"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground1/StaticBody2D"]
-position = Vector2(289.5, 143)
-shape = SubResource("RectangleShape2D_wmfcf")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground7/StaticBody2D"]
+position = Vector2(692, 347)
+shape = SubResource("RectangleShape2D_ngp1c")
+
+[node name="Ground5" type="NinePatchRect" parent="."]
+offset_left = -189.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 697.0
+texture = ExtResource("6_ab8bd")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground5/StaticBody2D"]
+position = Vector2(103, 347)
+shape = SubResource("RectangleShape2D_ipaot")
+metadata/_edit_lock_ = true
 
 [node name="Ground2" type="NinePatchRect" parent="."]
-offset_left = 704.0
-offset_top = 447.0
-offset_right = 1302.0
-offset_bottom = 742.0
-texture = ExtResource("6_vx81e")
+offset_left = 1287.0
+offset_top = -8.0
+offset_right = 1493.0
+offset_bottom = 722.0
+texture = ExtResource("6_ab8bd")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
@@ -79,28 +101,51 @@ axis_stretch_horizontal = 2
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
-position = Vector2(297, 142.5)
+position = Vector2(95, 364.5)
 shape = SubResource("RectangleShape2D_ao4h1")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(1259, -100)
+[node name="Ground6" type="NinePatchRect" parent="."]
+offset_left = -31.0
+offset_top = -23.0
+offset_right = 1377.0
+offset_bottom = 185.0
+texture = ExtResource("6_ab8bd")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(96.5, 347)
-shape = SubResource("RectangleShape2D_ngp1c")
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground6"]
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(-171, -95)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground6/StaticBody2D"]
+position = Vector2(692, 103)
+shape = SubResource("RectangleShape2D_u5eb6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(96.5, 347)
-shape = SubResource("RectangleShape2D_ngp1c")
+[node name="Ground4" type="NinePatchRect" parent="."]
+offset_left = -189.0
+offset_top = -2.0
+offset_right = 2.0
+offset_bottom = 697.0
+texture = ExtResource("6_ab8bd")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_use_anchors_ = true
 
-[node name="Coin" parent="." instance=ExtResource("7_h7qnc")]
-position = Vector2(772, 126)
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground4"]
 
-[node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("8_wtyso")]
-position = Vector2(1040, 453)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/StaticBody2D"]
+position = Vector2(103, 347)
+shape = SubResource("RectangleShape2D_ipaot")
+
+[node name="Coin" parent="." instance=ExtResource("7_w5ayf")]
+position = Vector2(640, 312)
+
+[node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("8_ya3ly")]
+position = Vector2(1136, 506)
 collision_layer = 2
 collision_mask = 2
 player_root = NodePath("../PlayerRoot")
@@ -111,6 +156,7 @@ texture = ExtResource("9_mwaqq")
 metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="."]
+z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -121,6 +167,42 @@ offset_right = 1280.0
 offset_bottom = 699.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "02. One Foot in the Grave"
+text = "04. One Foot in the Grave"
+label_settings = SubResource("LabelSettings_57lp3")
+horizontal_alignment = 1
+
+[node name="Ground3" type="NinePatchRect" parent="."]
+offset_left = 543.0
+offset_top = 428.0
+offset_right = 749.0
+offset_bottom = 1158.0
+texture = ExtResource("6_ab8bd")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
+position = Vector2(105, 364.5)
+shape = SubResource("RectangleShape2D_ao4h1")
+metadata/_edit_lock_ = true
+
+[node name="Label2" type="Label" parent="."]
+z_index = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = 40.0
+offset_right = 1280.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "When controlling a leg, press Space near other
+parts to kick them away!"
 label_settings = SubResource("LabelSettings_57lp3")
 horizontal_alignment = 1

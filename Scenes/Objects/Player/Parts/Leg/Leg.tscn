@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://ckjovd4m5x8h4"]
+[gd_scene load_steps=24 format=3 uid="uid://ckjovd4m5x8h4"]
 
 [ext_resource type="Script" uid="uid://digm7s2akv0h" path="res://Scenes/Objects/Player/Parts/Leg/Leg.gd" id="1_57jxl"]
 [ext_resource type="Texture2D" uid="uid://ok7e42kijr8l" path="res://Assets/Bones/Leg3.png" id="2_1twnf"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cndyxdysslfsp" path="res://Assets/Bones/Leg1.png" id="4_dkpgs"]
 [ext_resource type="Script" uid="uid://dx4ik8gmlqv56" path="res://Scenes/Objects/Player/Parts/Leg/KickArea.gd" id="5_b30j4"]
 [ext_resource type="AudioStream" uid="uid://cpfw8hmbbot6p" path="res://Assets/Sounds/SFX/CraniumKick.wav" id="8_4i633"]
+[ext_resource type="AudioStream" uid="uid://cr2yt6jcmt3e5" path="res://Assets/Sounds/SFX/LegWalk.wav" id="9_jullg"]
+[ext_resource type="AudioStream" uid="uid://bdw0t3ls27emu" path="res://Assets/Sounds/SFX/LegJump.wav" id="10_uqhlb"]
 
 [sub_resource type="Animation" id="Animation_4i633"]
 length = 0.001
@@ -82,6 +84,18 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../WalkSound:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_1twnf"]
@@ -496,6 +510,18 @@ tracks/5/keys = {
 "update": 0,
 "values": [-0.50236243, 0.5770865, 0.09908755, 0.1720404]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../WalkSound:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dkpgs"]
 _data = {
@@ -598,6 +624,17 @@ one_shot = true
 
 [node name="KickSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_4i633")
+volume_db = 5.0
+bus = &"SFX"
+
+[node name="WalkSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_jullg")
+volume_db = 5.0
+pitch_scale = 0.9
+bus = &"SFX"
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_uqhlb")
 volume_db = 5.0
 bus = &"SFX"
 
