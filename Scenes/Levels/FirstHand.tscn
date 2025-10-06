@@ -47,10 +47,10 @@ metadata/_edit_lock_ = true
 [node name="PlayerRoot" parent="." instance=ExtResource("3_w8ada")]
 
 [node name="Skull" parent="PlayerRoot" instance=ExtResource("4_w8nsy")]
-position = Vector2(228, 407)
+position = Vector2(228, 446)
 
 [node name="Arm1" parent="PlayerRoot" instance=ExtResource("5_3xfgs")]
-position = Vector2(841, 429)
+position = Vector2(841, 435)
 
 [node name="Ground1" type="NinePatchRect" parent="."]
 offset_left = -20.0
