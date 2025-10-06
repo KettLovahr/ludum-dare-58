@@ -231,9 +231,9 @@ shape = SubResource("RectangleShape2D_fsn6e")
 
 [node name="RedGate3" type="NinePatchRect" parent="."]
 z_index = 1
-offset_left = 1282.0
+offset_left = 1376.0
 offset_top = -250.0
-offset_right = 1354.0
+offset_right = 1448.0
 offset_bottom = -43.0
 texture = ExtResource("7_dok2g")
 patch_margin_left = 24
