@@ -30,7 +30,7 @@ size = Vector2(67, 625)
 size = Vector2(244, 45)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l5kak"]
-size = Vector2(104, 40)
+size = Vector2(202, 40)
 
 [sub_resource type="LabelSettings" id="LabelSettings_57lp3"]
 font = ExtResource("13_m8ayf")
@@ -154,7 +154,7 @@ position = Vector2(124, 24.5)
 shape = SubResource("RectangleShape2D_fsn6e")
 
 [node name="Ground8" type="NinePatchRect" parent="."]
-offset_left = 75.0
+offset_left = -20.0
 offset_top = 407.0
 offset_right = 200.0
 offset_bottom = 461.0
@@ -168,11 +168,11 @@ axis_stretch_horizontal = 2
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground8"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground8/StaticBody2D"]
-position = Vector2(61, 26)
+position = Vector2(110, 26)
 shape = SubResource("RectangleShape2D_l5kak")
 
 [node name="Button" parent="." node_paths=PackedStringArray("connected_items") instance=ExtResource("9_hyje3")]
-position = Vector2(138, 413)
+position = Vector2(90, 413)
 connected_items = [NodePath("../RedGate2/Triggerable"), NodePath("../RedGate/Triggerable")]
 
 [node name="Button2" parent="." node_paths=PackedStringArray("connected_items") instance=ExtResource("9_hyje3")]

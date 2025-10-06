@@ -49,7 +49,7 @@ func _handle_controls(_delta: float):
 func _custom_behavior(delta: float):
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
-		velocity.x = lerp(velocity.x, 0.0, 0.5)
+		velocity.x = lerp(velocity.x, 0.0, 0.2)
 	elif not selected:
 		if velocity.y < 0:
 			col_when_kicked.set_deferred("disabled", false)
@@ -57,18 +57,6 @@ func _custom_behavior(delta: float):
 		else:
 			col_when_kicked.set_deferred("disabled", true)
 			col.set_deferred("disabled", false)
-
-
-func hop(direction: Direction):
-	match direction:
-		Direction.LEFT:
-			velocity.x = -HOP_DIST
-			kick_dir = Direction.LEFT
-		Direction.RIGHT:
-			velocity.x = HOP_DIST
-			kick_dir = Direction.LEFT
-	velocity.y = -HOP_HEIGHT
-
 
 func kick():
 	KickSound.pitch_scale = randf_range(0.8, 1.2)
