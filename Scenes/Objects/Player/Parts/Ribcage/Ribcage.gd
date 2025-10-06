@@ -16,6 +16,10 @@ var detected_parts: Array[PlayerPart]
 
 var climb_target_direction: float
 
+@onready var rib_pick: AudioStreamPlayer = $RibPick
+@onready var rib_release: AudioStreamPlayer = $RibRelease
+@onready var rib_walk: AudioStreamPlayer = $RibWalk
+
 func _custom_behavior(delta: float):
 	if not climbing:
 		velocity.y += GRAVITY * delta
@@ -38,6 +42,15 @@ func _handle_controls(delta: float):
 	velocity.x = x_axis * (CLIMB_SPEED if climbing else MOVE_SPEED)
 	if climbing:
 		velocity.y = y_axis * CLIMB_SPEED
+	
+	if velocity != Vector2(0.0, 0.0):
+		if not rib_walk.is_playing():
+			rib_walk.play()
+			rib_walk.pitch_scale = randf_range(1.0, 1.2)
+	else:
+		if rib_walk.is_playing():
+			rib_walk.stop()
+	
 	if not climbing and Input.is_action_pressed("move_up") and can_climb():
 		climbing = true
 	if not climbing and not carrying and len(detected_parts) > 0:
@@ -45,16 +58,18 @@ func _handle_controls(delta: float):
 			carrying = detected_parts[0]
 			carrying.z_index = 1
 			carrying.being_carried = true
+			rib_pick.play()
 	elif carrying:
 		if Input.is_action_just_pressed("move_action"):
 			carrying.z_index = 0
 			carrying.being_carried = false
 			carrying = null
+			rib_release.play()
 
 	if climbing:
 		root.scale.x = 1
 		if velocity.length() > 0:
-			climb_target_direction = atan2(velocity.y, velocity.x) + (PI/2)
+			climb_target_direction = atan2(velocity.y, velocity.x) + (PI / 2)
 		climb_root.rotation = lerp_angle(climb_root.rotation, climb_target_direction, 0.5)
 		if x_axis != 0 or y_axis != 0:
 			anim.play("climb_walk")

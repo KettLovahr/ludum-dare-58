@@ -38,8 +38,15 @@ func button_state_change(on: bool):
 	state_changed.emit(on)
 	print("button pressed!" if on else "button released!")
 
+@onready var pressed_sfx: AudioStreamPlayer = $PressedSFX
+
 func release():
 	button_state_change(false)
+	pressed_sfx.play()
+	pressed_sfx.pitch_scale = 0.8
 
 func press():
 	button_state_change(true)
+	pressed_sfx.play()
+	pressed_sfx.pitch_scale = 1.0
+	
