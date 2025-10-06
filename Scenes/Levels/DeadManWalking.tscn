@@ -271,9 +271,10 @@ scale = Vector2(0.9, 0.9)
 text = "Who's a good doggy? 
 If you're not climbing, press Space
  while controlling your ribcage to carry other 
-body parts on your back!
-You can also press Space again to
-release them."
+body parts on your back, and press Space again
+to release!
+You can also press W to climb grates with
+your ribs."
 label_settings = SubResource("LabelSettings_57lp3")
 horizontal_alignment = 1
 

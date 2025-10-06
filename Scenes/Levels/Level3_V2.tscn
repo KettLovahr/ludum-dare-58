@@ -87,10 +87,10 @@ position = Vector2(658, 103.5)
 shape = SubResource("RectangleShape2D_wmfcf")
 
 [node name="Coin" parent="." instance=ExtResource("7_gtsmg")]
-position = Vector2(1015, 244)
+position = Vector2(1096, 235)
 
 [node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("8_lbxyy")]
-position = Vector2(1029, 513)
+position = Vector2(1165, 513)
 collision_layer = 2
 collision_mask = 2
 player_root = NodePath("../PlayerRoot")
