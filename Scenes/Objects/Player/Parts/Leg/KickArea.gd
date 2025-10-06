@@ -44,8 +44,11 @@ func generate_curve(strength: float, delta: float) -> bool:
 	return true
 	
 func handle_kick():
-	kick_target.velocity.x = dist
-	kick_target.velocity.y = -height
+	var ref = kick_target
+	ref.velocity.y = -height
+	await get_tree().create_timer(0.05).timeout
+	ref.velocity.x = dist
+	print("%s, %s" % [dist, height])
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerPart and body != get_parent() and kick_target == null:
