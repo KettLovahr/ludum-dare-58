@@ -12,6 +12,9 @@ var detected_parts: Array[PlayerPart]
 
 @onready var root = $Root
 @onready var anim = $Root/AnimationPlayer
+@onready var climb_root = $Root/Climb
+
+var climb_target_direction: float
 
 func _custom_behavior(delta: float):
 	if not climbing:
@@ -44,6 +47,9 @@ func _handle_controls(delta: float):
 
 	if climbing:
 		root.scale.x = 1
+		if velocity.length() > 0:
+			climb_target_direction = atan2(velocity.y, velocity.x) + (PI/2)
+		climb_root.rotation = lerp_angle(climb_root.rotation, climb_target_direction, 0.5)
 		if x_axis != 0 or y_axis != 0:
 			anim.play("climb_walk")
 		else:
