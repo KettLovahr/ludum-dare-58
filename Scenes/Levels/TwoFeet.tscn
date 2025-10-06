@@ -216,7 +216,7 @@ offset_right = 640.0
 offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "04. TWO Feet in the Grave"
+text = "07. TWO Feet in the Grave"
 label_settings = SubResource("LabelSettings_hungf")
 horizontal_alignment = 1
 

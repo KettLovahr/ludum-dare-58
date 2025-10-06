@@ -125,7 +125,7 @@ offset_right = 1280.0
 offset_bottom = 699.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "06. First-hand Experience"
+text = "08. First-hand Experience"
 label_settings = SubResource("LabelSettings_57lp3")
 horizontal_alignment = 1
 

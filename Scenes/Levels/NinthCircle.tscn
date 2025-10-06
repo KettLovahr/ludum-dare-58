@@ -315,7 +315,7 @@ offset_right = 640.0
 offset_bottom = -21.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "07. The Ninth Circle"
+text = "09. The Ninth Circle"
 label_settings = SubResource("LabelSettings_57lp3")
 horizontal_alignment = 1
 
