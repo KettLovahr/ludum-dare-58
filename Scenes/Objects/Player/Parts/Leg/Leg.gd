@@ -50,7 +50,7 @@ func _custom_behavior(delta: float):
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
 		velocity.x = lerp(velocity.x, 0.0, 0.5)
-	else:
+	elif not selected:
 		if velocity.y < 0:
 			col_when_kicked.set_deferred("disabled", false)
 			col.set_deferred("disabled", true)

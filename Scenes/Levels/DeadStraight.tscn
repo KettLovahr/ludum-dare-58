@@ -35,9 +35,6 @@ shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.64705884)
 shadow_offset = Vector2(3, 3)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3nwb"]
-size = Vector2(203, 719)
-
 [node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
 script = ExtResource("1_c0lux")
 target_time = 5.0
@@ -122,39 +119,3 @@ grow_vertical = 0
 text = "01. Dead Straight"
 label_settings = SubResource("LabelSettings_57lp3")
 horizontal_alignment = 1
-
-[node name="Ground2" type="NinePatchRect" parent="."]
-offset_left = -213.0
-offset_top = -3.0
-offset_right = 8.0
-offset_bottom = 727.0
-texture = ExtResource("8_8fhce")
-patch_margin_left = 24
-patch_margin_top = 30
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
-position = Vector2(110.5, 364.5)
-shape = SubResource("RectangleShape2D_f3nwb")
-
-[node name="Ground3" type="NinePatchRect" parent="."]
-offset_left = 1280.0
-offset_right = 1501.0
-offset_bottom = 730.0
-texture = ExtResource("8_8fhce")
-patch_margin_left = 24
-patch_margin_top = 30
-patch_margin_right = 24
-patch_margin_bottom = 24
-axis_stretch_horizontal = 2
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
-position = Vector2(110.5, 364.5)
-shape = SubResource("RectangleShape2D_f3nwb")
-metadata/_edit_lock_ = true

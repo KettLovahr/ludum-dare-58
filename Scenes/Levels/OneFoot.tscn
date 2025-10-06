@@ -31,7 +31,7 @@ shadow_color = Color(0, 0, 0, 0.64705884)
 shadow_offset = Vector2(3, 3)
 
 [node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
-script = ExtResource("1_ipaot")
+script = ExtResource("1_6luyl")
 target_time = 10.0
 coin = NodePath("Coin")
 flag = NodePath("Flag")
@@ -43,10 +43,10 @@ metadata/_edit_lock_ = true
 
 [node name="PlayerRoot" parent="." instance=ExtResource("3_okkw7")]
 
-[node name="Skull" parent="PlayerRoot" instance=ExtResource("5_tbiw2")]
+[node name="Skull" parent="PlayerRoot" instance=ExtResource("4_osw06")]
 position = Vector2(353, 469)
 
-[node name="Leg1" parent="PlayerRoot" instance=ExtResource("6_ao4h1")]
+[node name="Leg1" parent="PlayerRoot" instance=ExtResource("5_vh41t")]
 position = Vector2(180, 453)
 
 [node name="Ground7" type="NinePatchRect" parent="."]
@@ -54,7 +54,7 @@ offset_left = -78.0
 offset_top = 505.0
 offset_right = 1330.0
 offset_bottom = 1204.0
-texture = ExtResource("6_ab8bd")
+texture = ExtResource("6_vx81e")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
@@ -72,7 +72,7 @@ offset_left = -189.0
 offset_top = -2.0
 offset_right = 2.0
 offset_bottom = 697.0
-texture = ExtResource("6_ab8bd")
+texture = ExtResource("6_vx81e")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
@@ -91,7 +91,7 @@ offset_left = 1287.0
 offset_top = -8.0
 offset_right = 1493.0
 offset_bottom = 722.0
-texture = ExtResource("6_ab8bd")
+texture = ExtResource("6_vx81e")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
@@ -109,7 +109,7 @@ offset_left = -31.0
 offset_top = -23.0
 offset_right = 1377.0
 offset_bottom = 185.0
-texture = ExtResource("6_ab8bd")
+texture = ExtResource("6_vx81e")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
@@ -127,7 +127,7 @@ offset_left = -189.0
 offset_top = -2.0
 offset_right = 2.0
 offset_bottom = 697.0
-texture = ExtResource("6_ab8bd")
+texture = ExtResource("6_vx81e")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
@@ -141,10 +141,10 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(103, 347)
 shape = SubResource("RectangleShape2D_ipaot")
 
-[node name="Coin" parent="." instance=ExtResource("7_w5ayf")]
+[node name="Coin" parent="." instance=ExtResource("7_h7qnc")]
 position = Vector2(640, 312)
 
-[node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("8_ya3ly")]
+[node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("8_wtyso")]
 position = Vector2(1136, 506)
 collision_layer = 2
 collision_mask = 2
@@ -176,7 +176,7 @@ offset_left = 543.0
 offset_top = 428.0
 offset_right = 749.0
 offset_bottom = 1158.0
-texture = ExtResource("6_ab8bd")
+texture = ExtResource("6_vx81e")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
