@@ -594,7 +594,7 @@ scale = Vector2(1.25, 1.25)
 pivot_offset = Vector2(281, 88)
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
-columns = 6
+columns = 7
 
 [node name="MainMenu" parent="Levels" instance=ExtResource("5_qr3g5")]
 layout_mode = 0

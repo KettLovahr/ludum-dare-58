@@ -1,0 +1,535 @@
+[gd_scene load_steps=35 format=3 uid="uid://ddtlvr1djjgfk"]
+
+[ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_l45mr"]
+[ext_resource type="Texture2D" uid="uid://hiff0j0fqt5r" path="res://Assets/Environment/Background.png" id="2_mgths"]
+[ext_resource type="PackedScene" uid="uid://bajlrrg5f56a2" path="res://Scenes/Objects/Player/PlayerRoot.tscn" id="3_j2w8j"]
+[ext_resource type="PackedScene" uid="uid://bnichbfjk6ywa" path="res://Scenes/Objects/Player/Parts/Skull/Skull.tscn" id="4_jtwkq"]
+[ext_resource type="PackedScene" uid="uid://ckjovd4m5x8h4" path="res://Scenes/Objects/Player/Parts/Leg/Leg.tscn" id="5_4a1hh"]
+[ext_resource type="PackedScene" uid="uid://ctvb2v4km3wmk" path="res://Scenes/Objects/Player/Parts/Arm/Arm.tscn" id="6_mgths"]
+[ext_resource type="PackedScene" uid="uid://kxlkspfj2w2j" path="res://Scenes/Objects/Player/Parts/Ribcage/Ribcage.tscn" id="6_t6nwv"]
+[ext_resource type="Texture2D" uid="uid://bnflm07rloebr" path="res://Assets/Environment/Grass.png" id="7_bipyo"]
+[ext_resource type="PackedScene" uid="uid://b52cmf1ht8src" path="res://Scenes/Objects/Grate/Grate.tscn" id="8_ce44e"]
+[ext_resource type="PackedScene" uid="uid://dum6w4upon77l" path="res://Scenes/Objects/Coin/Coin.tscn" id="9_otr4f"]
+[ext_resource type="PackedScene" uid="uid://b3ye10a2hbdvu" path="res://Scenes/Objects/Flag/Flag.tscn" id="10_853vc"]
+[ext_resource type="Texture2D" uid="uid://cru0s563eo1hi" path="res://Assets/Environment/Gate1.png" id="11_tkasa"]
+[ext_resource type="Script" uid="uid://copkvyjkqf2bk" path="res://Scenes/Objects/Gate/Gate.gd" id="12_kbq0r"]
+[ext_resource type="Texture2D" uid="uid://d2hybql55xxvh" path="res://Assets/Environment/Gate2.png" id="13_5021s"]
+[ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="14_r5rbg"]
+[ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="15_xm03o"]
+[ext_resource type="PackedScene" uid="uid://ckuh1tjs1rgx1" path="res://Scenes/Objects/Button/BlueButton.tscn" id="17_3c2di"]
+[ext_resource type="PackedScene" uid="uid://cvtr13jyty6h8" path="res://Scenes/Objects/Lever/Lever.tscn" id="18_j2w8j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u1uf"]
+size = Vector2(652, 262)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l45mr"]
+size = Vector2(242, 248)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otr4f"]
+size = Vector2(94, 291)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgths"]
+size = Vector2(348, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_853vc"]
+size = Vector2(219, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6nwv"]
+size = Vector2(94, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qdnk"]
+size = Vector2(108, 1335)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bipyo"]
+size = Vector2(131, 761)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ce44e"]
+size = Vector2(209, 78)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jpq32"]
+size = Vector2(673.315, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3jbl"]
+size = Vector2(315.31494, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxnbb"]
+size = Vector2(270.31494, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4a1hh"]
+size = Vector2(624.31494, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtwkq"]
+size = Vector2(70.31494, 310)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2w8j"]
+size = Vector2(347.31494, 191)
+
+[sub_resource type="LabelSettings" id="LabelSettings_57lp3"]
+font = ExtResource("15_xm03o")
+font_size = 32
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.64705884)
+shadow_offset = Vector2(3, 3)
+
+[node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
+script = ExtResource("1_l45mr")
+target_time = 120.0
+coin = NodePath("Coin")
+flag = NodePath("Flag")
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Background" type="Sprite2D" parent="CanvasLayer2"]
+position = Vector2(640, 360)
+texture = ExtResource("2_mgths")
+metadata/_edit_lock_ = true
+
+[node name="PlayerRoot" parent="." instance=ExtResource("3_j2w8j")]
+
+[node name="Skull" parent="PlayerRoot" instance=ExtResource("4_jtwkq")]
+position = Vector2(526, 135)
+
+[node name="Leg1" parent="PlayerRoot" instance=ExtResource("5_4a1hh")]
+position = Vector2(234, 124)
+
+[node name="Leg2" parent="PlayerRoot" instance=ExtResource("5_4a1hh")]
+position = Vector2(387, 121)
+
+[node name="Arm1" parent="PlayerRoot" instance=ExtResource("6_mgths")]
+position = Vector2(1318, 110)
+
+[node name="Ribcage" parent="PlayerRoot" instance=ExtResource("6_t6nwv")]
+position = Vector2(1690, -180)
+
+[node name="Ground1" type="NinePatchRect" parent="."]
+offset_left = -63.0
+offset_top = 571.0
+offset_right = 608.0
+offset_bottom = 849.0
+texture = ExtResource("7_bipyo")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground1/StaticBody2D"]
+position = Vector2(335, 136)
+shape = SubResource("RectangleShape2D_1u1uf")
+
+[node name="Ground2" type="NinePatchRect" parent="."]
+offset_left = 1008.0
+offset_top = 571.0
+offset_right = 1269.0
+offset_bottom = 841.0
+texture = ExtResource("7_bipyo")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2/StaticBody2D"]
+position = Vector2(130, 129)
+shape = SubResource("RectangleShape2D_l45mr")
+
+[node name="Ground6" type="NinePatchRect" parent="."]
+offset_left = 1839.0
+offset_top = -176.0
+offset_right = 1951.0
+offset_bottom = 137.0
+texture = ExtResource("7_bipyo")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground6/StaticBody2D"]
+position = Vector2(56, 150.5)
+shape = SubResource("RectangleShape2D_otr4f")
+
+[node name="Ground3" type="NinePatchRect" parent="."]
+offset_left = 1712.0
+offset_top = 112.0
+offset_right = 2081.0
+offset_bottom = 205.0
+texture = ExtResource("7_bipyo")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
+position = Vector2(183, 44.5)
+shape = SubResource("RectangleShape2D_mgths")
+
+[node name="Ground5" type="NinePatchRect" parent="."]
+offset_left = 1540.0
+offset_top = -176.0
+offset_right = 1778.0
+offset_bottom = 54.0
+texture = ExtResource("7_bipyo")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground5/StaticBody2D"]
+position = Vector2(118.5, 113)
+shape = SubResource("RectangleShape2D_853vc")
+
+[node name="Ground7" type="NinePatchRect" parent="."]
+offset_left = 1372.0
+offset_top = -343.0
+offset_right = 1484.0
+offset_bottom = -113.0
+texture = ExtResource("7_bipyo")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground7/StaticBody2D"]
+position = Vector2(56, 113)
+shape = SubResource("RectangleShape2D_t6nwv")
+
+[node name="Ground4" type="NinePatchRect" parent="."]
+offset_left = 1047.0
+offset_top = 112.0
+offset_right = 1416.0
+offset_bottom = 205.0
+texture = ExtResource("7_bipyo")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+metadata/_edit_group_ = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/StaticBody2D"]
+position = Vector2(183, 44.5)
+shape = SubResource("RectangleShape2D_mgths")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-147, -327)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(65, 444.5)
+shape = SubResource("RectangleShape2D_8qdnk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(2472, 479)
+shape = SubResource("RectangleShape2D_8qdnk")
+
+[node name="Grate2" parent="." instance=ExtResource("8_ce44e")]
+position = Vector2(2153, 238)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Grate2" index="0"]
+position = Vector2(1.5, -189.5)
+shape = SubResource("RectangleShape2D_bipyo")
+
+[node name="NinePatchRect" parent="Grate2" index="1"]
+offset_left = -85.0
+offset_top = -582.0
+offset_right = 88.0
+offset_bottom = 199.0
+
+[node name="Grate3" parent="." instance=ExtResource("8_ce44e")]
+position = Vector2(1801, -289)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" parent="Grate3" index="0"]
+position = Vector2(181.5, -5)
+shape = SubResource("RectangleShape2D_ce44e")
+
+[node name="NinePatchRect" parent="Grate3" index="1"]
+offset_left = 71.0
+offset_top = -55.0
+offset_right = 267.0
+offset_bottom = 38.0
+
+[node name="RedGate3" type="NinePatchRect" parent="."]
+offset_left = -52.0
+offset_top = 146.0
+offset_right = 625.0
+offset_bottom = 194.0
+texture = ExtResource("11_tkasa")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Triggerable" type="Node" parent="RedGate3"]
+script = ExtResource("12_kbq0r")
+initial_active = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RedGate3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedGate3/StaticBody2D"]
+position = Vector2(338.3425, 24)
+shape = SubResource("RectangleShape2D_jpq32")
+
+[node name="RedGate4" type="NinePatchRect" parent="."]
+offset_left = 1717.0
+offset_top = 433.0
+offset_right = 2394.0
+offset_bottom = 481.0
+texture = ExtResource("11_tkasa")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Triggerable" type="Node" parent="RedGate4"]
+script = ExtResource("12_kbq0r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RedGate4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedGate4/StaticBody2D"]
+position = Vector2(338.3425, 24)
+shape = SubResource("RectangleShape2D_jpq32")
+
+[node name="RedGate5" type="NinePatchRect" parent="."]
+offset_left = 1403.0
+offset_top = 115.0
+offset_right = 1722.0
+offset_bottom = 163.0
+texture = ExtResource("11_tkasa")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Triggerable" type="Node" parent="RedGate5"]
+script = ExtResource("12_kbq0r")
+initial_active = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RedGate5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedGate5/StaticBody2D"]
+position = Vector2(159.34253, 24)
+shape = SubResource("RectangleShape2D_f3jbl")
+
+[node name="Coin" parent="." instance=ExtResource("9_otr4f")]
+position = Vector2(84, -262)
+
+[node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("10_853vc")]
+position = Vector2(49, 146)
+collision_layer = 2
+collision_mask = 2
+player_root = NodePath("../PlayerRoot")
+
+[node name="BlueGate2" type="NinePatchRect" parent="."]
+offset_left = 672.0
+offset_top = 556.0
+offset_right = 946.0
+offset_bottom = 604.0
+texture = ExtResource("13_5021s")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Triggerable" type="Node" parent="BlueGate2"]
+script = ExtResource("12_kbq0r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueGate2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueGate2/StaticBody2D"]
+position = Vector2(136.84253, 24)
+shape = SubResource("RectangleShape2D_cxnbb")
+
+[node name="BlueGate3" type="NinePatchRect" parent="."]
+offset_left = 1355.0
+offset_top = 504.0
+offset_right = 1629.0
+offset_bottom = 552.0
+texture = ExtResource("13_5021s")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Triggerable" type="Node" parent="BlueGate3"]
+script = ExtResource("12_kbq0r")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueGate3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueGate3/StaticBody2D"]
+position = Vector2(136.84253, 24)
+shape = SubResource("RectangleShape2D_cxnbb")
+
+[node name="BlueGate5" type="NinePatchRect" parent="."]
+offset_left = -52.0
+offset_top = -203.0
+offset_right = 576.0
+offset_bottom = -155.0
+texture = ExtResource("13_5021s")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Triggerable" type="Node" parent="BlueGate5"]
+script = ExtResource("12_kbq0r")
+initial_active = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueGate5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueGate5/StaticBody2D"]
+position = Vector2(313.84253, 24)
+shape = SubResource("RectangleShape2D_4a1hh")
+
+[node name="BlueGate4" type="NinePatchRect" parent="."]
+offset_left = 626.0
+offset_top = -121.0
+offset_right = 700.0
+offset_bottom = 193.0
+texture = ExtResource("13_5021s")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Triggerable" type="Node" parent="BlueGate4"]
+script = ExtResource("12_kbq0r")
+initial_active = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueGate4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueGate4/StaticBody2D"]
+position = Vector2(36.84253, 157)
+shape = SubResource("RectangleShape2D_jtwkq")
+
+[node name="BlueGate7" type="NinePatchRect" parent="."]
+offset_left = 203.0
+offset_top = -631.0
+offset_right = 328.0
+offset_bottom = -290.0
+texture = ExtResource("13_5021s")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Triggerable" type="Node" parent="BlueGate7"]
+script = ExtResource("12_kbq0r")
+initial_active = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueGate7"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueGate7/StaticBody2D"]
+position = Vector2(62.34253, 171)
+shape = SubResource("RectangleShape2D_jtwkq")
+
+[node name="BlueGate6" type="NinePatchRect" parent="."]
+offset_left = 700.0
+offset_top = -3.0
+offset_right = 1051.0
+offset_bottom = 192.0
+texture = ExtResource("13_5021s")
+patch_margin_left = 24
+patch_margin_top = 24
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Triggerable" type="Node" parent="BlueGate6"]
+script = ExtResource("12_kbq0r")
+initial_active = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="BlueGate6"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlueGate6/StaticBody2D"]
+position = Vector2(175.34253, 97.5)
+shape = SubResource("RectangleShape2D_j2w8j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Vignette" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(640, 360)
+texture = ExtResource("14_r5rbg")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -640.0
+offset_top = -70.0
+offset_right = 640.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "14. Solve the Ribble"
+label_settings = SubResource("LabelSettings_57lp3")
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1117, 145)
+zoom = Vector2(0.55, 0.55)
+
+[node name="Button2" parent="." node_paths=PackedStringArray("connected_items") instance=ExtResource("17_3c2di")]
+position = Vector2(1786, 117)
+connected_items = [NodePath("../BlueGate2/Triggerable"), NodePath("../BlueGate3/Triggerable"), NodePath("../BlueGate5/Triggerable"), NodePath("../BlueGate4/Triggerable"), NodePath("../BlueGate6/Triggerable"), NodePath("../BlueGate7/Triggerable")]
+
+[node name="Lever" parent="." node_paths=PackedStringArray("connected_items") instance=ExtResource("18_j2w8j")]
+position = Vector2(1162, 116)
+connected_items = [NodePath("../RedGate3/Triggerable"), NodePath("../RedGate4/Triggerable"), NodePath("../RedGate5/Triggerable")]
+
+[editable path="Grate2"]
+[editable path="Grate3"]
