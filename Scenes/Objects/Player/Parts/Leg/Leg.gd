@@ -19,28 +19,30 @@ enum Direction {
 	RIGHT
 }
 
+@onready var anim = $Root/AnimationPlayer
+
 func _handle_controls(_delta: float):
 	if is_on_floor():
-		if $Root/AnimationPlayer.current_animation == "kick":
+		if anim.current_animation == "kick":
 			return
 		var axis = Input.get_axis("move_left","move_right")
 		velocity.x = Input.get_axis("move_left","move_right") * HOP_DIST
 		if axis < 0:
 			$Root.scale.x = -1
-			$Root/AnimationPlayer.play("walk")
+			anim.play("walk")
 			facing = Direction.LEFT
 		elif axis > 0:
 			$Root.scale.x = 1
-			$Root/AnimationPlayer.play("walk")
+			anim.play("walk")
 			facing = Direction.RIGHT
 		else:
-			$Root/AnimationPlayer.play("idle")
+			anim.play("idle")
 		if Input.is_action_just_pressed("move_action"):
 			if $KickArea.kick_target != null:
 				if can_kick:
-					$Root/AnimationPlayer.play("kick")
+					anim.play("kick")
 		if Input.is_action_pressed("move_up"):
-			$Root/AnimationPlayer.play("jump")
+			anim.play("jump")
 			if $WalkSound.is_playing():
 				$WalkSound.stop()
 			$JumpSound.play()
@@ -57,6 +59,8 @@ func _custom_behavior(delta: float):
 		else:
 			col_when_kicked.set_deferred("disabled", true)
 			col.set_deferred("disabled", false)
+	if not selected:
+		anim.play("idle")
 
 func kick():
 	KickSound.pitch_scale = randf_range(0.8, 1.2)
