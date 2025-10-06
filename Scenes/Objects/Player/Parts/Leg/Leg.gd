@@ -40,6 +40,8 @@ func _handle_controls(_delta: float):
 				if can_kick:
 					$Root/AnimationPlayer.play("kick")
 		if Input.is_action_pressed("move_up"):
+			JumpSFX.play()
+			JumpSFX.pitch_scale = randf_range(0.8, 1.2)
 			$Root/AnimationPlayer.play("jump")
 			velocity.y = -JUMP_HEIGHT
 
@@ -55,6 +57,8 @@ func _custom_behavior(delta: float):
 			col_when_kicked.set_deferred("disabled", true)
 			col.set_deferred("disabled", false)
 
+
+@onready var JumpSFX: AudioStreamPlayer = $LegJump
 
 func hop(direction: Direction):
 	match direction:
