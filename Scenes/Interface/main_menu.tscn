@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cfwt6uej8j8s"]
+[gd_scene load_steps=42 format=3 uid="uid://cfwt6uej8j8s"]
 
 [ext_resource type="Script" uid="uid://bl68rdkoxnmr" path="res://Scenes/Interface/main_menu.gd" id="1_l5osf"]
 [ext_resource type="Texture2D" uid="uid://5fsb544rsqy1" path="res://Assets/Interface/MenuBackground.png" id="1_lpc36"]
@@ -8,7 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://n4yb77aqepuc" path="res://Scenes/Interface/fancy_butt.tscn" id="5_qr3g5"]
 [ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="6_4ijj7"]
 [ext_resource type="AudioStream" uid="uid://cygwwvxy1p8ep" path="res://Assets/Sounds/SFX/MenuCancel.wav" id="8_l5osf"]
+[ext_resource type="FontFile" uid="uid://djmrwf1ck4r4m" path="res://Assets/Fonts/Atma-Bold.ttf" id="9_lhov2"]
 [ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="10_cmsd5"]
+[ext_resource type="Texture2D" uid="uid://dixe3wc4kg1md" path="res://Assets/Bones/Skull.png" id="11_qua8k"]
+[ext_resource type="Texture2D" uid="uid://ok7e42kijr8l" path="res://Assets/Bones/Leg3.png" id="12_etgo7"]
+[ext_resource type="Texture2D" uid="uid://j0vfd8sckgrm" path="res://Assets/Bones/Leg2.png" id="13_1x3an"]
+[ext_resource type="Texture2D" uid="uid://cndyxdysslfsp" path="res://Assets/Bones/Leg1.png" id="14_a4iwq"]
+[ext_resource type="Texture2D" uid="uid://bclcuvutwcf14" path="res://Assets/Bones/RibcageClimb2.png" id="15_73d7e"]
+[ext_resource type="Texture2D" uid="uid://p24keyj568ps" path="res://Assets/Bones/RibcageClimb1.png" id="16_h2aso"]
+[ext_resource type="Texture2D" uid="uid://jw2hgg4goel0" path="res://Assets/Bones/RibcageClimb3.png" id="17_x8faw"]
+[ext_resource type="Texture2D" uid="uid://bp4m2tj5asvyl" path="res://Assets/Bones/Arm3.png" id="18_rofj8"]
+[ext_resource type="Texture2D" uid="uid://dmo24ot0kq40i" path="res://Assets/Bones/Arm2.png" id="19_20quv"]
+[ext_resource type="Texture2D" uid="uid://d1et2tjwgi10g" path="res://Assets/Bones/Arm1.png" id="20_1ic8c"]
+[ext_resource type="Texture2D" uid="uid://dfincw5mmhucf" path="res://Assets/Interface/Breno.png" id="20_1x3an"]
+[ext_resource type="Texture2D" uid="uid://ds7pbaqk2lyaw" path="res://Assets/Interface/Fupicat.png" id="21_a4iwq"]
+[ext_resource type="Texture2D" uid="uid://byni5guyvgg3c" path="res://Assets/Interface/Kett.png" id="22_73d7e"]
 
 [sub_resource type="Animation" id="Animation_3bbhb"]
 length = 0.001
@@ -414,6 +428,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1280, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_61btv"]
 resource_name = "in"
@@ -429,6 +455,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(1280, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_1gl56"]
@@ -446,6 +484,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0), Vector2(1280, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.23333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cmsd5"]
 _data = {
@@ -453,6 +503,114 @@ _data = {
 &"in": SubResource("Animation_61btv"),
 &"out": SubResource("Animation_1gl56")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_6jfpq"]
+line_spacing = -6.0
+font = ExtResource("9_lhov2")
+font_size = 32
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.7647059)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="Animation" id="Animation_lhov2"]
+resource_name = "in"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 720), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qua8k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 720)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_etgo7"]
+resource_name = "out"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 720)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_etgo7"]
+_data = {
+&"RESET": SubResource("Animation_qua8k"),
+&"in": SubResource("Animation_lhov2"),
+&"out": SubResource("Animation_etgo7")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2aso"]
+line_spacing = -6.0
+font = ExtResource("9_lhov2")
+font_size = 48
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.7647059)
+shadow_offset = Vector2(3, 3)
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -462,6 +620,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l5osf")
+metadata/_edit_vertical_guides_ = [2560.0]
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -559,6 +718,7 @@ libraries = {
 autoplay = "in"
 
 [node name="Levels" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -570,9 +730,9 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Levels"]
 layout_mode = 0
-offset_top = 72.0
+offset_top = 70.0
 offset_right = 1280.0
-offset_bottom = 170.0
+offset_bottom = 168.0
 text = "Select a level!"
 label_settings = SubResource("LabelSettings_4ijj7")
 horizontal_alignment = 1
@@ -584,10 +744,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -280.0
-offset_top = -88.0
-offset_right = 280.0
-offset_bottom = 88.0
+offset_left = -340.0
+offset_top = -108.0
+offset_right = 316.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.25, 1.25)
@@ -614,10 +774,309 @@ text = "Main menu"
 [node name="Confirm" parent="Levels/MainMenu" index="4"]
 stream = ExtResource("8_l5osf")
 
+[node name="Credits" parent="Levels" instance=ExtResource("5_qr3g5")]
+layout_mode = 0
+offset_left = 912.0
+offset_top = 580.0
+offset_right = 1325.0
+offset_bottom = 693.99915
+scale = Vector2(0.75, 0.75)
+
+[node name="Label" parent="Levels/Credits" index="1"]
+offset_left = 4.0
+offset_top = 10.0
+offset_right = -9.0
+offset_bottom = 10.0
+text = "Credits"
+
+[node name="Confirm" parent="Levels/Credits" index="4"]
+stream = ExtResource("8_l5osf")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Levels"]
 libraries = {
 &"": SubResource("AnimationLibrary_cmsd5")
 }
+
+[node name="Instructions" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1280.0
+offset_right = 1279.9993
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Instructions"]
+layout_mode = 0
+offset_top = 32.0
+offset_right = 1280.0
+offset_bottom = 130.0
+text = "Instructions"
+label_settings = SubResource("LabelSettings_4ijj7")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Instructions"]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 125.0
+offset_right = 1151.0
+offset_bottom = 272.0
+text = "Life ain't easy without muscle! Our skeleton friend fell apart and got all his limbs jumbled up! Now, you gotta help him get to the end with all his parts intact."
+label_settings = SubResource("LabelSettings_6jfpq")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Instructions"]
+layout_mode = 0
+offset_left = 429.0
+offset_top = 301.0
+offset_right = 1309.0
+offset_bottom = 636.0
+text = "Click on a body part to control it.
+Use A and D or the arrows to move.
+Use W or Up to jump, if you're a leg!
+Press Space to use your body part's special ability!
+Bring all your bones to the flag to win.
+
+You'll get the hang of it. Just go play!!"
+label_settings = SubResource("LabelSettings_6jfpq")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="MainMenu2" parent="Instructions" instance=ExtResource("5_qr3g5")]
+layout_mode = 0
+offset_left = 56.000004
+offset_top = 580.0
+offset_right = 469.0
+offset_bottom = 693.99915
+scale = Vector2(0.75, 0.75)
+
+[node name="Label" parent="Instructions/MainMenu2" index="1"]
+offset_left = 4.0
+offset_top = 10.0
+offset_right = -9.0
+offset_bottom = 10.0
+text = "Main menu"
+
+[node name="Confirm" parent="Instructions/MainMenu2" index="4"]
+stream = ExtResource("8_l5osf")
+
+[node name="Skull" type="Sprite2D" parent="Instructions"]
+position = Vector2(248.99988, 279.89297)
+rotation = -0.29153213
+texture = ExtResource("11_qua8k")
+
+[node name="Node2D2" type="Node2D" parent="Instructions"]
+position = Vector2(414, 465.89307)
+rotation = -0.35497922
+metadata/_edit_group_ = true
+
+[node name="Leg3" type="Sprite2D" parent="Instructions/Node2D2"]
+position = Vector2(1.5, 68.5)
+texture = ExtResource("12_etgo7")
+
+[node name="Leg2" type="Sprite2D" parent="Instructions/Node2D2"]
+position = Vector2(-4.5, 29.5)
+texture = ExtResource("13_1x3an")
+
+[node name="Leg1" type="Sprite2D" parent="Instructions/Node2D2"]
+position = Vector2(-10.5, -38.5)
+texture = ExtResource("14_a4iwq")
+
+[node name="Climb" type="Node2D" parent="Instructions"]
+position = Vector2(281, 336.89304)
+rotation = 2.9940555
+metadata/_edit_group_ = true
+
+[node name="RibcageClimb4" type="Sprite2D" parent="Instructions/Climb"]
+position = Vector2(-23.5, -38)
+scale = Vector2(0.8611111, 1)
+texture = ExtResource("15_73d7e")
+
+[node name="RibcageClimb2" type="Sprite2D" parent="Instructions/Climb"]
+position = Vector2(-26, -62)
+texture = ExtResource("15_73d7e")
+
+[node name="RibcageClimb5" type="Sprite2D" parent="Instructions/Climb"]
+position = Vector2(-23.500002, -82.00001)
+scale = Vector2(0.8611111, 1)
+texture = ExtResource("15_73d7e")
+
+[node name="RibcageClimb6" type="Sprite2D" parent="Instructions/Climb"]
+position = Vector2(24.499996, -38.000008)
+scale = Vector2(0.8611111, 1)
+texture = ExtResource("15_73d7e")
+flip_h = true
+
+[node name="RibcageClimb7" type="Sprite2D" parent="Instructions/Climb"]
+position = Vector2(25, -62)
+texture = ExtResource("15_73d7e")
+flip_h = true
+
+[node name="RibcageClimb8" type="Sprite2D" parent="Instructions/Climb"]
+position = Vector2(21.499992, -82)
+scale = Vector2(0.8611111, 1)
+texture = ExtResource("15_73d7e")
+flip_h = true
+
+[node name="RibcageClimb1" type="Sprite2D" parent="Instructions/Climb"]
+position = Vector2(3, -116)
+texture = ExtResource("16_h2aso")
+
+[node name="RibcageClimb3" type="Sprite2D" parent="Instructions/Climb"]
+position = Vector2(1, -59)
+texture = ExtResource("17_x8faw")
+
+[node name="Node2D4" type="Node2D" parent="Instructions"]
+position = Vector2(157.00012, 496.893)
+rotation = 1.2017477
+metadata/_edit_group_ = true
+
+[node name="Leg3" type="Sprite2D" parent="Instructions/Node2D4"]
+position = Vector2(1.5, 68.5)
+texture = ExtResource("12_etgo7")
+
+[node name="Leg2" type="Sprite2D" parent="Instructions/Node2D4"]
+position = Vector2(-4.5, 29.5)
+texture = ExtResource("13_1x3an")
+
+[node name="Leg1" type="Sprite2D" parent="Instructions/Node2D4"]
+position = Vector2(-10.5, -38.5)
+texture = ExtResource("14_a4iwq")
+
+[node name="Node2D" type="Node2D" parent="Instructions"]
+position = Vector2(417, 344.89294)
+rotation = -0.7564566
+metadata/_edit_group_ = true
+
+[node name="Arm3" type="Sprite2D" parent="Instructions/Node2D"]
+position = Vector2(25, 45)
+texture = ExtResource("18_rofj8")
+
+[node name="Arm2" type="Sprite2D" parent="Instructions/Node2D"]
+position = Vector2(2, 11)
+texture = ExtResource("19_20quv")
+
+[node name="Arm1" type="Sprite2D" parent="Instructions/Node2D"]
+position = Vector2(-18, -47)
+texture = ExtResource("20_1ic8c")
+
+[node name="Node2D3" type="Node2D" parent="Instructions"]
+position = Vector2(136, 379.89297)
+rotation = -2.858613
+scale = Vector2(1, -1)
+metadata/_edit_group_ = true
+
+[node name="Arm3" type="Sprite2D" parent="Instructions/Node2D3"]
+position = Vector2(25, 45)
+texture = ExtResource("18_rofj8")
+
+[node name="Arm2" type="Sprite2D" parent="Instructions/Node2D3"]
+position = Vector2(2, 11)
+texture = ExtResource("19_20quv")
+
+[node name="Arm1" type="Sprite2D" parent="Instructions/Node2D3"]
+position = Vector2(-18, -47)
+texture = ExtResource("20_1ic8c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Instructions"]
+libraries = {
+&"": SubResource("AnimationLibrary_cmsd5")
+}
+
+[node name="Credits" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 720.0
+offset_right = -0.0007324219
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 0
+offset_top = 48.0
+offset_right = 1280.0
+offset_bottom = 146.0
+text = "Brought to you by 3 kitties"
+label_settings = SubResource("LabelSettings_4ijj7")
+horizontal_alignment = 1
+
+[node name="Breno" type="Sprite2D" parent="Credits"]
+position = Vector2(234.00002, 329)
+scale = Vector2(0.9735493, 0.9735493)
+texture = ExtResource("20_1x3an")
+
+[node name="Fupicat" type="Sprite2D" parent="Credits"]
+position = Vector2(647, 316)
+scale = Vector2(0.9197952, 0.9197952)
+texture = ExtResource("21_a4iwq")
+
+[node name="Kett" type="Sprite2D" parent="Credits"]
+position = Vector2(1039, 328)
+scale = Vector2(0.8569231, 0.8569231)
+texture = ExtResource("22_73d7e")
+
+[node name="Back" parent="Credits" instance=ExtResource("5_qr3g5")]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 580.0
+offset_right = 901.0
+offset_bottom = 693.99915
+scale = Vector2(0.75, 0.75)
+
+[node name="Label" parent="Credits/Back" index="1"]
+offset_left = 4.0
+offset_top = 10.0
+offset_right = -9.0
+offset_bottom = 10.0
+text = "Back"
+
+[node name="Confirm" parent="Credits/Back" index="4"]
+stream = ExtResource("8_l5osf")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Credits"]
+libraries = {
+&"": SubResource("AnimationLibrary_etgo7")
+}
+
+[node name="Label2" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 553.0
+offset_top = 469.0
+offset_right = 720.0
+offset_bottom = 547.0
+text = "Fupicat"
+label_settings = SubResource("LabelSettings_h2aso")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 469.0
+offset_right = 386.0
+offset_bottom = 547.0
+text = "Brenonerb"
+label_settings = SubResource("LabelSettings_h2aso")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 913.0
+offset_top = 469.0
+offset_right = 1178.0
+offset_bottom = 547.0
+text = "Raccat"
+label_settings = SubResource("LabelSettings_h2aso")
+horizontal_alignment = 1
+autowrap_mode = 3
 
 [node name="Vignette" type="TextureRect" parent="."]
 layout_mode = 1
@@ -631,8 +1090,15 @@ texture = ExtResource("10_cmsd5")
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Main/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Main/Instructions" to="." method="_on_instructions_pressed"]
 [connection signal="pressed" from="Levels/MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Levels/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Instructions/MainMenu2" to="." method="_on_main_menu_2_pressed"]
+[connection signal="pressed" from="Credits/Back" to="." method="_on_back_pressed"]
 
 [editable path="Main/Start"]
 [editable path="Main/Instructions"]
 [editable path="Levels/MainMenu"]
+[editable path="Levels/Credits"]
+[editable path="Instructions/MainMenu2"]
+[editable path="Credits/Back"]

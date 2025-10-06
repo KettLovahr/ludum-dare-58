@@ -36,3 +36,27 @@ func _on_main_menu_pressed() -> void:
 	$Levels/AnimationPlayer.play("out")
 	await $Levels/AnimationPlayer.animation_finished
 	$Main/AnimationPlayer.play("in")
+
+
+func _on_instructions_pressed() -> void:
+	$Main/AnimationPlayer.play("out")
+	await $Main/AnimationPlayer.animation_finished
+	$Instructions/AnimationPlayer.play("in")
+
+
+func _on_main_menu_2_pressed() -> void:
+	$Instructions/AnimationPlayer.play("out")
+	await $Instructions/AnimationPlayer.animation_finished
+	$Main/AnimationPlayer.play("in")
+
+
+func _on_credits_pressed() -> void:
+	$Levels/AnimationPlayer.play("out")
+	await $Levels/AnimationPlayer.animation_finished
+	$Credits/AnimationPlayer.play("in")
+
+
+func _on_back_pressed() -> void:
+	$Credits/AnimationPlayer.play("out")
+	await $Credits/AnimationPlayer.animation_finished
+	$Levels/AnimationPlayer.play("in")
