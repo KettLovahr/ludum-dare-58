@@ -32,9 +32,10 @@ func _physics_process(delta: float) -> void:
 		Transition.reload_current_scene()
 
 ## Override this function with this part's controls
-func _handle_controls(delta: float): pass
+func _handle_controls(_delta: float): pass
 ## Override this function with this part's custom behavior
-func _custom_behavior(delta: float): pass
+func _custom_behavior(_delta: float): pass
+func _handle_kicked(): pass
 
 func _ready():
 	# this is stupid but i want the state for these to be different always :/

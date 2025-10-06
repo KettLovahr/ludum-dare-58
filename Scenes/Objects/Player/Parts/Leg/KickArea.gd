@@ -48,6 +48,7 @@ func handle_kick():
 	var ref = kick_target
 	if not ref: return
 	ref.velocity.y = -height
+	ref._handle_kicked()
 	await get_tree().create_timer(0.05).timeout
 	ref.velocity.x = dist
 
