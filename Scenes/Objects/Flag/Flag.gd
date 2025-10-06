@@ -14,8 +14,11 @@ func _on_body_entered(body: Node2D) -> void:
 	if body is PlayerPart and body not in parts_reached:
 		$AnimationPlayer.play("blip")
 		parts_reached.append(body)
+		$PartReached.play()
+		$PartReached.pitch_scale = 1.0 + (len(parts_reached) / 10.0)
 	if len(parts_reached) == target_count:
 		flag_reached.emit()
+		$LevelComplete.play()
 
 func _on_body_exited(body: Node2D) -> void:
 	for i in range(len(parts_reached)):

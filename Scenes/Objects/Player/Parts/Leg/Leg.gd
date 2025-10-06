@@ -41,6 +41,9 @@ func _handle_controls(_delta: float):
 					$Root/AnimationPlayer.play("kick")
 		if Input.is_action_pressed("move_up"):
 			$Root/AnimationPlayer.play("jump")
+			if $WalkSound.is_playing():
+				$WalkSound.stop()
+			$JumpSound.play()
 			velocity.y = -JUMP_HEIGHT
 
 func _custom_behavior(delta: float):

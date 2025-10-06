@@ -1,18 +1,19 @@
-[gd_scene load_steps=16 format=4 uid="uid://brgm1eyioddjh"]
+[gd_scene load_steps=18 format=4 uid="uid://b6tpekq60y4p5"]
 
-[ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_n5ptj"]
-[ext_resource type="Texture2D" uid="uid://hiff0j0fqt5r" path="res://Assets/Environment/Background.png" id="2_77iba"]
-[ext_resource type="Texture2D" uid="uid://43q4pcvppvws" path="res://icon.svg" id="3_67y36"]
-[ext_resource type="PackedScene" uid="uid://bajlrrg5f56a2" path="res://Scenes/Objects/Player/PlayerRoot.tscn" id="4_hk4vc"]
-[ext_resource type="PackedScene" uid="uid://bnichbfjk6ywa" path="res://Scenes/Objects/Player/Parts/Skull/Skull.tscn" id="5_wiu4c"]
-[ext_resource type="Texture2D" uid="uid://bnflm07rloebr" path="res://Assets/Environment/Grass.png" id="8_8fhce"]
-[ext_resource type="PackedScene" uid="uid://dum6w4upon77l" path="res://Scenes/Objects/Coin/Coin.tscn" id="9_uqlrs"]
-[ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="10_f3nwb"]
-[ext_resource type="PackedScene" uid="uid://b3ye10a2hbdvu" path="res://Scenes/Objects/Flag/Flag.tscn" id="10_htexa"]
-[ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="12_p6c81"]
+[ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_4eujb"]
+[ext_resource type="Texture2D" uid="uid://hiff0j0fqt5r" path="res://Assets/Environment/Background.png" id="2_6l1cv"]
+[ext_resource type="Texture2D" uid="uid://43q4pcvppvws" path="res://icon.svg" id="3_ji11g"]
+[ext_resource type="PackedScene" uid="uid://bajlrrg5f56a2" path="res://Scenes/Objects/Player/PlayerRoot.tscn" id="4_40sop"]
+[ext_resource type="PackedScene" uid="uid://ckjovd4m5x8h4" path="res://Scenes/Objects/Player/Parts/Leg/Leg.tscn" id="5_6l1cv"]
+[ext_resource type="PackedScene" uid="uid://bnichbfjk6ywa" path="res://Scenes/Objects/Player/Parts/Skull/Skull.tscn" id="5_vtt3i"]
+[ext_resource type="Texture2D" uid="uid://bnflm07rloebr" path="res://Assets/Environment/Grass.png" id="6_a2l3p"]
+[ext_resource type="PackedScene" uid="uid://dum6w4upon77l" path="res://Scenes/Objects/Coin/Coin.tscn" id="7_gtsmg"]
+[ext_resource type="PackedScene" uid="uid://b3ye10a2hbdvu" path="res://Scenes/Objects/Flag/Flag.tscn" id="8_lbxyy"]
+[ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="9_mwukg"]
+[ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="10_1wt5k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cv17v"]
-texture = ExtResource("3_67y36")
+texture = ExtResource("3_ji11g")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
@@ -26,7 +27,7 @@ sources/1 = SubResource("TileSetAtlasSource_cv17v")
 size = Vector2(1298, 197)
 
 [sub_resource type="LabelSettings" id="LabelSettings_57lp3"]
-font = ExtResource("10_f3nwb")
+font = ExtResource("10_1wt5k")
 font_size = 32
 shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.64705884)
@@ -35,9 +36,12 @@ shadow_offset = Vector2(3, 3)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3nwb"]
 size = Vector2(203, 719)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4eujb"]
+size = Vector2(951, 148)
+
 [node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
-script = ExtResource("1_n5ptj")
-target_time = 5.0
+script = ExtResource("1_4eujb")
+target_time = 10.0
 coin = NodePath("Coin")
 flag = NodePath("Flag")
 
@@ -46,7 +50,7 @@ layer = -1
 
 [node name="Background" type="Sprite2D" parent="CanvasLayer2"]
 position = Vector2(640, 360)
-texture = ExtResource("2_77iba")
+texture = ExtResource("2_6l1cv")
 metadata/_edit_lock_ = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -56,17 +60,20 @@ tile_map_data = PackedByteArray("AAAAAAUAAQAAAAAAAAABAAUAAQAAAAAAAAACAAUAAQAAAAA
 enabled = false
 tile_set = SubResource("TileSet_v8iqp")
 
-[node name="PlayerRoot" parent="." instance=ExtResource("4_hk4vc")]
+[node name="PlayerRoot" parent="." instance=ExtResource("4_40sop")]
 
-[node name="Skull" parent="PlayerRoot" instance=ExtResource("5_wiu4c")]
-position = Vector2(180, 329)
+[node name="Leg1" parent="PlayerRoot" instance=ExtResource("5_6l1cv")]
+position = Vector2(284, 149)
+
+[node name="Skull" parent="PlayerRoot" instance=ExtResource("5_vtt3i")]
+position = Vector2(67, 472)
 
 [node name="Ground1" type="NinePatchRect" parent="."]
 offset_left = -20.0
-offset_top = 371.0
+offset_top = 511.0
 offset_right = 1303.0
-offset_bottom = 735.0
-texture = ExtResource("8_8fhce")
+offset_bottom = 875.0
+texture = ExtResource("6_a2l3p")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
@@ -79,18 +86,18 @@ axis_stretch_horizontal = 2
 position = Vector2(658, 103.5)
 shape = SubResource("RectangleShape2D_wmfcf")
 
-[node name="Coin" parent="." instance=ExtResource("9_uqlrs")]
-position = Vector2(635, 326)
+[node name="Coin" parent="." instance=ExtResource("7_gtsmg")]
+position = Vector2(1015, 244)
 
-[node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("10_htexa")]
-position = Vector2(1029, 371)
+[node name="Flag" parent="." node_paths=PackedStringArray("player_root") instance=ExtResource("8_lbxyy")]
+position = Vector2(1029, 513)
 collision_layer = 2
 collision_mask = 2
 player_root = NodePath("../PlayerRoot")
 
 [node name="Vignette" type="Sprite2D" parent="."]
 position = Vector2(640, 360)
-texture = ExtResource("12_p6c81")
+texture = ExtResource("9_mwukg")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 7
@@ -103,7 +110,7 @@ offset_right = 1280.0
 offset_bottom = 699.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "01. Dead Straight"
+text = "03. Double-Trousle"
 label_settings = SubResource("LabelSettings_57lp3")
 horizontal_alignment = 1
 
@@ -112,7 +119,7 @@ offset_left = -213.0
 offset_top = -3.0
 offset_right = 8.0
 offset_bottom = 727.0
-texture = ExtResource("8_8fhce")
+texture = ExtResource("6_a2l3p")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
@@ -129,7 +136,7 @@ shape = SubResource("RectangleShape2D_f3nwb")
 offset_left = 1280.0
 offset_right = 1501.0
 offset_bottom = 730.0
-texture = ExtResource("8_8fhce")
+texture = ExtResource("6_a2l3p")
 patch_margin_left = 24
 patch_margin_top = 30
 patch_margin_right = 24
@@ -142,3 +149,38 @@ axis_stretch_horizontal = 2
 position = Vector2(110.5, 364.5)
 shape = SubResource("RectangleShape2D_f3nwb")
 metadata/_edit_lock_ = true
+
+[node name="Ground4" type="NinePatchRect" parent="."]
+offset_left = -20.0
+offset_top = 201.0
+offset_right = 949.0
+offset_bottom = 359.0
+texture = ExtResource("6_a2l3p")
+patch_margin_left = 24
+patch_margin_top = 30
+patch_margin_right = 24
+patch_margin_bottom = 24
+axis_stretch_horizontal = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground4/StaticBody2D"]
+position = Vector2(484.5, 79)
+shape = SubResource("RectangleShape2D_4eujb")
+
+[node name="Label2" type="Label" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 234.0
+offset_right = 934.0
+offset_bottom = 335.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press 1 or 2, or click the other parts to move them!
+Get all the parts to the flag to win!"
+label_settings = SubResource("LabelSettings_57lp3")
+horizontal_alignment = 1
