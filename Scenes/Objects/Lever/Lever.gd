@@ -7,7 +7,9 @@ const OFF_DEGREES = -45
 const ON_DEGREES = 45
 
 func _on_body_entered(body: Node2D) -> void:
+	print("algo entrou")
 	if body is Arm:
+		print("é um braço")
 		body.interact.connect(flip)
 
 func _on_body_exited(body: Node2D) -> void:
