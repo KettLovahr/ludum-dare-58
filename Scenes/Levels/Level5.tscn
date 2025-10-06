@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://xn4p1wd3rgwn"]
+[gd_scene load_steps=22 format=3 uid="uid://xn4p1wd3rgwn"]
 
 [ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_eyf00"]
 [ext_resource type="Texture2D" uid="uid://hiff0j0fqt5r" path="res://Assets/Environment/Background.png" id="2_34e73"]
@@ -14,11 +14,17 @@
 [ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="12_4psah"]
 [ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="13_4j28p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca5bt"]
-size = Vector2(335, 141)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68v1p"]
+size = Vector2(453, 141)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eyf00"]
 size = Vector2(100, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ca5bt"]
+size = Vector2(335, 141)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_konwh"]
+size = Vector2(458, 141)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fsn6e"]
 size = Vector2(127, 45)
@@ -33,9 +39,12 @@ shadow_size = 0
 shadow_color = Color(0, 0, 0, 0.64705884)
 shadow_offset = Vector2(3, 3)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai8g5"]
+size = Vector2(60, 1272)
+
 [node name="Level" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
 script = ExtResource("1_eyf00")
-target_time = 60.0
+target_time = 120.0
 coin = NodePath("Coin")
 flag = NodePath("Flag")
 
@@ -59,7 +68,7 @@ position = Vector2(107, 394)
 position = Vector2(708, 278)
 
 [node name="Ground1" type="NinePatchRect" parent="."]
-offset_left = 12.0
+offset_left = -108.0
 offset_top = 443.0
 offset_right = 365.0
 offset_bottom = 598.0
@@ -74,8 +83,8 @@ metadata/_edit_group_ = true
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground1"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground1/StaticBody2D"]
-position = Vector2(176.5, 75.5)
-shape = SubResource("RectangleShape2D_ca5bt")
+position = Vector2(235.5, 75.5)
+shape = SubResource("RectangleShape2D_68v1p")
 
 [node name="Ground4" type="NinePatchRect" parent="."]
 offset_left = 391.0
@@ -118,7 +127,7 @@ shape = SubResource("RectangleShape2D_ca5bt")
 [node name="Ground3" type="NinePatchRect" parent="."]
 offset_left = 1071.0
 offset_top = 201.0
-offset_right = 1424.0
+offset_right = 1553.0
 offset_bottom = 356.0
 texture = ExtResource("6_tjygj")
 patch_margin_left = 24
@@ -131,8 +140,8 @@ metadata/_edit_group_ = true
 [node name="StaticBody2D" type="StaticBody2D" parent="Ground3"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground3/StaticBody2D"]
-position = Vector2(176.5, 75.5)
-shape = SubResource("RectangleShape2D_ca5bt")
+position = Vector2(238, 75.5)
+shape = SubResource("RectangleShape2D_konwh")
 
 [node name="RedGate" type="NinePatchRect" parent="."]
 offset_left = 911.0
@@ -213,3 +222,17 @@ horizontal_alignment = 1
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(720, 199)
 zoom = Vector2(0.8, 0.8)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-167, -342)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(39, 641)
+shape = SubResource("RectangleShape2D_ai8g5")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(1523, -402)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(39, 641)
+shape = SubResource("RectangleShape2D_ai8g5")
