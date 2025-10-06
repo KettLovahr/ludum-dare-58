@@ -27,6 +27,7 @@ func _custom_behavior(delta: float):
 		carrying.global_position = $CarryPivot.global_position
 		carrying.velocity = Vector2.ZERO
 	if not selected or not controllable:
+		rib_walk.stop()
 		if climbing:
 			anim.play("climb_idle")
 		else:
@@ -43,7 +44,7 @@ func _handle_controls(delta: float):
 	if climbing:
 		velocity.y = y_axis * CLIMB_SPEED
 
-	if velocity != Vector2(0.0, 0.0):
+	if x_axis != 0 or y_axis != 0:
 		if not rib_walk.is_playing():
 			rib_walk.play()
 			rib_walk.pitch_scale = randf_range(1.0, 1.2)
