@@ -20,11 +20,15 @@ var selected: bool:
 func _process(delta) -> void:
 	glow_material.set_shader_parameter("glowing", self.selected)
 
+var restarted := false
 func _physics_process(delta: float) -> void:
 	if selected and controllable:
 		_handle_controls(delta)
 	_custom_behavior(delta)
 	move_and_slide()
+	if global_position.y > 1000 and not restarted:
+		restarted = true
+		Transition.reload_current_scene()
 
 ## Override this function with this part's controls
 func _handle_controls(delta: float): pass
