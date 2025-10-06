@@ -1,0 +1,327 @@
+[gd_scene load_steps=15 format=3 uid="uid://btpv8e5jrg4a7"]
+
+[ext_resource type="Texture2D" uid="uid://5fsb544rsqy1" path="res://Assets/Interface/MenuBackground.png" id="1_5mu0l"]
+[ext_resource type="Script" uid="uid://c4yiac7cl5xwy" path="res://Scenes/Interface/end_screen.gd" id="1_m5ejv"]
+[ext_resource type="Texture2D" uid="uid://dlrav1pwdg8da" path="res://Assets/Interface/Vignette.png" id="2_m5ejv"]
+[ext_resource type="FontFile" uid="uid://cpa2mhplu6bvo" path="res://Assets/Fonts/FontdinerSwanky-Regular.ttf" id="3_4d7x6"]
+[ext_resource type="FontFile" uid="uid://djmrwf1ck4r4m" path="res://Assets/Fonts/Atma-Bold.ttf" id="4_tdfoq"]
+[ext_resource type="Texture2D" uid="uid://bayaahfcsjmto" path="res://Assets/Interface/Damn.png" id="5_pujwq"]
+[ext_resource type="PackedScene" uid="uid://n4yb77aqepuc" path="res://Scenes/Interface/fancy_butt.tscn" id="6_rys8x"]
+[ext_resource type="AudioStream" uid="uid://cygwwvxy1p8ep" path="res://Assets/Sounds/SFX/MenuCancel.wav" id="7_m1y6p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qixr6"]
+font = ExtResource("3_4d7x6")
+font_size = 160
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.5882353)
+shadow_offset = Vector2(6, 6)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ft8lu"]
+line_spacing = -15.0
+font = ExtResource("4_tdfoq")
+font_size = 45
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.5882353)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5i50d"]
+line_spacing = -15.0
+font = ExtResource("4_tdfoq")
+font_size = 30
+shadow_size = 0
+shadow_color = Color(0, 0, 0, 0.5882353)
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="Animation" id="Animation_bxa36"]
+resource_name = "in"
+length = 2.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Damn:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-12.566370614359172, 0.07034079]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Damn:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 0.70000005, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(0.5, 2), Vector2(1.2, 0.9), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lady:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(45, 720), Vector2(45, 53.36212)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.2, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1280, 246), Vector2(611.72815, 246)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.4, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1280, 379), Vector2(627.72815, 379)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.5999999, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1280, 440), Vector2(599, 440)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainMenu:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.2, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(910, 800), Vector2(910, 586)]
+}
+
+[sub_resource type="Animation" id="Animation_egtsj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Damn:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.07034079]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Damn:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lady:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(45, 53.36212)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Label:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(611.72815, 246)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(627.72815, 379)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Label3:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(599, 440)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MainMenu:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(910, 586)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmk8p"]
+_data = {
+&"RESET": SubResource("Animation_egtsj"),
+&"in": SubResource("Animation_bxa36")
+}
+
+[node name="EndScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m5ejv")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("1_5mu0l")
+metadata/_edit_lock_ = true
+
+[node name="Vignette" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_m5ejv")
+metadata/_edit_lock_ = true
+
+[node name="Damn" type="Label" parent="."]
+layout_mode = 0
+offset_left = 545.00006
+offset_top = 25.0
+offset_right = 1194.0
+offset_bottom = 269.00003
+rotation = 0.07034079
+pivot_offset = Vector2(324.50006, 122.000015)
+text = "DAMN!!"
+label_settings = SubResource("LabelSettings_qixr6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 611.72815
+offset_top = 246.0
+offset_right = 1163.9996
+offset_bottom = 379.0
+pivot_offset = Vector2(304, 67)
+text = "You just Skeledaddled™ SO hard dude!"
+label_settings = SubResource("LabelSettings_ft8lu")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 627.72815
+offset_top = 379.0
+offset_right = 1180.0016
+offset_bottom = 429.0
+rotation = -0.018772304
+pivot_offset = Vector2(276.27185, 25)
+text = "We are seriously impressed."
+label_settings = SubResource("LabelSettings_5i50d")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 599.0
+offset_top = 440.0
+offset_right = 1216.7278
+offset_bottom = 573.0
+rotation = -0.03560619
+pivot_offset = Vector2(304, 67)
+text = "Why not try to get all those tombstones now hm?"
+label_settings = SubResource("LabelSettings_ft8lu")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Lady" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 53.36212
+offset_right = 623.0
+offset_bottom = 724.54364
+texture = ExtResource("5_pujwq")
+
+[node name="MainMenu" parent="." instance=ExtResource("6_rys8x")]
+layout_mode = 0
+offset_left = 910.0
+offset_top = 586.0
+offset_right = 1323.0
+offset_bottom = 699.99915
+scale = Vector2(0.75, 0.75)
+
+[node name="Label" parent="MainMenu" index="1"]
+offset_left = 4.0
+offset_top = 10.0
+offset_right = -9.0
+offset_bottom = 10.0
+text = "Main menu"
+
+[node name="Confirm" parent="MainMenu" index="4"]
+stream = ExtResource("7_m1y6p")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cmk8p")
+}
+autoplay = "in"
+
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+
+[editable path="MainMenu"]

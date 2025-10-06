@@ -2,6 +2,7 @@ extends Control
 
 
 const SQUARE_BUTT = preload("res://Scenes/Interface/square_butt.tscn")
+const GRAVE_COMPLETE = preload("res://Assets/Interface/TombstoneCompleted.png")
 
 
 func _ready() -> void:
@@ -10,6 +11,10 @@ func _ready() -> void:
 	for path in GameState.level_scene_paths:
 		var butt := SQUARE_BUTT.instantiate() as Button
 		butt.get_node("Label").text = str(i + 1)
+		butt.get_node("Graves").show()
+		for j in range(3):
+			if GameState.tombstones_state[i][j]:
+				butt.get_node("Graves/Grave" + str(j + 1)).texture = GRAVE_COMPLETE
 		butt.pressed.connect(func():
 			GameState.current_level = i
 			Transition.change_scene_to_file(path)

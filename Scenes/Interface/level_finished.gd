@@ -8,10 +8,12 @@ var _grave_states := [false, false, false]
 func complete(grave_states: Array, time_limit: float):
 	var which_level = GameState.current_level
 	if which_level + 1 >= len(GameState.level_scene_paths):
-		$Next.hide()
+		$Next/Label.text = "Finish!"
+		next_level = "res://Scenes/Interface/EndScreen.tscn"
 	else:
 		next_level = GameState.level_scene_paths[which_level + 1]
 	_grave_states = grave_states
+	GameState.update_tombstones(which_level, grave_states)
 
 	var sec_num = floor(time_limit)
 	var minutes = floor(sec_num / 60)
@@ -32,8 +34,8 @@ func check_grave(which: int):
 	if which < 0 or which > 2 or not _grave_states[which]:
 		return
 	get_node("Grave" + str(which + 1) + "/AnimationPlayer").play("complete")
-	get_node("Grave" + str(which + 1) + "/DirtSFX").play()
 	get_node("Grave" + str(which + 1) + "/DirtSFX").pitch_scale = randf_range(0.8, 1.2)
+	get_node("Grave" + str(which + 1) + "/DirtSFX").play()
 
 func _on_main_menu_pressed() -> void:
 	Transition.change_scene_to_file("res://Scenes/Interface/main_menu.tscn")

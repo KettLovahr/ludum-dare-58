@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://j2yrdprfcj3r"]
+[gd_scene load_steps=15 format=3 uid="uid://j2yrdprfcj3r"]
 
 [ext_resource type="Script" uid="uid://3howopcgbo1a" path="res://Scenes/Interface/fancy_butt.gd" id="1_abgfk"]
 [ext_resource type="Texture2D" uid="uid://bc6i2f0a4m41b" path="res://Assets/Interface/BoneButton.png" id="2_abgfk"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://n3hr67ddnoc0" path="res://Assets/Interface/BoneButtonPressed.png" id="5_ppwpn"]
 [ext_resource type="AudioStream" uid="uid://djqm6672mai03" path="res://Assets/Sounds/SFX/MenuSelect.wav" id="6_ppwpn"]
 [ext_resource type="AudioStream" uid="uid://cfs6ibfeq6sq1" path="res://Assets/Sounds/SFX/MenuConfirm.wav" id="7_08oyl"]
+[ext_resource type="Texture2D" uid="uid://b2br03xtf5jqg" path="res://Assets/Interface/TombstoneIncomplete.png" id="8_08oyl"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_abgfk"]
 font = ExtResource("3_ppwpn")
@@ -273,6 +274,38 @@ bus = &"SFX"
 [node name="Confirm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_08oyl")
 bus = &"SFX"
+
+[node name="Graves" type="HBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = -18.0
+offset_right = -7.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Grave1" type="TextureRect" parent="Graves"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_08oyl")
+expand_mode = 5
+
+[node name="Grave2" type="TextureRect" parent="Graves"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_08oyl")
+expand_mode = 5
+
+[node name="Grave3" type="TextureRect" parent="Graves"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("8_08oyl")
+expand_mode = 5
 
 [connection signal="button_down" from="." to="." method="_on_button_down"]
 [connection signal="button_up" from="." to="." method="_on_button_up"]
