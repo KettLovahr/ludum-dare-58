@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://kxlkspfj2w2j"]
+[gd_scene load_steps=28 format=3 uid="uid://kxlkspfj2w2j"]
 
 [ext_resource type="Script" uid="uid://drmc2yhwgo2ga" path="res://Scenes/Objects/Player/Parts/Ribcage/Ribcage.gd" id="1_o5qfi"]
 [ext_resource type="Texture2D" uid="uid://chaysg1rkfi4" path="res://Assets/Bones/Ribcage7.png" id="2_k7jol"]
@@ -15,6 +15,9 @@
 [ext_resource type="Script" uid="uid://c5xh8k0ojshh5" path="res://Scenes/Objects/Player/PartSelectionArea.gd" id="12_o5qfi"]
 [ext_resource type="Texture2D" uid="uid://bclcuvutwcf14" path="res://Assets/Bones/RibcageClimb2.png" id="12_olu0q"]
 [ext_resource type="Texture2D" uid="uid://jw2hgg4goel0" path="res://Assets/Bones/RibcageClimb3.png" id="14_uchnl"]
+[ext_resource type="AudioStream" uid="uid://cqtbbnj4ibv5d" path="res://Assets/Sounds/SFX/DogPickup.wav" id="16_kvlcm"]
+[ext_resource type="AudioStream" uid="uid://dg1qb25ko6w58" path="res://Assets/Sounds/SFX/DogRelease.wav" id="17_fhx7n"]
+[ext_resource type="AudioStream" uid="uid://0ypbg1tf5dj7" path="res://Assets/Sounds/SFX/DogWalk.wav" id="18_my4ou"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lgp1r"]
 size = Vector2(104, 83)
@@ -2474,6 +2477,18 @@ texture = ExtResource("14_uchnl")
 libraries = {
 &"": SubResource("AnimationLibrary_olu0q")
 }
+
+[node name="RibPick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_kvlcm")
+volume_db = 5.0
+
+[node name="RibRelease" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_fhx7n")
+volume_db = 5.0
+
+[node name="RibWalk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18_my4ou")
+volume_db = -10.0
 
 [connection signal="body_entered" from="PickupArea" to="." method="_on_pickup_area_body_entered"]
 [connection signal="body_exited" from="PickupArea" to="." method="_on_pickup_area_body_exited"]

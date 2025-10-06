@@ -28,4 +28,9 @@ func flip():
 		.set_ease(Tween.EASE_IN)
 	await get_tree().create_timer(TRIGGER_TIME).timeout
 	state_changed.emit(activated)
+	
+	$LevelPullSFX.play()
+	if activated: $LevelPullSFX.pitch_scale = 2.0
+	else: $LevelPullSFX.pitch_scale = 1.5
+	
 	print("lever flipped!")

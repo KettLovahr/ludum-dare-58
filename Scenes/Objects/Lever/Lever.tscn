@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvtr13jyty6h8"]
+[gd_scene load_steps=6 format=3 uid="uid://cvtr13jyty6h8"]
 
 [ext_resource type="Script" uid="uid://crynq7gfa8lc2" path="res://Scenes/Objects/Lever/Lever.gd" id="1_gxapa"]
 [ext_resource type="Texture2D" uid="uid://bdfof076avaae" path="res://Assets/Environment/Lever2.png" id="1_vq7cg"]
 [ext_resource type="Texture2D" uid="uid://dpchll6y0de3r" path="res://Assets/Environment/Lever1.png" id="2_gxapa"]
+[ext_resource type="AudioStream" uid="uid://cnxgffupsrb05" path="res://Assets/Sounds/SFX/LeverPull.wav" id="4_vupft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vupft"]
 size = Vector2(132, 54)
@@ -26,6 +27,10 @@ texture = ExtResource("2_gxapa")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -27)
 shape = SubResource("RectangleShape2D_vupft")
+
+[node name="LevelPullSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vupft")
+pitch_scale = 1.2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
