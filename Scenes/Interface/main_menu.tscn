@@ -831,12 +831,11 @@ autowrap_mode = 3
 [node name="Label3" type="Label" parent="Instructions"]
 layout_mode = 0
 offset_left = 429.0
-offset_top = 301.0
+offset_top = 329.0
 offset_right = 1309.0
-offset_bottom = 636.0
+offset_bottom = 664.0
 text = "Click on a body part to control it.
-Use A and D or the arrows to move.
-Use W or Up to jump, if you're a leg!
+Use WASD or the Arrows to move.
 Press Space to use your body part's special ability!
 Bring all your bones to the flag to win.
 
@@ -1073,7 +1072,7 @@ offset_left = 913.0
 offset_top = 469.0
 offset_right = 1178.0
 offset_bottom = 547.0
-text = "Raccat"
+text = "Kett"
 label_settings = SubResource("LabelSettings_h2aso")
 horizontal_alignment = 1
 autowrap_mode = 3
