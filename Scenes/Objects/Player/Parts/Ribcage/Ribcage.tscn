@@ -19,15 +19,6 @@
 [ext_resource type="AudioStream" uid="uid://dg1qb25ko6w58" path="res://Assets/Sounds/SFX/DogRelease.wav" id="17_fhx7n"]
 [ext_resource type="AudioStream" uid="uid://0ypbg1tf5dj7" path="res://Assets/Sounds/SFX/DogWalk.wav" id="18_my4ou"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgp1r"]
-size = Vector2(104, 83)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_efypk"]
-size = Vector2(147, 131)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qfi"]
-size = Vector2(138, 46)
-
 [sub_resource type="Animation" id="Animation_olu0q"]
 length = 0.001
 tracks/0/type = "value"
@@ -2344,35 +2335,21 @@ _data = {
 &"side_walk": SubResource("Animation_uchnl")
 }
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lgp1r"]
+size = Vector2(104, 83)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efypk"]
+size = Vector2(147, 131)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qfi"]
+size = Vector2(138, 46)
+
 [node name="Ribcage" type="CharacterBody2D" node_paths=PackedStringArray("sprites")]
 collision_layer = 2
 script = ExtResource("1_o5qfi")
 sprites = NodePath("Root")
 kick_strength_factor = 0.8
 metadata/_custom_type_script = "uid://bf3ggechk0wan"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -42.5)
-shape = SubResource("RectangleShape2D_lgp1r")
-
-[node name="PartSelectionArea" type="Area2D" parent="."]
-script = ExtResource("12_o5qfi")
-metadata/_custom_type_script = "uid://c5xh8k0ojshh5"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PartSelectionArea"]
-position = Vector2(13.5, -64.5)
-shape = SubResource("RectangleShape2D_efypk")
-
-[node name="CarryPivot" type="Marker2D" parent="."]
-position = Vector2(0, -56)
-
-[node name="PickupArea" type="Area2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-position = Vector2(9, -22)
-shape = SubResource("RectangleShape2D_o5qfi")
 
 [node name="Root" type="CanvasGroup" parent="."]
 
@@ -2477,6 +2454,29 @@ texture = ExtResource("14_uchnl")
 libraries = {
 &"": SubResource("AnimationLibrary_olu0q")
 }
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -42.5)
+shape = SubResource("RectangleShape2D_lgp1r")
+
+[node name="PartSelectionArea" type="Area2D" parent="."]
+script = ExtResource("12_o5qfi")
+metadata/_custom_type_script = "uid://c5xh8k0ojshh5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PartSelectionArea"]
+position = Vector2(13.5, -64.5)
+shape = SubResource("RectangleShape2D_efypk")
+
+[node name="CarryPivot" type="Marker2D" parent="."]
+position = Vector2(0, -56)
+
+[node name="PickupArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(9, -22)
+shape = SubResource("RectangleShape2D_o5qfi")
 
 [node name="RibPick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_kvlcm")

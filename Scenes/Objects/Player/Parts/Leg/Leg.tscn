@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://ckjovd4m5x8h4"]
+[gd_scene load_steps=23 format=3 uid="uid://ckjovd4m5x8h4"]
 
 [ext_resource type="Script" uid="uid://digm7s2akv0h" path="res://Scenes/Objects/Player/Parts/Leg/Leg.gd" id="1_57jxl"]
 [ext_resource type="Texture2D" uid="uid://ok7e42kijr8l" path="res://Assets/Bones/Leg3.png" id="2_1twnf"]
@@ -536,9 +536,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o5qlu"]
 size = Vector2(33, 150)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4i633"]
-size = Vector2(33, 61)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqpvh"]
 size = Vector2(56, 161)
 
@@ -590,10 +587,6 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1.5, -78.5)
 shape = SubResource("RectangleShape2D_o5qlu")
-
-[node name="CollisionShapeWhenKicked" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -83)
-shape = SubResource("RectangleShape2D_4i633")
 
 [node name="PartSelectionArea" type="Area2D" parent="."]
 position = Vector2(0, -53.5)

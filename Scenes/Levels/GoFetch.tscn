@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://c2idp8bnukbjr"]
+[gd_scene load_steps=34 format=3 uid="uid://c2idp8bnukbjr"]
 
 [ext_resource type="Script" uid="uid://b5jtu2xxo8yqw" path="res://Scenes/Levels/LevelState.gd" id="1_xhaql"]
 [ext_resource type="Texture2D" uid="uid://hiff0j0fqt5r" path="res://Assets/Environment/Background.png" id="2_244d7"]
@@ -36,6 +36,9 @@ size = Vector2(2063, 283)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qdnk"]
 size = Vector2(108, 187)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vt474"]
+size = Vector2(108, 1020)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u7xx"]
 size = Vector2(732, 64)
 
@@ -65,7 +68,7 @@ shadow_color = Color(0, 0, 0, 0.64705884)
 shadow_offset = Vector2(3, 3)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1wb0"]
-size = Vector2(228, 613)
+size = Vector2(247, 613)
 
 [node name="Level2" type="Node2D" node_paths=PackedStringArray("coin", "flag")]
 script = ExtResource("1_xhaql")
@@ -285,8 +288,7 @@ shape = SubResource("RectangleShape2D_8qdnk")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
 position = Vector2(1839, 559)
-shape = SubResource("RectangleShape2D_8qdnk")
-metadata/_edit_lock_ = true
+shape = SubResource("RectangleShape2D_vt474")
 
 [node name="Ground3" type="NinePatchRect" parent="."]
 offset_left = 931.0
@@ -513,7 +515,7 @@ zoom = Vector2(0.7, 0.7)
 
 [node name="Ground6" type="NinePatchRect" parent="."]
 z_index = -1
-offset_left = -200.0
+offset_left = -217.0
 offset_top = -256.0
 offset_right = 46.0
 offset_bottom = 393.0
@@ -528,7 +530,7 @@ axis_stretch_horizontal = 2
 metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground6/StaticBody2D"]
-position = Vector2(121, 311.5)
+position = Vector2(130.5, 311.5)
 shape = SubResource("RectangleShape2D_b1wb0")
 
 [editable path="Grate"]

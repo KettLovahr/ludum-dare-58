@@ -26,6 +26,12 @@ func _ready() -> void:
 		i += 1
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("cheat"):
+		GameState.unlocked = len(GameState.level_scene_paths) - 1
+		Transition.reload_current_scene()
+
+
 func _on_start_pressed() -> void:
 	$Main/AnimationPlayer.play("out")
 	await $Main/AnimationPlayer.animation_finished

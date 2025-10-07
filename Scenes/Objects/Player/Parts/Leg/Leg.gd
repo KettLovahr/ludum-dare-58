@@ -11,8 +11,6 @@ var kick_dir: Direction
 var facing: Direction = Direction.RIGHT
 
 @onready var KickSound: AudioStreamPlayer = $KickSound
-@onready var col = $CollisionShape2D
-@onready var col_when_kicked = $CollisionShapeWhenKicked
 
 enum Direction {
 	LEFT,
@@ -58,13 +56,6 @@ func _custom_behavior(delta: float):
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
 		velocity.x = lerp(velocity.x, 0.0, 0.2)
-	elif not selected:
-		if velocity.y < 0:
-			col_when_kicked.set_deferred("disabled", false)
-			col.set_deferred("disabled", true)
-		else:
-			col_when_kicked.set_deferred("disabled", true)
-			col.set_deferred("disabled", false)
 	if not selected or not controllable:
 		anim.play("idle")
 

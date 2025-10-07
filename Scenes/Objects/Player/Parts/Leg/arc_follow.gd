@@ -1,6 +1,6 @@
 extends Path2D
 
-const points: int = 10
+const points: int = 12
 
 @export var trajectory_gradient: Gradient
 

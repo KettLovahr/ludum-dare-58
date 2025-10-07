@@ -4,8 +4,6 @@ class_name Skull
 const VELOCITY: float = 1500
 
 @onready var anim := $Root/AnimationPlayer
-@onready var col = $CollisionShape2D
-@onready var col_when_kicked = $CollisionShapeWhenKicked
 var kick_anim_delay_passed := true
 
 func _custom_behavior(delta):
@@ -15,13 +13,6 @@ func _custom_behavior(delta):
 		if kick_anim_delay_passed:
 			anim.play("idle")
 		velocity.x = lerp(velocity.x, 0.0, 0.1)
-	else:
-		if velocity.y < 0:
-			col_when_kicked.set_deferred("disabled", false)
-			col.set_deferred("disabled", true)
-		else:
-			col_when_kicked.set_deferred("disabled", true)
-			col.set_deferred("disabled", false)
 
 func _handle_controls(delta):
 	if is_on_floor():
