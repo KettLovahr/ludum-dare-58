@@ -22,23 +22,23 @@ enum Direction {
 @onready var right_kick = $KickArea/Right
 
 func _handle_controls(_delta: float):
+	if anim.current_animation == "kick":
+		return
+	var axis = Input.get_axis("move_left","move_right")
+	velocity.x = Input.get_axis("move_left","move_right") * HOP_DIST
+	if axis < 0:
+		$Root.scale.x = -1
+		facing = Direction.LEFT
+		left_kick.set_deferred("disabled", false)
+		right_kick.set_deferred("disabled", true)
+	elif axis > 0:
+		$Root.scale.x = 1
+		facing = Direction.RIGHT
+		left_kick.set_deferred("disabled", true)
+		right_kick.set_deferred("disabled", false)
 	if is_on_floor():
-		if anim.current_animation == "kick":
-			return
-		var axis = Input.get_axis("move_left","move_right")
-		velocity.x = Input.get_axis("move_left","move_right") * HOP_DIST
-		if axis < 0:
-			$Root.scale.x = -1
+		if axis != 0:
 			anim.play("walk")
-			facing = Direction.LEFT
-			left_kick.set_deferred("disabled", false)
-			right_kick.set_deferred("disabled", true)
-		elif axis > 0:
-			$Root.scale.x = 1
-			anim.play("walk")
-			facing = Direction.RIGHT
-			left_kick.set_deferred("disabled", true)
-			right_kick.set_deferred("disabled", false)
 		else:
 			anim.play("idle")
 		if Input.is_action_just_pressed("move_action"):
