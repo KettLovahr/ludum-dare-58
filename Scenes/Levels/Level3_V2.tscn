@@ -179,7 +179,7 @@ offset_right = 934.0
 offset_bottom = 335.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Press 1 or 2, or click the other parts to move them!
+text = "Click on the other parts to move them!
 Get all the parts to the flag to win!"
 label_settings = SubResource("LabelSettings_57lp3")
 horizontal_alignment = 1
